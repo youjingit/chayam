@@ -26,13 +26,18 @@
     src: url('../fonts/NanumSquareRoundOTFEB.otf') format('opentype');
 }
 
-
+@font-face {
+    font-family: 'HSSantokki-Regular';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/HSSantokki-Regular.ttf') format('truetype');
+}
 
 * {
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, ul, li, div, p, form, fieldset, legend{
+body, h1, h2, h3, ul, li, dl, dt, dd, div, p, form, fieldset, legend{
     margin:0;
     padding:0
 }
@@ -54,7 +59,8 @@ img, fieldset{
     border:0 none
 }
 button{
-    cursor:pointer
+    cursor:pointer;
+    border:none;
 }
 
 address{
