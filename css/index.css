@@ -44,7 +44,7 @@ header {
 
 .depth_1>ul {
     text-align: center;
-    display: none;
+    /* display: none; */
 }
 
 .depth_1>ul>li:not(:first-child) {
@@ -245,6 +245,7 @@ footer {
 }
 
 .footer_left {
+    width: 60%;
     padding-right: 20px;
 }
 
@@ -259,6 +260,7 @@ footer {
 .footer_left dd {
     display: flex;
     padding: 4px 0;
+    white-space: nowrap;
 }
 
 .footer_left p {
@@ -279,6 +281,7 @@ footer {
 }
 
 .footer_right {
+    width: 40%;
     border-left: 1px solid #fff;
     padding-left: 20px;
 }

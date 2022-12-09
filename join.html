@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <h1 class="logo"><a href="">CHAYAM</a></h1>
+        <div class="gnb_wrap">
+            <nav class="gnb">
+                <h2 class="hide">주요메뉴</h2>
+                <ul>
+                    <li class="depth_1"><a href="#" class="depth_1_title">차얌 이야기</a>
+                        <ul>
+                            <li><a href="#">브랜드 소개</a></li>
+                            <li><a href="#">브랜드 경쟁력</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth_1"><a href="#">메뉴</a>
+                        <ul>
+                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="#">COFFEE</a></li>
+                            <li><a href="#">TEA</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth_1"><a href="#">매장</a>
+                        <ul>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">매장 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth_1"><a href="#">멤버십</a>
+                        <ul>
+                            <li><a href="#">멤버십 소개</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth_1"><a href="#">이벤트&뉴스</a>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li class="depth_1"><a href="#">프랜차이즈</a>
+                        <ul>
+                            <li><a href="#">인테리어</a></li>
+                            <li><a href="#">창업문의</a></li>
+                            <li><a href="#">창업설명회</a></li>
+                            <li><a href="#">개설안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="top_menu">
+            <h2 class="hide">사용자 메뉴</h2>
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <h2 class="join_title">회원가입</h2>
+        <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
+            <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
+            <input type="hidden" name="email_exist" id="email_exist" value="t">
+            <fieldset>
+                <legend class="hide">회원가입</legend>
+                <section class="input_wrap">
+                    <label for="u_id">아이디</label>
+                    <input type="text" name="u_id" id="u_id">
+                    <button type="button" id="u_id_search">중복 확인</button>
+                    <br><span id="err_u_id" class="err_txt"></span>
+                    <br><span id="u_id_result"></span>
+
+                    <label for="pwd">비밀번호</label>
+                    <input type="password" id="pwd" name="pwd" placeholder="비밀번호 (영어 숫자 특수문자 조합 8~16자리)">
+                    <br><span id="err_pwd" class="err_txt"></span>
+
+                    <label for="re_pwd">비밀번호 확인</label>
+                    <input type="password" id="re_pwd" name="re_pwd">
+                    <br><span id="err_repwd" class="err_txt"></span>
+
+                    <label for="u_name">이름</label>
+                    <input type="text" id="u_name" name="u_name">
+                    <br><span id="err_name" class="err_txt"></span>
+
+                    <label for="mobile">휴대폰</label>
+                    <input type="text" id="mobile" name="mobile" placeholder="숫자만 입력해주세요" maxlength="11"
+                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <button type="button" id="auth_number_send">인증번호 받기</button>
+                    <span id="err_mobile" class="err_txt"></span>
+
+                    <label for="email">이메일</label>
+                    <input type="text" placeholder="이메일" id="email" name="email" placeholder="ex) chayaming@chayam.com">
+                    <button type="button" id="email_search">중복확인</button>
+                    <span id="err_email" class="err_txt"></span>
+
+
+                    <label for="u_address">주소</label>
+                    <div id="u_address">
+                        <label for="ps_code">우편번호</label>
+                        <input type="text" name="ps_code" id="ps_code">
+                        <button type="button" id="ps_code_search">우편번호 검색</button><br>
+                        <label for="addr_b">주소</label>
+                        <input type="text" name="addr_b" id="addr_b"><br>
+                        <label for="addr_d">상세주소</label>
+                        <input type="text" name="addr_d" id="addr_d">
+                    </div>
+                </section>
+                <hr>
+                <section class="terms">
+                    <label for="">이용약관동의</label>
+
+                    <input type="checkbox" name="all_agree" id="all_agree">
+                    <label for="all_agree">전체 동의합니다.</label>
+
+                    <input type="checkbox" name="use_agree" id="use_agree" class="termck essential">
+                    <label for="use_agree">이용약관 동의 <span>(필수)</span></label><a href="">약관보기</a>
+
+                    <input type="checkbox" name="save_agree" id="save_agree" class="termck essential">
+                    <label for="save_agree">개인정보 수집 이용 동의 <span>(필수)</span></label><a href="">약관보기</a>
+
+                    <input type="checkbox" name="save_agree_choice" id="save_agree_choice" class="termck">
+                    <label for="save_agree_choice">개인정보 수집 이용 동의 <span>(선택)</span></label><a href="">약관보기</a>
+                    
+                    <input type="checkbox" name="mkt_agree" id="mkt_agree" class="termck">
+                    <label for="mkt_agree">혜택/정보 수신 동의 <span>(선택)</span></label>
+
+                    <input type="checkbox" name="sms_agree" id="sms_agree" class="termck">
+                    <label for="sms_agree">SMS</label> 
+
+                    <input type="checkbox" name="email_agree" id="email_agree" class="termck">
+                    <label for="email_agree">이메일</label> 
+
+                    <input type="checkbox" name="tng_agree" id="tng_agree" class="termck essential">
+                    <label for="tng_agree">본인은 만 14세 이상입니다. <span>(필수)</span></label>
+
+                    <br><span id="err_ess" class="err_txt"></span>
+                </section>
+                <button type="submit" name="submit_btn" id="submit_btn">가입하기</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer id="footer" class="footer">
+        <h2 class="hide">사이트 이용안내</h2>
+        <div class="footer_wrap">
+            <div class="footer_left">
+                <dl>
+                    <dt>Address</dt>
+                    <dd>
+                        <span>본사주소 :</span>
+                        <address>서울특별시 성동구 왕십리로 16가길 24 4층(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
+                    </dd>
+                    <dd>
+                        <span>사업자 등록주소 :</span>
+                        <address>서울특별시 성동구 성수이로 69, 2층 2196호 (성수동 2가, 삼화빌딩)</address>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>Customer</dt>
+                    <dd>대표전화 : 1661-9178</dd>
+                </dl>
+                <div class="footer_left_bottom">
+                    <i class="bottom_logo">chayam</i>
+                    <div>
+                        <p>대표자명 : 윤석제</p>
+                        <p>상호 : 주식회사 프로젝트비</p>
+                        <p>Copyright 2019 차얌 all rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_right">
+                <div class="notice">
+                    <h3>Notice</h3>
+                    <div class="notice_cont">
+                        <a href="" class="notice_title">쥬씨패밀리 멤버십 서비스 앱 출시 안내</a>
+                        <a href="" class="notice_more_btn">+ 더보기</a>
+                    </div>
+                </div>
+                <div class="sns">
+                    <h3>SNS</h3>
+                    <ul>
+                        <li>
+                            <a href="#" class="instagram_i">인스타그램</a>
+                        </li>
+                        <li>
+                            <a href="#" class="facebook_i">페이스북</a>
+                        </li>
+                        <li>
+                            <a href="#" class="youtube_i">유튜브</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 폼 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+        function join_form_check() {
+            var u_idEl = document.getElementById("u_id"); 
+            var pwdEl = document.getElementById("pwd");
+            var repwdEl = document.getElementById("re_pwd");
+            var u_nameEl = document.getElementById("u_name");
+            var mobileEl = document.getElementById("mobile");
+            var ps_codeEl = document.getElementById("ps_code");
+            var essEls = document.querySelectorAll(".essential:checked");
+           
+            if (u_idEl == "") {
+                var txt = document.getElementById("err_u_id");
+                txt.innerHTML = "<em>아이디를 입력하세요.</em>";
+                u_idEl.focus();
+                return false;
+            }
+
+            if (pwdEl.value == "") {
+                var txt = document.getElementById("err_pwd");
+                txt.innerHTML = "<em>비밀번호를 입력하세요.</em>";
+                pwdEl.focus();
+                return false;
+
+            } else {
+                var txt = document.getElementById("err_pwd");
+                txt.innerHTML = "";
+
+                var cnt = 0;
+                var format1 = /[0-9]/;
+                if (format1.test(pwdEl.value)) {
+                    cnt++;
+                }
+
+                var format2 = /[a-zA-Z]/;
+                if (format2.test(pwdEl.value)) {
+                    cnt++;
+                }
+
+                var format3 = /[~?!@#$%<>^&*\()\-=+_\’\:\;\.\,\"\'\[\]\{\}\/\|\`]/gi;
+                if (format3.test(pwdEl.value)) {
+                    cnt++;
+                }
+
+                var txt = document.getElementById("err_pwd");
+                if ((cnt >= 2 && pwdEl.value.length >= 10) || (cnt >= 3 && pwdEl.value.length >= 8)) {
+                    txt.innerHTML = "";
+                } else {
+                    txt.innerHTML =
+                        "<em>-영문,숫자,특수문자 중 2가지 종류이상을 조합으로 10자리이상 입력하세요.<br>-영문,숫자,특수문자 중 3가지 종류이상을 조합으로 8자리이상 입력하세요.</em>";
+                    pwdEl.focus();
+                    return false;
+                }
+            }
+
+            if (pwdEl.value != repwdEl.value) {
+                var txt = document.getElementById("err_repwd");
+                txt.innerHTML = "<em>비밀번호를 확인하세요.</em>";
+                repwdEl.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_repwd");
+                txt.innerHTML = "";
+            }
+
+            if (u_nameEl.value == "") {
+                var txt = document.getElementById("err_name");
+                txt.innerHTML = "<em>이름을 입력하세요.</em>";
+                u_nameEl.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_name");
+                txt.innerHTML = "";
+            }
+
+            if (mobileEl.value == "") {
+                var txt = document.getElementById("err_mobile");
+                txt.innerHTML = "<em>휴대폰번호를 입력하세요.</em>";
+                mobileEl.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_mobile");
+                txt.innerHTML = "";
+            }
+
+            if (essEls.length < 3) {
+                var txt = document.getElementById("err_ess");
+                txt.innerHTML = "<em>필수 약관에 동의해주세요.</em><br><br>";
+                return false;
+            } else {
+                var txt = document.getElementById("err_ess");
+                txt.innerHTML = "";
+            }
+        }
+
+        function email_search() {
+            var emailEl = document.getElementById("email");
+            var emailVal = emailEl.value;
+            if (emailEl == "") {
+                alert('이메일을 입력해주세요');
+                return;
+            }
+
+            var regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+            if (!regex.test(emailVal)) {
+                alert('올바른 이메일을 입력하세요');
+                return;
+            }
+
+            $.ajax({
+                url: 'exist_email.php',
+                method: 'get',
+                data: {
+                    emailVal: emailVal
+                }
+            }).then(function (data) {
+                if (data === 't') {
+                    alert(emailVal + "은 사용할 수 없는 이메일입니다.");
+                } else {
+                    alert(emailVal + "은 사용할 수 있는 이메일입니다.");
+                }
+                $('#email_exist').val(data);
+            })
+        }
+
+        $("#email").change(function () {
+            $('#email_exist').val('t');
+        })
+
+
+        // 전체동의합니다 
+        var allAgreeEl = document.getElementById("all_agree");
+        allAgreeEl.onclick = function () {
+            var isChecked = allAgreeEl.checked;
+            var allTermEls = document.querySelectorAll(".termck");
+
+            for (var index = 0; index < allTermEls.length; index++) {
+                var allTermEl = allTermEls[index];
+                allTermEl.checked = isChecked;
+            }
+        }
+
+        var allTermEls = document.querySelectorAll(".termck");
+        for (var index = 0; index < allTermEls.length; index++) {
+            var allTermEl = allTermEls[index];
+            allTermEl.onclick = function () {
+                var checkAlltermEls = document.querySelectorAll(".termck:checked");
+                if (allTermEls.length === checkAlltermEls.length) {
+                    allTermEl.checked = true;
+                } else {
+                    allTermEl.checked = false;
+                }
+            }
+        }
+
+        // 선택약관 항목별 자동선택
+        var collectApplyEl = document.getElementById("opt_apply1");
+        var marketApplyEl = document.getElementById("opt_apply2");
+        var emailApplyEl = document.getElementById("email_apply");
+        var smsApplyEl = document.getElementById("sms_apply");
+
+        collectApplyEl.onclick = function () {
+            var isChecked = collectApplyEl.checked;
+            optionEl.checked = isChecked;
+            marketApplyEl.checked = isChecked;
+            emailApplyEl.checked = isChecked;
+            smsApplyEl.checked = isChecked;
+        }
+        marketApplyEl.onclick = function () {
+            var isChecked = marketApplyEl.checked;
+            if (isChecked) {
+                optionEl.checked = true;
+                collectApplyEl.checked = true;
+                emailApplyEl.checked = true;
+                smsApplyEl.checked = true;
+            } else {
+                optionEl.checked = false;
+                emailApplyEl.checked = false;
+                smsApplyEl.checked = false;
+            }
+        }
+        emailApplyEl.onclick = function () {
+            var isChecked = emailApplyEl.checked;
+            var isSmsChecked = smsApplyEl.checked;
+            if (isChecked === true) {
+                collectApplyEl.checked = true;
+                marketApplyEl.checked = true;
+                if (isSmsChecked === true) {
+                    optionEl.checked = true;
+                }
+            } else {
+                if (isSmsChecked === false) {
+                    marketApplyEl.checked = false;
+                }
+                optionEl.checked = false;
+            }
+        }
+        smsApplyEl.onclick = function () {
+            var isChecked = smsApplyEl.checked;
+            var isEmailChecked = emailApplyEl.checked;
+            if (isChecked === true) {
+                collectApplyEl.checked = true;
+                marketApplyEl.checked = true;
+                if (isEmailChecked === true) {
+                    optionEl.checked = true;
+                }
+            } else {
+                if (!isEmailChecked) {
+                    marketApplyEl.checked = false;
+                }
+                optionEl.checked = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
