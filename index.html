@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/reset.css"> 
-    <link rel="stylesheet" type="text/css" href="css/index.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
+
 <body>
     <header id="header" class="header">
         <h1 class="logo"><a href="">CHAYAM</a></h1>
@@ -16,7 +19,7 @@
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
                 <ul>
-                    <li class="depth_1"><a href="#" class="depth_1_title">차얌 이야기</a>
+                    <li class="depth_1"><a href="#">차얌 이야기</a>
                         <ul>
                             <li><a href="#">브랜드 소개</a></li>
                             <li><a href="#">브랜드 경쟁력</a></li>
@@ -54,7 +57,7 @@
                             <li><a href="#">개설안내</a></li>
                         </ul>
                     </li>
-                </ul>     
+                </ul>
             </nav>
         </div>
         <div class="top_menu">
@@ -65,197 +68,238 @@
             </ul>
         </div>
     </header>
-    <main id="content" class="content">
-        <section>
-            <div class="main_image">
-                <h2 class="hide">신메뉴 소식</h2>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><a href=""><img src="images/main01.jpg" alt="말차 버라이어티"></a></div>
-                        <div class="swiper-slide"><a href=""><img src="images/main02.jpg" alt="차얌 시리즈"></a></div>
-                        <div class="swiper-slide"><a href=""><img src="images/main03.jpg" alt="차얌, 따뜻함을 담다"></a></div>
-                        <div class="swiper-slide"><a href=""><img src="images/main04.jpg" alt="몬스터 밀크티"></a></div>
+    <main>
+        <div id="fullpage">
+            <!-- fullpage slide1 -->
+            <div class="section" data-anchor="slide1">
+                <section class="main_swiper">
+                    <h2 class="hide">신메뉴 소식</h2>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="images/main01.jpg" alt="말차 버라이어티"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="images/main02.jpg" alt="차얌 시리즈"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="images/main03.jpg" alt="차얌, 따뜻함을 담다"></a>
+                            </div>
+                            <div class="swiper-slide"><a href="#"><img src="images/main04.jpg" alt="몬스터 밀크티"></a></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <ul class="swiper_custom_pagination">
-                <li><a href="" class="active">말차 버라이어티</a></li>
-                <li><a href="" class="">차얌 시리즈</a></li>
-                <li><a href="" class="">차얌, 따뜻함을 담다</a></li>
-                <li><a href="" class="">몬스터 밀크티</a></li>
-            </ul>
-        </section>
-        <section class="chayam_menu">
-            <div class="container">
-                <h2 class="main_title">CHAYAM MENU</h2> 
-                <div class="tabs">
-                    <ul>
-                        <li><button type="button" class="main_subtitle active">MILK TEA</button></li>
-                        <li><button type="button" class="main_subtitle">COFFEE</button></li>
-                        <li><button type="button" class="main_subtitle">TEA</button></li>
+                    <ul class="swiper_custom_pagination">
+                        <li class="slide_page"><a href="#">말차 버라이어티</a></li>
+                        <li class="slide_page"><a href="#">차얌 시리즈</a></li>
+                        <li class="slide_page"><a href="#">차얌, 따뜻함을 담다</a></li>
+                        <li class="slide_page"><a href="#">몬스터 밀크티</a></li>
                     </ul>
-                </div>
-                <div>
-                    <div>
-                        <h3 class="hide">MILK TEA</h3>
-                    </div>
-                    <div>
-                        <div class="milktea_1"><img src="images/milktea1.png" alt="차얌 밀크티"></div>
-                        <div class="milktea_2"><img src="images/milktea2.png" alt="타로 밀크티"></div>
-                        <div class="milktea_3"><img src="images/milktea3.png" alt="보성 말차 밀크티"></div>
-                        <div class="milktea_4"><img src="images/milktea4.png" alt="망고 밀크퐁"></div>
-                        <div class="milktea_5"><img src="images/milktea5.png" alt="오레오 밀크티"></div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <h3 class="hide">COFFEE</h3>
-                    </div>
-                    <div>
-                        <div class="coffee_1"><img src="images/coffee1.png" alt="아메리카노"></div>
-                        <div class="coffee_2"><img src="images/coffee2.png" alt="카페라떼"></div>
-                        <div class="coffee_3"><img src="images/coffee3.png" alt="달고나 커피"></div>
-                        <div class="coffee_4"><img src="images/coffee4.png" alt="코코넛 커피 스무디"></div>
-                        <div class="coffee_4"><img src="images/coffee5.png" alt="치즈크림커피"></div>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <h3 class="hide">TEA</h3>
-                    </div>
-                    <div>
-                        <div class="tea_1"><img src="images/tea1.png" alt="차얌 치즈폼티"></div>
-                        <div class="tea_2"><img src="images/tea2.png" alt="우롱"></div>
-                        <div class="tea_3"><img src="images/tea3.png" alt="얼그레이"></div>
-                        <div class="tea_4"><img src="images/tea4.png" alt="차얌 블랙티"></div>
-                        <div class="tea_5"><img src="images/tea5.png" alt="잉글리시블랙퍼스트"></div>
-                    </div>
-                </div>
+                </section>
             </div>
-        </section>
-        <section class="franchise">
-            <div class="container">
-                <h2 class="main_title">FRANCHISE</h2> 
-                <strong>"茶원이 다른 창업 차얌,<br>런칭 1개월만의 20호점 가맹 계약 돌파!"</strong>
-                <button type="button" onclick="location.href=''">가맹상담신청</button>
+            <!-- fullpage slide2 -->
+            <div class="section" data-anchor="slide2">
+                <section class="chayam_menu">
+                    <div class="container">
+                        <div class="container_inner">
+                            <h2 class="menu_title">CHAYAM MENU</h2>
+                        </div>
+                        <div class="container_inner">
+                            <div class="menu_title_wrap">
+                                <div class="tabs">
+                                    <ul>
+                                        <li><button type="button" class="menu_subtitle active"  data-target="#milktea_menu">MILK TEA</button></li>
+                                        <li><button type="button" class="menu_subtitle" data-target="#coffee_menu">COFFEE</button></li>
+                                        <li><button type="button" class="menu_subtitle" data-target="#tea_menu">TEA</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="menu_slider active" id="milktea_menu">
+                                <h3 class="hide">MILK TEA</h3>
+                                <div class="swiper menuSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="images/milktea1.png" alt="차얌 밀크티"></div>
+                                        <div class="swiper-slide"><img src="images/milktea2.png" alt="타로 밀크티"></div>
+                                        <div class="swiper-slide"><img src="images/milktea3.png" alt="보성 말차 밀크티"></div>
+                                        <div class="swiper-slide"><img src="images/milktea4.png" alt="망고 밀크퐁"></div>
+                                        <div class="swiper-slide"><img src="images/milktea5.png" alt="오레오 밀크티"></div>
+                                    </div>
+                                </div>
+                                <div class="menu_pagination_wrap">
+                                    <button class="button_prev">이전</button>
+                                    <div class="menu_pagination">차얌 밀크티</div>
+                                    <button class="button_next">다음</button>
+                                </div>
+                            </div>
+                            <div class="menu_slider" id="coffee_menu">
+                                <h3 class="hide">COFFEE</h3>
+                                <div class="swiper menuSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="images/coffee1.png" alt="아메리카노"></div>
+                                        <div class="swiper-slide"><img src="images/coffee2.png" alt="카페라떼"></div>
+                                        <div class="swiper-slide"><img src="images/coffee3.png" alt="달고나 커피"></div>
+                                        <div class="swiper-slide"><img src="images/coffee4.png" alt="코코넛 커피 스무디"></div>
+                                        <div class="swiper-slide"><img src="images/coffee5.png" alt="치즈크림커피"></div>
+                                    </div>
+                                </div>
+                                <div class="menu_pagination_wrap">
+                                    <button class="button_prev">이전</button>
+                                    <div class="menu_pagination">아메리카노</div>
+                                    <button class="button_next">다음</button>
+                                </div>
+                            </div>
+                            <div class="menu_slider" id="tea_menu">
+                                <h3 class="hide">TEA</h3>
+                                <div class="swiper menuSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="images/tea1.png" alt="차얌 치즈폼티"></div>
+                                        <div class="swiper-slide"><img src="images/tea2.png" alt="우롱"></div>
+                                        <div class="swiper-slide"><img src="images/tea3.png" alt="얼그레이"></div>
+                                        <div class="swiper-slide"><img src="images/tea4.png" alt="차얌 블랙티"></div>
+                                        <div class="swiper-slide"><img src="images/tea5.png" alt="잉글리시블랙퍼스트"></div>
+                                    </div>
+                                </div>
+                                <div class="menu_pagination_wrap">
+                                    <button class="button_prev">이전</button>
+                                    <div class="menu_pagination">차얌 치즈폼티</div>
+                                    <button class="button_next">다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div class="franchise_cont_wrap">
-                <div>
-                    <dl>
-                        <dt>차얌 성결대점</dt>
-                        <dd>
-                            <img src="images/franchise1.png" alt="차얌 성결대점">
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt>차얌 수원정자점</dt>
-                        <dd>
-                            <img src="images/franchise2.png" alt="차얌 수원정자점">
+            <!-- fullpage slide3 -->
+            <div class="section active" data-anchor="slide3">
+                <section class="franchise">
+                    <div class="container">
+                        <div class="container_inner">
+                            <h2 class="main_title">FRANCHISE</h2>
+                            <strong>"茶원이 다른 창업 차얌,<br>런칭 1개월만의 20호점 가맹 계약 돌파!"</strong>
+                            <a href="#"><span>가맹상담신청</span></a>
+                        </div>
+                    </div>
+                    <div class="franchise_cont_wrap">
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 성결대점</dt>
+                                <dd>
+                                    <img src="images/franchise1.png" alt="차얌 성결대점">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 수원정자점</dt>
+                                <dd>
+                                    <img src="images/franchise2.png" alt="차얌 수원정자점">
 
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt>차얌 군포송정점</dt>
-                        <dd>
-                            <img src="images/franchise3.png" alt="차얌 군포송정점">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 군포송정점</dt>
+                                <dd>
+                                    <img src="images/franchise3.png" alt="차얌 군포송정점">
 
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt>차얌 삼산시장점</dt>
-                        <dd>
-                            <img src="images/franchise4.png" alt="차얌 삼산시장점">
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt></dt>
-                        <dd>
-                            <img src="images/franchise5.png" alt="">
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt></dt>
-                        <dd>
-                            <img src="images/franchise6.png" alt="">
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <dl>
-                        <dt></dt>
-                        <dd>
-                            <img src="images/franchise7.png" alt="">
-                        </dd>
-                    </dl>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer id="footer" class="footer">
-        <h2 class="hide">사이트 이용안내</h2>
-        <div class="footer_wrap">
-            <div class="footer_left">
-                <dl>
-                    <dt>Address</dt>
-                    <dd>
-                        <span>본사주소 :</span><address>서울특별시 성동구 왕십리로 16가길 24 4층(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
-                    </dd>
-                    <dd>
-                        <span>사업자 등록주소 :</span><address>서울특별시 성동구 성수이로 69, 2층 2196호 (성수동 2가, 삼화빌딩)</address>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>Customer</dt>
-                    <dd>대표전화 : 1661-9178</dd>
-                </dl>
-                <div class="footer_left_bottom">
-                    <i class="bottom_logo">chayam</i>
-                    <div>
-                        <p>대표자명 : 윤석제</p>
-                        <p>상호 : 주식회사 프로젝트비</p>
-                        <p>Copyright 2019 차얌 all rights reserved.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 삼산시장점</dt>
+                                <dd>
+                                    <img src="images/franchise4.png" alt="차얌 삼산시장점">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 구의점</dt>
+                                <dd>
+                                    <img src="images/franchise5.png" alt="">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 방이시장점</dt>
+                                <dd>
+                                    <img src="images/franchise6.png" alt="">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="franchise_cont_item">
+                            <dl>
+                                <dt>차얌 광교호수공원점</dt>
+                                <dd>
+                                    <img src="images/franchise7.png" alt="">
+                                </dd>
+                            </dl>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
-            <div class="footer_right">
-                <div class="notice">
-                    <h3>Notice</h3>
-                    <div class="notice_cont">
-                        <a href="" class="notice_title">쥬씨패밀리 멤버십 서비스 앱 출시 안내</a>
-                        <a href="" class="notice_more_btn">+ 더보기</a>
+            <!-- fullpage slide4 (footer)-->
+            <div class="section fp-auto-height" data-anchor="slide4">
+                <footer id="footer" class="footer">
+                    <h2 class="hide">사이트 이용안내</h2>
+                    <div class="footer_wrap">
+                        <div class="footer_left">
+                            <dl>
+                                <dt>Address</dt>
+                                <dd>
+                                    <span>본사주소 :</span>
+                                    <address>서울특별시 성동구 왕십리로 16가길 24 4층<br>(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
+                                </dd>
+                                <dd>
+                                    <span>사업자 등록주소 :</span>
+                                    <address>서울특별시 성동구 성수이로 69, 2층 2196호 (성수동 2가, 삼화빌딩)</address>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>Customer</dt>
+                                <dd>대표전화 : 1661-9178</dd>
+                            </dl>
+                            <div class="footer_left_bottom">
+                                <i class="bottom_logo">chayam</i>
+                                <div>
+                                    <p>대표자명 : 윤석제</p>
+                                    <p>상호 : 주식회사 프로젝트비</p>
+                                    <p>Copyright 2019 차얌 all rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_right">
+                            <div class="notice">
+                                <h3>Notice</h3>
+                                <div class="notice_cont">
+                                    <a href="" class="notice_title">쥬씨패밀리 멤버십 서비스 앱 출시 안내</a>
+                                    <a href="" class="notice_more_btn">+ 더보기</a>
+                                </div>
+                            </div>
+                            <div class="sns">
+                                <h3>SNS</h3>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="instagram_i">인스타그램</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="facebook_i">페이스북</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="youtube_i">유튜브</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="sns">
-                    <h3>SNS</h3>
-                    <ul>
-                        <li>
-                            <a href="#" class="instagram_i">인스타그램</a>
-                        </li>
-                        <li>
-                            <a href="#" class="facebook_i">페이스북</a>
-                        </li>
-                        <li>
-                            <a href="#" class="youtube_i">유튜브</a>
-                        </li>
-                    </ul>
-                </div>
+                </footer>
             </div>
         </div>
-    </footer> 
+    </main>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.extensions.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script type="text/javascript">
@@ -268,13 +312,16 @@
                 $(".depth_1>ul").stop().slideUp("fast");
             })
 
+            $("#fullpage").fullpage({
+                lockAnchors: true,
+            });
+
             //메인 이미지 슬라이드
             var swiper = new Swiper(".mySwiper", {
                 autoplay: {
                     delay: 3000,
                 },
                 slidesPerView: 1,
-                spaceBetween: 30,
                 loop: true,
                 pagination: {
                     el: ".swiper-pagination",
@@ -284,18 +331,68 @@
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
+                on: {
+                    slideChange: function () {
+                        var index = this.activeIndex - 1;
+                        if (index === 4) {
+                            index = 0;
+                        }
+                        $(".slide_page").removeClass("active");
+                        $($(".slide_page")[index]).addClass("active");
+                    }
+                }
+            });
 
-                "dependencies": {
-                    "parcel-bundler": "^1.6.1",
-                    "swiper": "latest"
-                },
-                "name": "Swiper - Infinite loop",
-                "tags": [
-                    "swiper"
-                ]
-            }
-            );
+            $(".slide_page").click(function () {
+                swiper.slideTo($(this).index() + 1);
+            })
+
+            initMenuSwiper("#milktea_menu");
+            initMenuSwiper("#coffee_menu");
+            initMenuSwiper("#tea_menu");
         });
+
+        // 메뉴 슬라이드
+        function initMenuSwiper(sliderId){
+            var menuSwiper = new Swiper(sliderId + " .menuSwiper", {
+                loop: true,
+                // spaceBetween: 80,
+                speed: 500,
+                slidesPerView: 'auto',
+                // slidesPerView: 4,
+                navigation: {
+                    nextEl: sliderId + " .menu_pagination_wrap .button_next",
+                    prevEl: sliderId + " .menu_pagination_wrap .button_prev",
+                },
+                on: {
+                    slideChange: function () {
+                        setTimeout(function () {
+                            var imgTitle = $(sliderId + " .menuSwiper .swiper-slide-active").find('img').attr('alt');
+                            $(sliderId + " .menu_pagination").text(imgTitle);
+                        }, 10);
+                    }
+                }
+            });
+        }
+
+        //menu_subtitle 색깔 바꾸기
+        var subTitleEls = $(".menu_subtitle");
+        
+        subTitleEls.click(function(){
+            subTitleEls.removeClass("active");
+            $(this).addClass("active");
+
+            var targetId = $(this).attr("data-target");
+            var menuSlider = $(".menu_slider");
+            menuSlider.removeClass("active");
+
+            $(targetId).addClass("active");
+            console.log(targetId);
+        })
+
+
+
     </script>
 </body>
+
 </html>

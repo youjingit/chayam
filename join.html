@@ -362,61 +362,40 @@
         }
 
         // 선택약관 항목별 자동선택
-        var collectApplyEl = document.getElementById("opt_apply1");
-        var marketApplyEl = document.getElementById("opt_apply2");
-        var emailApplyEl = document.getElementById("email_apply");
-        var smsApplyEl = document.getElementById("sms_apply");
+        var marketAgreeEl = document.getElementById("mkt_agree");
+        var emailAgreeEl = document.getElementById("email_agree");
+        var smsAgreeEl = document.getElementById("sms_agree");
 
-        collectApplyEl.onclick = function () {
-            var isChecked = collectApplyEl.checked;
-            optionEl.checked = isChecked;
-            marketApplyEl.checked = isChecked;
-            emailApplyEl.checked = isChecked;
-            smsApplyEl.checked = isChecked;
-        }
-        marketApplyEl.onclick = function () {
-            var isChecked = marketApplyEl.checked;
+        marketAgreeEl.onclick = function () {
+            var isChecked = marketAgreeEl.checked;
             if (isChecked) {
-                optionEl.checked = true;
-                collectApplyEl.checked = true;
                 emailApplyEl.checked = true;
                 smsApplyEl.checked = true;
             } else {
-                optionEl.checked = false;
                 emailApplyEl.checked = false;
                 smsApplyEl.checked = false;
             }
         }
-        emailApplyEl.onclick = function () {
-            var isChecked = emailApplyEl.checked;
-            var isSmsChecked = smsApplyEl.checked;
+        emailAgreeEl.onclick = function () {
+            var isChecked = emailAgreeEl.checked;
+            var isSmsChecked = smsAgreeEl.checked;
             if (isChecked === true) {
-                collectApplyEl.checked = true;
-                marketApplyEl.checked = true;
-                if (isSmsChecked === true) {
-                    optionEl.checked = true;
-                }
+                marketAgreeEl.checked = true;
             } else {
                 if (isSmsChecked === false) {
-                    marketApplyEl.checked = false;
+                    marketAgreeEl.checked = false;
                 }
-                optionEl.checked = false;
             }
         }
-        smsApplyEl.onclick = function () {
-            var isChecked = smsApplyEl.checked;
-            var isEmailChecked = emailApplyEl.checked;
+        smsAgreeEl.onclick = function () {
+            var isChecked = smsAgreeEl.checked;
+            var isEmailChecked = emailAgreeEl.checked;
             if (isChecked === true) {
-                collectApplyEl.checked = true;
-                marketApplyEl.checked = true;
-                if (isEmailChecked === true) {
-                    optionEl.checked = true;
-                }
+                marketAgreeEl.checked = true;
             } else {
-                if (!isEmailChecked) {
-                    marketApplyEl.checked = false;
+                if (isEmailChecked === false) {
+                    marketAgreeEl.checked = false;
                 }
-                optionEl.checked = false;
             }
         }
     </script>
