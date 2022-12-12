@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index_640.css">
+    <link rel="stylesheet" type="text/css" href="css/index_1024.css">
 </head>
 
 <body>
@@ -67,6 +68,10 @@
                 <li><a href="#">회원가입</a></li>
             </ul>
         </div>
+        <div>
+            <a href="" class="menu_popup">주요메뉴</a>
+            
+        </div>
     </header>
     <main>
         <div id="fullpage">
@@ -76,11 +81,38 @@
                     <h2 class="hide">신메뉴 소식</h2>
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="#"><img src="images/main01.jpg" alt="말차 버라이어티"></a></div>
-                            <div class="swiper-slide"><a href="#"><img src="images/main02.jpg" alt="차얌 시리즈"></a></div>
-                            <div class="swiper-slide"><a href="#"><img src="images/main03.jpg" alt="차얌, 따뜻함을 담다"></a>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="images/main01.jpg">
+                                        <img src="images/mobile_main1.jpg" alt="말차 버라이어티">
+                                    </picture>
+                                </a>
                             </div>
-                            <div class="swiper-slide"><a href="#"><img src="images/main04.jpg" alt="몬스터 밀크티"></a></div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="images/main02.jpg">
+                                        <img src="images/mobile_main2.jpg" alt="차얌 시리즈">
+                                    </picture>  
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="images/main03.jpg">
+                                        <img src="images/mobile_main3.jpg" alt="차얌, 따뜻함을 담다">
+                                    </picture>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <picture>
+                                        <source media="(min-width: 1024px)" srcset="images/main04.jpg">
+                                        <img src="images/mobile_main4.jpg" alt="몬스터 밀크티">
+                                    </picture>
+                                </a>
+                            </div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -92,15 +124,20 @@
                         <li class="slide_page"><a href="#">차얌, 따뜻함을 담다</a></li>
                         <li class="slide_page"><a href="#">몬스터 밀크티</a></li>
                     </ul>
+                    <div class="brand_slogan_wrap">
+                        <p class="brand_slogan">CHAYAM BRAND STORY</p>
+                        <p class="brand_slogan_subtitle">'지키는 차얌'</p><br>
+                        <span>맛을 지킵니다</span><br>
+                        <span>신선함을 지킵니다</span><br> 
+                        <span>원칙을 지킵니다 </span>
+                    </div>
                 </section>
             </div>
             <!-- fullpage slide2 -->
             <div class="section" data-anchor="slide2">
                 <section class="chayam_menu">
                     <div class="container">
-                        <div class="container_inner">
-                            <h2 class="menu_title">CHAYAM MENU</h2>
-                        </div>
+                        <h2 class="menu_title">CHAYAM MENU</h2>
                         <div class="container_inner">
                             <div class="menu_title_wrap">
                                 <div class="tabs">
@@ -167,7 +204,7 @@
                 </section>
             </div>
             <!-- fullpage slide3 -->
-            <div class="section active" data-anchor="slide3">
+            <div class="section" data-anchor="slide3">
                 <section class="franchise">
                     <div class="container">
                         <div class="container_inner">
@@ -303,7 +340,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script type="text/javascript">
-        //메뉴 슬라이드
+        //header 메뉴 슬라이드
         $(document).ready(function () {
             $("header").mouseenter(function () {
                 $(".depth_1>ul").stop().slideDown("fast");
@@ -312,15 +349,16 @@
                 $(".depth_1>ul").stop().slideUp("fast");
             })
 
+        //fullpage 실행
             $("#fullpage").fullpage({
                 lockAnchors: true,
             });
 
             //메인 이미지 슬라이드
             var swiper = new Swiper(".mySwiper", {
-                autoplay: {
-                    delay: 3000,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                // },
                 slidesPerView: 1,
                 loop: true,
                 pagination: {
@@ -359,7 +397,17 @@
                 // spaceBetween: 80,
                 speed: 500,
                 slidesPerView: 'auto',
-                // slidesPerView: 4,
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 'auto',
+                    },
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                    }
+                },
                 navigation: {
                     nextEl: sliderId + " .menu_pagination_wrap .button_next",
                     prevEl: sliderId + " .menu_pagination_wrap .button_prev",
