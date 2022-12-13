@@ -268,7 +268,6 @@
 
     .menuSwiper .swiper-slide {
         width: 220px;
-        text-align: center;
     }
 
     .menuSwiper .swiper-slide-active {
@@ -291,7 +290,7 @@
         padding: 20px;
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 15px;
         z-index: 2;
     }
 
@@ -410,7 +409,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        opacity: .7;
+        opacity: .6;
     }
 
     .franchise_cont_item:nth-child(1) {
@@ -425,12 +424,12 @@
 
     .franchise_cont_item:nth-child(3) {
         top: 60%;
-        left: 50%;
+        left: 65%;
     }
 
     .franchise_cont_item:nth-child(4) {
-        top: 9%;
-        left: 100%;
+        top: 79%;
+        left: 18%
     }
 
     .franchise_cont_item:nth-child(5) {
@@ -439,13 +438,13 @@
     }
 
     .franchise_cont_item:nth-child(6) {
-        top: 16%;
+        top: 50%;
         left: 162%;
     }
 
     .franchise_cont_item:nth-child(7) {
-        top: 79%;
-        left: 18%
+        top: 10%;
+        left: 120%;
     }
 
     .franchise dt {
@@ -486,7 +485,7 @@
     }
 
     .footer_left {
-        width: 60%;
+        flex: 1;
         padding-right: 20px;
     }
 
@@ -508,10 +507,6 @@
         padding: 2px 0;
     }
 
-    .footer_left_bottom {
-        display: flex;
-    }
-
     .bottom_logo {
         display: block;
         background: url(../images/bottom_logo.png) no-repeat;
@@ -522,7 +517,7 @@
     }
 
     .footer_right {
-        width: 40%;
+        flex: 1;
         border-left: 1px solid #fff;
         padding-left: 20px;
     }
@@ -532,16 +527,7 @@
         font-weight: 800;
     }
 
-    .notice {
-        margin-bottom: 54px;
-    }
-
     .notice_cont {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .notice a {
         padding: 4px 0;
     }
 
@@ -550,9 +536,17 @@
         text-underline-position: under;
     }
 
+    .notice_more_btn {
+        margin-left: 60px;
+    }
+
+    .sns {
+        margin: 28px 0;
+    }
+
     .sns ul {
         display: flex;
-        margin-top: 10px
+        padding: 4px 0;
     }
 
     .instagram_i {
@@ -599,5 +593,10 @@
 
     .sns li:nth-child(2) {
         margin: 0 20px;
+    }
+
+    .footer_bottom {
+        display: flex;
+        align-items: center;
     }
 }

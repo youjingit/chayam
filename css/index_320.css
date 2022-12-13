@@ -1,4 +1,4 @@
-@media (min-width: 640px) and (max-width:1023px) {
+@media (min-width: 320px) and (max-width: 639px) {
     /* header */
     header {
         padding: 8px 27px;
@@ -82,45 +82,11 @@
     }
 
     .main_swiper .swiper-pagination {
+        display: block;
+    }
+
+    .main_swiper .swiper_custom_pagination {
         display: none;
-    }
-
-    .main_swiper .swiper_custom_pagination {
-        width: 100%;
-        display: flex;
-    }
-
-    .main_swiper .swiper_custom_pagination {
-        width: 100%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        border: 1px solid rgb(92 6 140 / 29%);
-        z-index: 2;
-        background: #ffffff61;
-    }
-
-    .main_swiper .swiper_custom_pagination>li {
-        flex: 1;
-        text-align: center
-    }
-
-    .main_swiper .swiper_custom_pagination>li:not(:last-child) {
-        border-right: 1px solid rgb(92 6 140 / 29%);
-    }
-
-    .main_swiper .swiper_custom_pagination>li>a {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .main_swiper .swiper_custom_pagination>li.active>a,
-    .main_swiper .swiper_custom_pagination>li:hover>a {
-        background: #5c068c;
-        color: #fff
     }
 
     .brand_slogan_wrap {
@@ -160,8 +126,8 @@
     .chayam_menu .container_inner {
         width: 100%;
         margin: 0 auto;
-        min-width: 640px;
-        max-width: 1023px;
+        min-width: 320px;
+        max-width: 639px;
         display: flex;
         position: relative;
         flex-direction: column;
@@ -169,7 +135,7 @@
 
     .menu_title {
         font-family: 'HSSantokki-Regular';
-        font-size: 90px;
+        font-size: 46px;
         font-weight: 600;
         color: #5c068c;
         margin-bottom: 40px;
@@ -197,7 +163,7 @@
 
     .menu_subtitle {
         font-family: 'HSSantokki-Regular';
-        font-size: 40px;
+        font-size: 24px;
         font-weight: 300;
         color: #888888;
         padding-bottom: 26px;
@@ -213,7 +179,7 @@
     .menu_slider {
         position: relative;
         width: 100%;
-        min-width: 640px;
+        min-width: 320px;
         display: none;
     }
 
@@ -291,7 +257,7 @@
 
     .franchise .main_title {
         font-family: 'HSSantokki-Regular';
-        font-size: 90px;
+        font-size: 46px;
         font-weight: 600;
         color: #5c068c;
         margin-bottom: 40px;
@@ -310,7 +276,7 @@
 
     .franchise strong {
         text-align: center;
-        font-size: 32px;
+        font-size: 20px;
         font-weight: 800;
         color: #f53a6f;
         margin-bottom: 40px;
@@ -322,12 +288,12 @@
         overflow: hidden;
         position: relative;
         font-family: 'NanumSquareRound';
-        font-size: 26px;
+        font-size: 20px;
         font-weight: 800;
         color: #5c068c;
         border: 1px solid #5c068c;
         background: #fff;
-        padding: 20px 64px;
+        padding: 16px 40px;
     }
 
     .franchise a:hover {
@@ -561,5 +527,5 @@
     .footer_bottom {
         display: flex;
         align-items: center;
-    }
+    } 
 }

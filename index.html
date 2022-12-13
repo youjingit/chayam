@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/index_320.css">
     <link rel="stylesheet" type="text/css" href="css/index_640.css">
     <link rel="stylesheet" type="text/css" href="css/index_1024.css">
 </head>
@@ -142,7 +143,7 @@
                             <div class="menu_title_wrap">
                                 <div class="tabs">
                                     <ul>
-                                        <li><button type="button" class="menu_subtitle active"  data-target="#milktea_menu">MILK TEA</button></li>
+                                        <li><button type="button" class="menu_subtitle active" data-target="#milktea_menu">MILK TEA</button></li>
                                         <li><button type="button" class="menu_subtitle" data-target="#coffee_menu">COFFEE</button></li>
                                         <li><button type="button" class="menu_subtitle" data-target="#tea_menu">TEA</button></li>
                                     </ul>
@@ -284,11 +285,11 @@
                             <dl>
                                 <dt>Address</dt>
                                 <dd>
-                                    <span>본사주소 :</span>
+                                    <span>본사주소: </span>
                                     <address>서울특별시 성동구 왕십리로 16가길 24 4층<br>(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
                                 </dd>
                                 <dd>
-                                    <span>사업자 등록주소 :</span>
+                                    <span>사업자 등록주소: </span>
                                     <address>서울특별시 성동구 성수이로 69, 2층 2196호 (성수동 2가, 삼화빌딩)</address>
                                 </dd>
                             </dl>
@@ -296,14 +297,6 @@
                                 <dt>Customer</dt>
                                 <dd>대표전화 : 1661-9178</dd>
                             </dl>
-                            <div class="footer_left_bottom">
-                                <i class="bottom_logo">chayam</i>
-                                <div>
-                                    <p>대표자명 : 윤석제</p>
-                                    <p>상호 : 주식회사 프로젝트비</p>
-                                    <p>Copyright 2019 차얌 all rights reserved.</p>
-                                </div>
-                            </div>
                         </div>
                         <div class="footer_right">
                             <div class="notice">
@@ -327,6 +320,14 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="footer_bottom">
+                                <i class="bottom_logo">chayam</i>
+                                <div>
+                                    <p>대표자명 : 윤석제</p>
+                                    <p>상호 : 주식회사 프로젝트비</p>
+                                    <p>Copyright 2019 차얌 all rights reserved.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </footer>
@@ -349,7 +350,7 @@
                 $(".depth_1>ul").stop().slideUp("fast");
             })
 
-        //fullpage 실행
+            //fullpage 실행
             $("#fullpage").fullpage({
                 lockAnchors: true,
             });
@@ -385,18 +386,17 @@
                 swiper.slideTo($(this).index() + 1);
             })
 
+            // 메뉴 슬라이드
             initMenuSwiper("#milktea_menu");
             initMenuSwiper("#coffee_menu");
             initMenuSwiper("#tea_menu");
         });
 
-        // 메뉴 슬라이드
+        
         function initMenuSwiper(sliderId){
             var menuSwiper = new Swiper(sliderId + " .menuSwiper", {
                 loop: true,
-                // spaceBetween: 80,
                 speed: 500,
-                slidesPerView: 'auto',
                 breakpoints: {
                     1024: {
                         slidesPerView: 'auto',
@@ -423,7 +423,7 @@
             });
         }
 
-        //menu_subtitle 색깔 바꾸기
+        //menu_subtitle 클릭 시 해당 메뉴 슬라이더 보이기
         var subTitleEls = $(".menu_subtitle");
         
         subTitleEls.click(function(){
@@ -435,7 +435,6 @@
             menuSlider.removeClass("active");
 
             $(targetId).addClass("active");
-            console.log(targetId);
         })
 
 
