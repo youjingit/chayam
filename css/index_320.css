@@ -1,7 +1,7 @@
 @media (min-width: 320px) and (max-width: 639px) {
     /* header */
     header {
-        padding: 8px 27px;
+        padding: 8px 10px;
         width: 100%;
         position: fixed;
         display: flex;
@@ -52,6 +52,10 @@
         position: relative;
         display: flex;
         flex-direction: column;
+    }
+
+    .mySwiper {
+        margin-top: 79px;
     }
 
     .main_swiper .swiper {
@@ -119,10 +123,6 @@
     }
 
     /* slide2 - chayam menu slider */
-    .container {
-        padding: 40px;
-    }
-
     .chayam_menu .container_inner {
         width: 100%;
         margin: 0 auto;
@@ -135,7 +135,7 @@
 
     .menu_title {
         font-family: 'HSSantokki-Regular';
-        font-size: 46px;
+        font-size: 42px;
         font-weight: 600;
         color: #5c068c;
         margin-bottom: 40px;
@@ -188,7 +188,7 @@
     }
 
     .menuSwiper {
-        height: 600px;
+        height: 500px;
     }
 
     .menuSwiper .swiper-wrapper {
@@ -201,7 +201,7 @@
     }
 
     .menuSwiper .swiper-slide-active {
-        width: 380px;
+        width: 320px;
     }
 
     .menuSwiper .swiper-slide img {
@@ -214,8 +214,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 350px;
-        height: 50px;
+        width: 300px;
+        height: 46px;
         background: #5c068c;
         padding: 20px;
         margin: 0 auto;
@@ -257,7 +257,7 @@
 
     .franchise .main_title {
         font-family: 'HSSantokki-Regular';
-        font-size: 46px;
+        font-size: 42px;
         font-weight: 600;
         color: #5c068c;
         margin-bottom: 40px;
@@ -328,8 +328,8 @@
         width: 100%;
         height: 100%;
         transform: translate(-200%, 0);
-        -webkit-animation: franchiseAni 40s linear 0s infinite;
-        animation: franchiseAni 40s linear 0s infinite;
+        -webkit-animation: franchiseAni 15s linear 0s infinite;
+        animation: franchiseAni 15s linear 0s infinite;
     }
 
     .franchise_cont_item {
@@ -350,32 +350,32 @@
 
     .franchise_cont_item:nth-child(2) {
         top: 17%;
-        left: 72%
+        left: 85%
     }
 
     .franchise_cont_item:nth-child(3) {
         top: 60%;
-        left: 65%;
+        left: 120%;
     }
 
     .franchise_cont_item:nth-child(4) {
         top: 79%;
-        left: 18%
+        left: 30%
     }
 
     .franchise_cont_item:nth-child(5) {
         top: 76%;
-        left: 120%;
+        left: 180%;
     }
 
     .franchise_cont_item:nth-child(6) {
         top: 50%;
-        left: 180%;
+        left: 220%;
     }
 
     .franchise_cont_item:nth-child(7) {
         top: 9%;
-        left: 140%;
+        left: 200%;
     }
 
     .franchise dt {
@@ -430,8 +430,9 @@
 
     .footer_left dd {
         display: flex;
+        flex-direction: column;
         padding: 4px 0;
-        white-space: nowrap;
+        font-size: 12px;
     }
 
     .footer_left p {
@@ -440,6 +441,7 @@
 
     .footer_bottom {
         display: flex;
+        font-size: 12px;
     }
 
     .bottom_logo {
@@ -451,6 +453,11 @@
         margin-right: 20px;
     }
 
+    .bottom_copyright {
+        flex: 1;
+        font-size: 8px;
+    }
+
     .footer_right h3 {
         font-size: 16px;
         font-weight: 800;
@@ -458,6 +465,7 @@
 
     .notice_cont {
         padding: 4px 0;
+        font-size: 12px;
     }
 
     .notice a:hover {
