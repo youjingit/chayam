@@ -8,7 +8,10 @@
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/index_1024.css">
+    <link rel="stylesheet" type="text/css" href="css/index_640.css">
+    <link rel="stylesheet" type="text/css" href="css/index_320.css">
+    <link rel="stylesheet" type="text/css" href="css/join.css">
 </head>
 
 <body>
@@ -18,7 +21,7 @@
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
                 <ul>
-                    <li class="depth_1"><a href="#" class="depth_1_title">차얌 이야기</a>
+                    <li class="depth_1"><a href="#">차얌 이야기</a>
                         <ul>
                             <li><a href="#">브랜드 소개</a></li>
                             <li><a href="#">브랜드 경쟁력</a></li>
@@ -66,89 +69,94 @@
                 <li><a href="#">회원가입</a></li>
             </ul>
         </div>
+        <div>
+            <a href="" class="menu_popup">주요메뉴</a>
+        </div>
     </header>
     <main>
-        <h2 class="join_title">회원가입</h2>
-        <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
-            <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
-            <input type="hidden" name="email_exist" id="email_exist" value="t">
-            <fieldset>
-                <legend class="hide">회원가입</legend>
-                <section class="input_wrap">
-                    <label for="u_id">아이디</label>
-                    <input type="text" name="u_id" id="u_id">
-                    <button type="button" id="u_id_search">중복 확인</button>
-                    <br><span id="err_u_id" class="err_txt"></span>
-                    <br><span id="u_id_result"></span>
+        <div class="padding_top">
+            <h2 class="join_title">회원가입</h2>
+            <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
+                <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
+                <input type="hidden" name="email_exist" id="email_exist" value="t">
+                <fieldset>
+                    <legend class="hide">회원가입</legend>
+                    <section class="input_wrap">
+                        <label for="u_id">아이디</label>
+                        <input type="text" name="u_id" id="u_id">
+                        <button type="button" id="u_id_search">중복 확인</button>
+                        <br><span id="err_u_id" class="err_txt"></span>
+                        <br><span id="u_id_result"></span>
 
-                    <label for="pwd">비밀번호</label>
-                    <input type="password" id="pwd" name="pwd" placeholder="비밀번호 (영어 숫자 특수문자 조합 8~16자리)">
-                    <br><span id="err_pwd" class="err_txt"></span>
+                        <label for="pwd">비밀번호</label>
+                        <input type="password" id="pwd" name="pwd" placeholder="비밀번호 (영어 숫자 특수문자 조합 8~16자리)">
+                        <br><span id="err_pwd" class="err_txt"></span>
 
-                    <label for="re_pwd">비밀번호 확인</label>
-                    <input type="password" id="re_pwd" name="re_pwd">
-                    <br><span id="err_repwd" class="err_txt"></span>
+                        <label for="re_pwd">비밀번호 확인</label>
+                        <input type="password" id="re_pwd" name="re_pwd">
+                        <br><span id="err_repwd" class="err_txt"></span>
 
-                    <label for="u_name">이름</label>
-                    <input type="text" id="u_name" name="u_name">
-                    <br><span id="err_name" class="err_txt"></span>
+                        <label for="u_name">이름</label>
+                        <input type="text" id="u_name" name="u_name">
+                        <br><span id="err_name" class="err_txt"></span>
 
-                    <label for="mobile">휴대폰</label>
-                    <input type="text" id="mobile" name="mobile" placeholder="숫자만 입력해주세요" maxlength="11"
-                        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                    <button type="button" id="auth_number_send">인증번호 받기</button>
-                    <span id="err_mobile" class="err_txt"></span>
+                        <label for="mobile">휴대폰</label>
+                        <input type="text" id="mobile" name="mobile" placeholder="숫자만 입력해주세요" maxlength="11"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                        <button type="button" id="auth_number_send">인증번호 받기</button>
+                        <br><span id="err_mobile" class="err_txt"></span>
 
-                    <label for="email">이메일</label>
-                    <input type="text" placeholder="이메일" id="email" name="email" placeholder="ex) chayaming@chayam.com">
-                    <button type="button" id="email_search">중복확인</button>
-                    <span id="err_email" class="err_txt"></span>
+                        <label for="email">이메일</label>
+                        <input type="text" placeholder="이메일" id="email" name="email" placeholder="ex) chayaming@chayam.com">
+                        <button type="button" id="email_search">중복확인</button>
+                        <br><span id="err_email" class="err_txt"></span>
 
 
-                    <label for="u_address">주소</label>
-                    <div id="u_address">
-                        <label for="ps_code">우편번호</label>
-                        <input type="text" name="ps_code" id="ps_code">
-                        <button type="button" id="ps_code_search">우편번호 검색</button><br>
-                        <label for="addr_b">주소</label>
-                        <input type="text" name="addr_b" id="addr_b"><br>
-                        <label for="addr_d">상세주소</label>
-                        <input type="text" name="addr_d" id="addr_d">
-                    </div>
-                </section>
-                <hr>
-                <section class="terms">
-                    <label for="">이용약관동의</label>
+                        <label for="u_address">주소</label>
+                        <div id="u_address">
+                            <label for="ps_code">우편번호</label>
+                            <input type="text" name="ps_code" id="ps_code">
+                            <button type="button" id="ps_code_search">우편번호 검색</button><br>
+                            <label for="addr_b">주소</label>
+                            <input type="text" name="addr_b" id="addr_b"><br>
+                            <label for="addr_d">상세주소</label>
+                            <input type="text" name="addr_d" id="addr_d">
+                        </div>
+                    </section>
+                    <hr>
+                    <section class="terms">
+                        <label for="">이용약관동의</label>
 
-                    <input type="checkbox" name="all_agree" id="all_agree">
-                    <label for="all_agree">전체 동의합니다.</label>
+                        <input type="checkbox" name="all_agree" id="all_agree">
+                        <label for="all_agree">전체 동의합니다.</label>
 
-                    <input type="checkbox" name="use_agree" id="use_agree" class="termck essential">
-                    <label for="use_agree">이용약관 동의 <span>(필수)</span></label><a href="">약관보기</a>
+                        <input type="checkbox" name="use_agree" id="use_agree" class="termck essential">
+                        <label for="use_agree">이용약관 동의 <span>(필수)</span></label><a href="">약관보기</a>
 
-                    <input type="checkbox" name="save_agree" id="save_agree" class="termck essential">
-                    <label for="save_agree">개인정보 수집 이용 동의 <span>(필수)</span></label><a href="">약관보기</a>
+                        <input type="checkbox" name="save_agree" id="save_agree" class="termck essential">
+                        <label for="save_agree">개인정보 수집 이용 동의 <span>(필수)</span></label><a href="">약관보기</a>
 
-                    <input type="checkbox" name="save_agree_choice" id="save_agree_choice" class="termck">
-                    <label for="save_agree_choice">개인정보 수집 이용 동의 <span>(선택)</span></label><a href="">약관보기</a>
-                    
-                    <input type="checkbox" name="mkt_agree" id="mkt_agree" class="termck">
-                    <label for="mkt_agree">혜택/정보 수신 동의 <span>(선택)</span></label>
+                        <input type="checkbox" name="save_agree_choice" id="save_agree_choice" class="termck">
+                        <label for="save_agree_choice">개인정보 수집 이용 동의 <span>(선택)</span></label><a href="">약관보기</a>
+                        
+                        <input type="checkbox" name="mkt_agree" id="mkt_agree" class="termck">
+                        <label for="mkt_agree">혜택/정보 수신 동의 <span>(선택)</span></label>
 
-                    <input type="checkbox" name="sms_agree" id="sms_agree" class="termck">
-                    <label for="sms_agree">SMS</label> 
+                        <input type="checkbox" name="sms_agree" id="sms_agree" class="termck">
+                        <label for="sms_agree">SMS</label> 
 
-                    <input type="checkbox" name="email_agree" id="email_agree" class="termck">
-                    <label for="email_agree">이메일</label> 
+                        <input type="checkbox" name="email_agree" id="email_agree" class="termck">
+                        <label for="email_agree">이메일</label> 
 
-                    <input type="checkbox" name="tng_agree" id="tng_agree" class="termck essential">
-                    <label for="tng_agree">본인은 만 14세 이상입니다. <span>(필수)</span></label>
+                        <input type="checkbox" name="tng_agree" id="tng_agree" class="termck essential">
+                        <label for="tng_agree">본인은 만 14세 이상입니다. <span>(필수)</span></label>
 
-                    <br><span id="err_ess" class="err_txt"></span>
-                </section>
-                <button type="submit" name="submit_btn" id="submit_btn">가입하기</button>
-            </fieldset>
-        </form>
+                        <br><span id="err_ess" class="err_txt"></span>
+                    </section>
+                    <button type="submit" name="submit_btn" id="submit_btn">가입하기</button>
+                </fieldset>
+            </form>
+        </div>
     </main>
     <footer id="footer" class="footer">
         <h2 class="hide">사이트 이용안내</h2>
@@ -157,11 +165,11 @@
                 <dl>
                     <dt>Address</dt>
                     <dd>
-                        <span>본사주소 :</span>
-                        <address>서울특별시 성동구 왕십리로 16가길 24 4층(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
+                        <span>본사주소: </span>
+                        <address>서울특별시 성동구 왕십리로 16가길 24 4층<br>(서울특별시 성동구 성수동 1가 656-1835 4층)</address>
                     </dd>
                     <dd>
-                        <span>사업자 등록주소 :</span>
+                        <span>사업자 등록주소: </span>
                         <address>서울특별시 성동구 성수이로 69, 2층 2196호 (성수동 2가, 삼화빌딩)</address>
                     </dd>
                 </dl>
@@ -169,14 +177,6 @@
                     <dt>Customer</dt>
                     <dd>대표전화 : 1661-9178</dd>
                 </dl>
-                <div class="footer_left_bottom">
-                    <i class="bottom_logo">chayam</i>
-                    <div>
-                        <p>대표자명 : 윤석제</p>
-                        <p>상호 : 주식회사 프로젝트비</p>
-                        <p>Copyright 2019 차얌 all rights reserved.</p>
-                    </div>
-                </div>
             </div>
             <div class="footer_right">
                 <div class="notice">
@@ -199,6 +199,14 @@
                             <a href="#" class="youtube_i">유튜브</a>
                         </li>
                     </ul>
+                </div>
+                <div class="footer_bottom">
+                    <i class="bottom_logo">chayam</i>
+                    <div class="bottom_copyright">
+                        <p>대표자명 : 윤석제</p>
+                        <p>상호 : 주식회사 프로젝트비</p>
+                        <p>Copyright 2019 차얌 all rights reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>

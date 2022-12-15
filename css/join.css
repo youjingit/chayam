@@ -1,0 +1,31 @@
+main {
+    color: #2a1700;
+}
+
+.padding_top {
+    padding-top: 80px;
+}
+
+.join_title {
+    margin: 64px 0;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.input_wrap {
+    text-align: center;
+}
+
+.input_wrap > input {
+    width: 400px;
+    height: 44px;
+    border-radius: 10px;
+    border-color: #2a1700;
+    margin-bottom: 56px;
+}
+
+.input_wrap > label {
+    font-size: 20px;
+    font-weight: 400;
+}
