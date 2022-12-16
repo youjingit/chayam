@@ -133,7 +133,7 @@
         flex-direction: column;
     }
 
-    .menu_title {
+    .section_title {
         font-family: 'HSSantokki-Regular';
         font-size: 42px;
         font-weight: 600;
@@ -142,12 +142,12 @@
         white-space: nowrap;
         text-align: center;
     }
-
-    .menu_title:after {
+    
+    .section_title:after {
         content: "";
         display: inline-block;
-        width: 14px;
-        height: 14px;
+        width: 10px;
+        height: 10px;
         margin: 0 0 -8px 16px;
         background-color: #f53a6f;
     }
@@ -253,25 +253,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .franchise .main_title {
-        font-family: 'HSSantokki-Regular';
-        font-size: 42px;
-        font-weight: 600;
-        color: #5c068c;
-        margin-bottom: 40px;
-        white-space: nowrap;
-        text-align: center;
-    }
-
-    .franchise .main_title:after {
-        content: "";
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        margin: 0 0 -8px 16px;
-        background-color: #f53a6f;
     }
 
     .franchise strong {
