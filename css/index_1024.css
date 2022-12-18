@@ -1,28 +1,12 @@
 @media (min-width: 1024px) {
-    body {overflow: hidden!important;}
+    
     /* header */
     header {
-        padding: 8px 27px;
-        width: 100%;
-        position: fixed;
-        display: flex;
-        z-index: 11;
-        background: #ffffff61;
-    }
-
-    header:hover {
-        background: #fff;
-    }
-
-    .logo a {
-        display: block;
-        background: url(../images/logo.png) no-repeat;
-        width: 63px;
-        height: 63px;
-        text-indent: -9999px;
+        align-items: flex-start;
     }
 
     .gnb_wrap {
+        display: block;
         width: 100%;
     }
 
@@ -103,16 +87,10 @@
     }
 
     /* slide1 - main image slider */
-    html,
-    body {
-        position: relative;
-        height: 100%;
-    }
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
+   .mySwiper {
+        margin-top: 0;
+   }
 
     .main_swiper {
         height: 100%;
@@ -120,75 +98,16 @@
     }
 
     .main_swiper .swiper {
-        width: 100%;
-        height: 100%;
-    }
-
-    .main_swiper .swiper-slide {
-        text-align: center;
-        background: #fff;
-    }
-
-    .main_swiper .swiper-slide a {
-        width: 100%;
         height: 100%;
     }
 
     .main_swiper .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .main_swiper .swiper-button-next,
-    .main_swiper .swiper-button-prev {
-        top: 56%;
-        color: #888;
-    }
-
-    .main_swiper .swiper-pagination {
-        display: none;
-    }
-
-    .main_swiper .swiper_custom_pagination {
-        width: 100%;
-        display: flex;
+        height: 100vh;
     }
 
     .main_swiper .swiper_custom_pagination {
         position: absolute;
-        width: 100%;
-        height: 50px;
         bottom: 0;
-        display: flex;
-        align-items: center;
-        border: 1px solid rgb(92 6 140 / 29%);
-        z-index: 2;
-        background: #ffffff61;
-    }
-
-    .main_swiper .swiper_custom_pagination>li {
-        flex: 1;
-        text-align: center
-    }
-
-    .main_swiper .swiper_custom_pagination>li:not(:last-child) {
-        border-right: 1px solid rgb(92 6 140 / 29%);
-    }
-
-    .main_swiper .swiper_custom_pagination>li>a {
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .main_swiper .swiper_custom_pagination>li.active>a,
-    .main_swiper .swiper_custom_pagination>li:hover>a {
-        background: #5c068c;
-        color: #fff
     }
 
     .brand_slogan_wrap {
@@ -196,6 +115,9 @@
     }
 
     /* slide2 - chayam menu slider */
+    .container {
+        padding: 0;
+    }
 
     .chayam_menu .container {
         width: 80%;
@@ -205,125 +127,51 @@
     .chayam_menu .container_inner {
         min-width: 1024px;
         max-width: 1400px;
-        display: flex;
-        position: relative;
+        flex-direction: row;
     }
 
     .section_title {
-        font-family: 'HSSantokki-Regular';
         font-size: 114px;
-        font-weight: 600;
-        color: #5c068c;
-        margin-bottom: 40px;
-        white-space: nowrap;
     }
 
     .section_title:after {
-        content: "";
-        display: inline-block;
         width: 14px;
         height: 14px;
-        margin: 0 0 -8px 16px;
-        background-color: #f53a6f;
     }
 
-    .tabs {
-        margin-top: 14px;
-    }
-
-    .menu_subtitle {
-        font-family: 'HSSantokki-Regular';
-        font-size: 70px;
-        font-weight: 300;
-        color: #888888;
-        padding-bottom: 26px;
-        white-space: nowrap;
-    }
-
-    .menu_subtitle.active {
-        text-decoration: underline;
-        text-underline-position: under;
-        color: #f53a6f;
-    }
-
-    .menu_slider {
-        position: relative;
-        margin-top: -72px;
-        margin-left: 50px;
-        width: 100%;
-        min-width: 1024px;
-        display: none;
-    }
-
-    .menu_slider.active {
+    .tabs ul {
         display: block;
     }
 
-    .menuSwiper {
-        height: 600px;
+    .menu_subtitle {
+        font-size: 70px;
     }
 
-    .menuSwiper .swiper-wrapper {
-        align-items: center;
+    .menu_slider {
+        margin-top: -72px;
+        margin-left: 50px;
+        min-width: 1024px;
     }
 
     .menuSwiper .swiper-slide {
-        width: 220px;
-    }
-
-    .menuSwiper .swiper-slide-active {
-        width: 380px;
-    }
-
-    .menuSwiper .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+        text-align: left;
     }
 
     .menu_pagination_wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 350px;
-        height: 50px;
-        background: #5c068c;
-        padding: 20px;
         position: absolute;
         bottom: 0;
         left: 15px;
         z-index: 2;
     }
 
-    .menu_pagination {
-        color: #fff;
-    }
-
-    .menu_pagination_wrap .button_prev {
-        width: 26px;
-        height: 6px;
-        background: url(../images/prev.png) no-repeat;
-        text-indent: -9999px;
-    }
-
-    .menu_pagination_wrap .button_next {
-        width: 26px;
-        height: 6px;
-        background: url(../images/next.png) no-repeat;
-        text-indent: -9999px;
-    }
-
     /* slide3 - competitve */
-    #fullpage .section:nth-child(3) {
-        width: 100vw;
-        height: 100vh;
-        background: url(../images/slide3_bg.jpg) no-repeat center;
-        background-size: cover;
-    }
 
     .competitive .container {
-        width: 80%;
-        margin: auto auto 200px auto;
+        width: 1024px;
+    }
+
+    .competitive .container_inner {
+        padding: 0 20px;
     }
 
     .competitive .section_title {
@@ -331,164 +179,58 @@
     }
 
     .competitive .cont_wrap {
-        display: flex;
-        justify-content: space-around;
-
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
     }
 
     .competitive .cont {
-        width: 300px;
-        height: 400px;
-        border: 2px solid #56443a;
-        border-radius: 20px;
+        width: 400px;
+        height: 450px;
+    }
+
+    .competitive .cont:not(:last-child) {
+        margin-right: 40px;
     }
 
     .cont_subtitle {
         height: 40%;
-        border: 1px solid transparent;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        background-color: #56443a;
-        opacity: 0.8;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        line-height: 44px;
+        line-height: 60px;
+        padding: 0;
     }
 
     .cont_subtitle span {
-        color: #fff; 
-        font-weight: 800;
-        font-size: 32px;
+        font-size: 36px;
     }
 
     .competitive .cont ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
         line-height: 55px;
-        flex-direction: column;
-        font-size: 20px;
-        font-weight: 700;
-        color: #2a1700;
+        font-size: 26px;
         padding: 38px 0;
     }
     
 
     /* slide4 - franchise */
-    .franchise {
-        width: 100%;
-        height: 100%;
-        background: #eee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 
-    .franchise .container_inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
     .franchise .section_title {
         text-align: center;
     }
 
     .franchise strong {
-        text-align: center;
         font-size: 54px;
-        font-weight: 800;
-        color: #f53a6f;
-        margin-bottom: 40px;
     }
 
     .franchise a {
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        font-family: 'NanumSquareRound';
         font-size: 30px;
-        font-weight: 800;
-        color: #5c068c;
-        border: 1px solid #5c068c;
-        background: #fff;
         padding: 26px 80px;
     }
 
-    .franchise a:hover {
-        color: #fff;
-    }
-
-    .franchise a::before {
-        position: absolute;
-        display: block;
-        content: "";
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #5c068c;
-        transform: translateX(-100%);
-        transition: transform .3s cubic-bezier(0.16, 0.04, 0.03, 0.95);
-    }
-
-    .franchise a:hover::before {
-        transform: translateX(0%);
-    }
-
-    .franchise a span {
-        z-index: 1;
-    }
-
-    .franchise_cont_wrap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: translate(-200%, 0);
-        -webkit-animation: franchiseAni 40s linear 0s infinite;
-        animation: franchiseAni 40s linear 0s infinite;
-    }
-
-    .franchise_cont_item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: .6;
-    }
-
-    .franchise_cont_item:nth-child(1) {
-        top: 10%;
-        left: 5%;
-    }
-
-    .franchise_cont_item:nth-child(2) {
-        top: 17%;
-        left: 72%
-    }
-
-    .franchise_cont_item:nth-child(3) {
-        top: 60%;
-        left: 65%;
-    }
-
-    .franchise_cont_item:nth-child(4) {
-        top: 79%;
-        left: 18%
-    }
-
-    .franchise_cont_item:nth-child(5) {
-        top: 76%;
-        left: 120%;
+    .franchise_cont_item img {
+        width: auto;
     }
 
     .franchise_cont_item:nth-child(6) {
-        top: 50%;
         left: 162%;
     }
 
@@ -498,72 +240,18 @@
     }
 
     .franchise dt {
-        position: absolute;
         left: 135px;
         top: 12px;
-        color: #fff;
         font-size: 14px;
-        display: inline-flex;
-        border: 1px solid transparent;
-        border-radius: 30px;
-        border-bottom-left-radius: 0;
-        padding: 8px 16px;
-        background-color: rgb(245, 58, 111, 0.8);
-        z-index: 1;
-        white-space: nowrap;
-    }
-
-    @keyframes franchiseAni {
-        0% {
-            transform: translate(100%, 0)
-        }
-
-        100% {
-            transform: translate(-200%, 0)
-        }
     }
 
     /* footer */
-    footer {
-        background: #000;
-        color: #fff;
-        padding: 20px;
-    }
-
     .footer_wrap {
-        display: flex;
+        flex-direction: row;
     }
 
     .footer_left {
         flex: 1;
-        padding-right: 20px;
-    }
-
-    .footer_left dl {
-        margin-bottom: 28px;
-    }
-
-    .footer_left dt {
-        font-weight: 800;
-    }
-
-    .footer_left dd {
-        display: flex;
-        padding: 4px 0;
-        white-space: nowrap;
-    }
-
-    .footer_left p {
-        padding: 2px 0;
-    }
-
-    .bottom_logo {
-        display: block;
-        background: url(../images/bottom_logo.png) no-repeat;
-        width: 63px;
-        height: 63px;
-        text-indent: -9999px;
-        margin-right: 20px;
     }
 
     .footer_right {
@@ -572,81 +260,11 @@
         padding-left: 20px;
     }
 
-    .footer_right h3 {
-        font-size: 16px;
-        font-weight: 800;
-    }
-
-    .notice_cont {
-        padding: 4px 0;
-    }
-
-    .notice a:hover {
-        text-decoration: underline;
-        text-underline-position: under;
-    }
-
     .notice_more_btn {
         margin-left: 60px;
     }
 
     .sns {
-        margin: 28px 0;
-    }
-
-    .sns ul {
-        display: flex;
-        padding: 4px 0;
-    }
-
-    .instagram_i {
-        display: block;
-        background: url(../images/instagram_i.png) no-repeat;
-        width: 22px;
-        height: 22px;
-        text-indent: -9999px;
-        position: absolute;
-        top: 25%;
-        left: 24%
-    }
-
-    .facebook_i {
-        display: block;
-        background: url(../images/facebook_i.png) no-repeat;
-        width: 11px;
-        height: 22px;
-        text-indent: -9999px;
-        position: absolute;
-        top: 25%;
-        left: 36%
-    }
-
-    .youtube_i {
-        display: block;
-        background: url(../images/youtube_i.png) no-repeat;
-        width: 28px;
-        height: 22px;
-        text-indent: -9999px;
-        position: absolute;
-        top: 25%;
-        left: 18%
-    }
-
-    .sns li {
-        width: 45px;
-        height: 45px;
-        border: 1px solid #fff;
-        border-radius: 50%;
-        background-color: #fff;
-        position: relative;
-    }
-
-    .sns li:nth-child(2) {
-        margin: 0 20px;
-    }
-
-    .footer_bottom {
-        display: flex;
-        align-items: center;
+        margin: 72px 0;
     }
 }
