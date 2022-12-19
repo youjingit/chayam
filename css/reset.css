@@ -37,7 +37,7 @@
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, ul, li, dl, dt, dd, div, p, form, fieldset, legend{
+body, h1, h2, h3, ul, li, dl, dt, dd, p, form, fieldset, legend{
     margin:0;
     padding:0
 }

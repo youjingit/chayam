@@ -1,0 +1,9 @@
+.form-control:focus {
+    border-color: #2a1700;
+    box-shadow: none;
+}
+
+.form-check-input:focus {
+    border-color: inherit;
+    box-shadow: none;
+}

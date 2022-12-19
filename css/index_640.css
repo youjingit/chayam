@@ -1,12 +1,7 @@
 @media (min-width: 640px) {
-    /* header */
-    header {
-        padding: 8px 27px;
-    }
 
     /* slide1 - main image slider */
     
-  
     .main_swiper .swiper-pagination {
         display: none;
     }
@@ -104,8 +99,6 @@
 
 
     /* franchise */
-
-
     .franchise strong {
         font-size: 32px;
     }
@@ -137,24 +130,5 @@
 
     .franchise_cont_item:nth-child(7) {
         left: 140%;
-    }
-
-    /* footer */
-    .footer_right dd {
-        flex-direction: row;
-        white-space: nowrap;
-        font-size: inherit;
-    }
-
-    .footer_bottom {
-        font-size: inherit;
-    }
-
-    .bottom_copyright {
-        font-size: inherit;
-    }
-
-    .notice_cont {
-        font-size: inherit;
     }
 }
