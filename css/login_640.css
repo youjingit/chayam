@@ -1,0 +1,26 @@
+@media (min-width: 640px) {
+    header {
+        padding: 8px 27px;
+    }
+
+   
+    /* footer */
+
+    .footer_right dd {
+        flex-direction: row;
+        white-space: nowrap;
+        font-size: inherit;
+    }
+
+    .footer_bottom {
+        font-size: inherit;
+    }
+
+    .bottom_copyright {
+        font-size: inherit;
+    }
+
+    .notice_cont {
+        font-size: inherit;
+    }
+}

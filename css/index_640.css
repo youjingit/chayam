@@ -140,8 +140,7 @@
     }
 
     /* footer */
-
-    .footer_left dd {
+    .footer_right dd {
         flex-direction: row;
         white-space: nowrap;
         font-size: inherit;

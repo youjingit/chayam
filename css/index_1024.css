@@ -247,17 +247,18 @@
 
     /* footer */
     .footer_wrap {
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
 
     .footer_left {
         flex: 1;
+        border-left: 1px solid #fff;
+        padding-left: 20px;
     }
 
     .footer_right {
         flex: 1;
-        border-left: 1px solid #fff;
-        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .notice_more_btn {

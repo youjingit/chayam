@@ -39,201 +39,134 @@ header:hover {
 }
 
 /* main */
-main {
-    color: #2a1700;
-}
 
 .padding_top {
     padding-top: 80px;
 }
 
-.join_title {
+#login_title {
     margin: 64px 0;
     text-align: center;
     font-size: 38px;
     font-weight: 800;
+    color: #2a1700;
 }
 
-.join_form {
-    width: 50%;
+.login_container {
+    width: 437px;
     margin: 0 auto;
 }
 
-.join_form input {
-    width: 400px;
-    height: 44px;
+.login_form input {
+    width: 437px;
+    height: 55px;
     border-radius: 10px;
     border: 1px solid #2a170069;
     padding: 10px;
 }
 
-.join_form input:focus,
-.join_form input:hover {
+.login_form input:focus,
+.login_form input:hover {
     border-color : #5c068c;
 }
 
-.input_cont_wrap:not(:first-child) {
-    margin-bottom: 18px;
+.login_form a {
+    color: #2a1700;
 }
 
-.join_form label {
-    font-size: 20px;
-    font-weight: 700;
-    width: 120px;
-    text-align: left;
-    white-space: nowrap;
-}
-
-.input_cont {
+.input_wrap,
+.btn_wrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
-.err_txt {
-    color: #f32a23;
-    font-size: 12px;
-}
-
-.input_cont button {
-    border: 2px solid #5c068c;
-    width: 144px;
-    height: 44px;
-    font-weight: 700;
-    border-radius: 10px;
-    color: #5c068c;
-    white-space: nowrap;
-}
-
-.btn_space {
-    width: 144px;
-    height: 44px;
-}
-
-.address_wrap {
+.login_sub_menu {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-bottom: 18px
 }
 
-.address_wrap input {
-    width: 160px;
-    height: 30px;
+.u_id,
+#login_btn {
+    margin-bottom: 20px;
 }
 
-#u_address {
-    width: 400px;
+.id_find:after {
+    content: "|";
+    margin: 0 8px;
 }
 
-#u_address div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 18px;
+.simple_login_title {
+    position: relative;
+    padding: 10px 0;
+    margin-top: 63px;
+    margin-bottom: 46px;
 }
-
-#u_address .ps_code_label {
-    width: 100px;
-}
-
-#u_address label {
-    font-size: inherit;
-}
-
-#ps_code_search {
-    border: 2px solid #5c068c;
-    width: 124px;
-    height: 30px;
-    font-weight: 700;
-    border-radius: 10px;
-    color: #5c068c;
-}
-
-#addr_b, #addr_d {
-    width: 325px;
-    height: 30px;
-}
-
-.terms {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 18px auto;
-}
-
-.terms > label {
-    font-size: 20px;
-    font-weight: 700;
-    width: 120px;
-    text-align: left;
-    white-space: nowrap;
-}
-
-.terms_input_wrap {
-    width: 400px;
-}
-
-.terms_input:not(:first-child) {
-    margin: 18px 0;
-}
-
-.terms_input input {
-    margin: 0 16px;
-}
-
-.all_agree_label {
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.terms span {
-    color: #888;
-}
-
-.terms_read {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.terms_read a {
-    display: flex;
-    align-items: center;
-    color: #5c068c;
-}
-
-.terms_read a::after {
-    content: "";
-    display: inline-block;
-    margin-left: 4px;
-    width: 10px;
-    height: 13px;
-    background: url(../images/terms.png) no-repeat;
-}
-
-.sms_email {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.sms_cont {
-    margin: 0 20px;
-}
-
-.submit_wrap {
+  
+.simple_login_text {
+    position: absolute;
+    width: 100%;
+    top: 2px;
+    left: 0;
     display: flex;
     justify-content: center;
-    margin: 40px 0;
+}
+  
+.simple_login_text span {
+    background: #fff;
 }
 
-#submit_btn {
+.simple_login_line {
+    border-top: 1px solid #2a1700;
+}
+
+.simple_login_cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 46px;
+}
+
+.log_icon {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    text-indent: -9999px;
+}
+
+.log_icon.naver {
+    background: url(../images/naver_login.png) no-repeat;
+}
+
+.log_icon.kakao {
+    background: url(../images/kakao_login.png) no-repeat;
+}
+
+.log_icon.fb {
+    background: url(../images/fb_login.png) no-repeat;
+}
+
+.log_icon.google {
+    background: url(../images/google_login.png) no-repeat;
+}
+
+#login_btn,
+#join_btn {
     border: 1px solid #5c068c;
-    width: 190px;
-    height: 50px;
+    width: 437px;
+    height: 55px;
     font-size: 18px;
     border-radius: 10px;
+}
+
+#login_btn {
     color: #fff;
     background-color: #5c068c;
+}
+
+#join_btn {
+    color: #5c068c;
+    background-color: #fff;
 }
 
 
