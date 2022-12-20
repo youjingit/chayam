@@ -45,3 +45,10 @@ main {
     background-color: inherit;
     border-color: inherit;
 }
+
+.submit_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+}

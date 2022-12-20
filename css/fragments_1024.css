@@ -91,6 +91,10 @@
         flex-direction: row-reverse;
     }
 
+    .footer_right {
+        padding-right: 20px;
+    }
+
     .footer_left {
         flex: 1;
         border-left: 1px solid #fff;
