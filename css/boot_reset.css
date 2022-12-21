@@ -40,3 +40,7 @@
     --bs-btn-disabled-border-color: #5c068c;
     --bs-gradient: none;
 }
+
+a:hover {
+    color: #2a1700;
+}

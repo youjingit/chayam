@@ -1,0 +1,56 @@
+main {
+    color: #2a1700;
+}
+
+.padding_top {
+    padding-top: 79px;
+}
+
+.bg_img {
+    background-image: url(../images/menu_bg.jpg);
+    height: 500px;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .bg_img {
+        height: 266px;
+    }
+}
+
+.title_wrap h2 {
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.menu_list .nav-link {
+    color: #2a1700;
+}
+
+.menu_list .nav-link.active {
+    background-color: #5c068c;
+}
+
+.tab-content h3 {
+    margin: 40px 0 64px 0;
+}
+
+.tab-content hr {
+    border-top: 4px solid #2a1700;
+    opacity: 1;
+}
+
+.card-body {
+    padding-bottom: 70px;
+}
+
+.cart_wrap {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

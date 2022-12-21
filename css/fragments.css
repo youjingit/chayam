@@ -4,7 +4,7 @@ header {
     position: fixed;
     display: flex;
     z-index: 11;
-    background: #ffffff8c;
+    background: #fff;
     align-items: center;
     justify-content: space-between;
 }
@@ -61,7 +61,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 4px 0;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .footer_right p {
@@ -70,7 +70,7 @@ footer {
 
 .footer_bottom {
     display: flex;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .bottom_logo {
@@ -84,7 +84,7 @@ footer {
 
 .bottom_copyright {
     flex: 1;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .footer_left h3 {
@@ -94,7 +94,7 @@ footer {
 
 .notice_cont {
     padding: 4px 0;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .notice a:hover {

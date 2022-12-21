@@ -77,7 +77,8 @@
     <main>
         <div class="padding_top">
             <h2 class="join_title">회원가입</h2>
-            <form name="join_form" class="pb-4" action="insert.php" method="post" onsubmit="return join_form_check()">
+            <form name="join_form" class="container pb-4" action="insert.php" method="post"
+                onsubmit="return join_form_check()">
                 <input type="hidden" name="u_id_test" id="u_id_test">
                 <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
                 <input type="hidden" name="email_test" id="email_test">
@@ -95,7 +96,8 @@
                                     <div class="col-12 col-sm-3">
                                         <div class="d-grid gap-2">
                                             <button type="button" id="id_search"
-                                                class="btn btn-outline-primary text-nowrap" onclick="id_search()">중복확인</button>
+                                                class="btn btn-outline-primary text-nowrap"
+                                                onclick="id_search()">중복확인</button>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +170,8 @@
                                     <div class="col-12 col-sm-3">
                                         <div class="d-grid gap-2">
                                             <button type="button" id="email_search"
-                                                class="btn btn-outline-primary text-nowrap" onclick="email_search()">중복확인</button>
+                                                class="btn btn-outline-primary text-nowrap"
+                                                onclick="email_search()">중복확인</button>
                                         </div>
                                     </div>
                                 </div>
@@ -210,11 +213,16 @@
                                     </div>
                                 </div>
                                 <span id="err_address" class="err_txt"></span>
-                                <div id="wrap"
-                                    style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
-                                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap"
-                                        style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1"
-                                        onclick="foldDaumPostcode()" alt="접기 버튼">
+                                <div class="row">
+                                    <div class="col-12 col-md-9">
+                                        <div id="wrap"
+                                            style="display:none;border:1px solid;width:100%;height:300px;margin:5px 0;position:relative">
+                                            <img src="//t1.daumcdn.net/postcode/resource/images/close.png"
+                                                id="btnFoldWrap"
+                                                style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1"
+                                                onclick="foldDaumPostcode()" alt="접기 버튼">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,17 +239,13 @@
                                             </label>
                                         </div>
                                         <div class="form-check mb-2">
-                                            <div class="row">
-                                                <div class="col-12 col-sm-9">
-                                                    <input type="checkbox"
-                                                        class="form-check-input custom_checkbox me-2 termck essential"
-                                                        name="use_agree" id="use_agree" value="y">
-                                                    <label for="use_agree" class="form-check-label">
-                                                        이용약관 동의 (필수)
-                                                    </label>
-                                                </div>
-                                                <a href="#" class="float-end terms_link col-12 col-sm-3">약관보기</a>
-                                            </div>
+                                            <input type="checkbox"
+                                                class="form-check-input custom_checkbox me-2 termck essential"
+                                                name="use_agree" id="use_agree" value="y">
+                                            <label for="use_agree" class="form-check-label">
+                                                이용약관 동의 (필수)
+                                            </label>
+                                            <a href="#" class="float-end terms_link">약관보기</a>
                                         </div>
                                         <div class="form-check mb-2">
                                             <input type="checkbox" name="save_agree" id="save_agree"
@@ -294,13 +298,19 @@
                                 <span id="err_ess" class="err_txt"></span>
                             </div>
                         </div>
-        </div>
-        <div class="submit_wrap">
-            <button type="submit" name="join_btn" id="join_btn" class="btn btn-primary">가입하기</button>
-        </div>
-        </section>
-        </fieldset>
-        </form>
+                        <div class="row justify-content-end my-4">
+                            <div class="col-12 col-md-9">
+                                <div class="row">
+                                    <div class="col-12 col-md-9">
+                                        <button type="submit" name="join_btn" id="join_btn"
+                                            class="btn btn-primary w-100">가입하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </fieldset>
+            </form>
         </div>
     </main>
     <footer id="footer" class="footer">
@@ -382,12 +392,19 @@
         }
 
         function sample3_execDaumPostcode() {
+            // 색깔 바꾸기
+            var themeObj = {
+                bgColor: "#5C068C",
+                postcodeTextColor: "#E82A3E",
+                emphTextColor: "#E72C81"
+            };
             // 현재 scroll 위치를 저장해놓는다.
             var currentScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
             new daum.Postcode({
+                theme: themeObj,
                 oncomplete: function (data) {
                     // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-            
+
                     // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                     // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                     var addr = ''; // 주소 변수
@@ -447,12 +464,6 @@
             element_wrap.style.display = 'block';
         }
 
-            // var themeObj = {
-            //     bgColor: "#5C068C",
-            //     postcodeTextColor: "#E82A3E",
-            //     emphTextColor: "#E72C81"
-            // };
-
         function join_form_check() {
             var u_idEl = document.getElementById("u_id");
             var pwdEl = document.getElementById("pwd");
@@ -462,8 +473,8 @@
             var emailEl = document.getElementById("email");
             var addr_dEl = document.getElementById("sample3_detailAddress");
             var essEls = document.querySelectorAll(".essential:checked");
-            var u_id_existEl= document.getElementById("u_id_exist"); //hidden input
-            var email_existEl= document.getElementById("email_exist"); //hidden input
+            var u_id_existEl = document.getElementById("u_id_exist"); //hidden input
+            var email_existEl = document.getElementById("email_exist"); //hidden input
 
             if (u_idEl.value == "") {
                 var txt = document.getElementById("err_u_id");
@@ -471,8 +482,8 @@
                 u_idEl.focus();
                 return false;
             } else {
-                var regex= /^[a-z0-9]{4,20}$/;
-                if (!regex.test(u_idEl.value)){
+                var regex = /^[a-z0-9]{4,20}$/;
+                if (!regex.test(u_idEl.value)) {
                     var txt = document.getElementById("err_u_id");
                     txt.innerHTML = "<em>소문자 또는 숫자 4~20자로 입력해주세요</em>";
                     u_idEl.focus();
@@ -483,7 +494,7 @@
                 }
             }
 
-            if(u_id_existEl.value == 't'){
+            if (u_id_existEl.value == 't') {
                 alert('아이디 중복확인을 해주세요');
                 return false;
             }
@@ -562,18 +573,18 @@
                 return false;
             } else {
                 var regex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-                if (!regex.test(emailEl.value)){
+                if (!regex.test(emailEl.value)) {
                     var txt = document.getElementById("err_email");
                     txt.innerHTML = "<em>올바른 이메일을 입력해주세요</em>";
                     emailEl.focus();
                     return false;
                 } else {
-                var txt = document.getElementById("err_email");
-                txt.innerHTML = "";
-                }   
+                    var txt = document.getElementById("err_email");
+                    txt.innerHTML = "";
+                }
             }
-            
-            if(email_existEl.value == 't'){
+
+            if (email_existEl.value == 't') {
                 alert('이메일 중복확인을 해주세요');
                 return false;
             }
@@ -607,7 +618,7 @@
                 return;
             }
 
-            var regex =  /^[a-z0-9]{4,20}$/;
+            var regex = /^[a-z0-9]{4,20}$/;
             if (!regex.test(u_idVal)) {
                 alert('소문자 또는 숫자로 4~20자리 이내로 입력해주세요');
                 return;
@@ -681,15 +692,16 @@
             }
         }
 
+        // 하위 체크박스 클릭 시 전체동의 체크박스 상태 변경
         var allTermEls = document.querySelectorAll(".termck");
         for (var index = 0; index < allTermEls.length; index++) {
             var allTermEl = allTermEls[index];
             allTermEl.onclick = function () {
                 var checkAlltermEls = document.querySelectorAll(".termck:checked");
                 if (allTermEls.length === checkAlltermEls.length) {
-                    allTermEl.checked = true;
+                    allAgreeEl.checked = true;
                 } else {
-                    allTermEl.checked = false;
+                    allAgreeEl.checked = false;
                 }
             }
         }
