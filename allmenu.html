@@ -11,6 +11,11 @@
         background-color: #2a1700;
         color: #fff;
         padding: 30px 34px 0 30px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 
     .allmenu_logo a {
@@ -48,7 +53,7 @@
     }
 
     .allmenu_depth_1 li {
-        margin: 20px 0;
+        padding-top: 20px;
     }
 
     .allmenu_depth_1 > a {
@@ -140,14 +145,10 @@
     <script type="text/javascript">
         var depth1Els = $('.allmenu_depth_1');
         depth1Els.click(function(){
-            var depth1El = $(this);
-            var isOpen = depth1El.hasClass('active');
-                depth1Els.removeClass('active');
-                
-                if(!isOpen) {
-                    depth1El.addClass('active');
-                } 
+            depth1Els.find("ul").not($(this).find("ul")).slideUp();
+            $(this).find("ul").slideToggle("fast");
         })
+
     </script>
 </body>
 </html>
