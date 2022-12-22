@@ -30,6 +30,7 @@ main {
 
 .menu_list .nav-link {
     color: #2a1700;
+    background-color: #eee;
 }
 
 .menu_list .nav-link.active {
@@ -37,7 +38,7 @@ main {
 }
 
 .tab-content h3 {
-    margin: 40px 0 64px 0;
+    margin: 60px 0 60px 0;
 }
 
 .tab-content hr {

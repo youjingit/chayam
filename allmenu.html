@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+    .allmenu_container {
+        background-color: #2a1700;
+        color: #fff;
+        padding: 30px 34px 0 30px;
+    }
+
+    .allmenu_logo a {
+        display: block;
+        background: url(./images/bottom_logo.png) no-repeat;
+        width: 63px;
+        height: 63px;
+        text-indent: -9999px;
+    }
+
+    .allmenu_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .allmenu_top .close_btn {
+        display: block;
+        background: url(./images/close_btn.jpg) no-repeat;
+        width: 30px;
+        height: 30px;
+        text-indent: -9999px;
+    } 
+
+    .allmenu_depth_1 {
+        margin: 40px 0;
+    }
+
+    .allmenu_depth_1 ul {
+        display: none;
+    }
+
+    .allmenu_depth_1.active ul {
+        display: block;
+    }
+
+    .allmenu_depth_1 li {
+        margin: 20px 0;
+    }
+
+    .allmenu_depth_1 > a {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .allmenu_depth_1 > ul > li,
+    .allmenu_user_menu {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+    .allmenu_container hr {
+        border: 2px solid #fff;
+    }
+
+    .allmenu_user_menu {
+        padding: 40px 0;
+    }
+
+    .allmenu_user_menu > ul > li:not(:first-child){
+        margin-top: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="allmenu_container">
+        <div class="allmenu_top">
+            <h1 class="allmenu_logo"><a href="">CHAYAM</a></h1>
+            <a class="close_btn" href="">닫기</a>
+        </div>
+        <div class="allmenu_gnb_wrap">
+            <nav class="allmenu_gnb">
+                <h2 class="hide">주요메뉴</h2>
+                <ul>
+                    <li class="allmenu_depth_1"><a href="#">차얌 이야기</a>
+                        <ul>
+                            <li><a href="#">브랜드 소개</a></li>
+                            <li><a href="#">브랜드 경쟁력</a></li>
+                        </ul>
+                    </li>
+                    <li class="allmenu_depth_1"><a href="#">메뉴</a>
+                        <ul>
+                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="#">COFFEE</a></li>
+                            <li><a href="#">TEA</a></li>
+                        </ul>
+                    </li>
+                    <li class="allmenu_depth_1"><a href="#">매장</a>
+                        <ul>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">매장 이야기</a></li>
+                        </ul>
+                    </li>
+                    <li class="allmenu_depth_1"><a href="#">멤버십</a>
+                        <ul>
+                            <li><a href="#">멤버십 소개</a></li>
+                        </ul>
+                    </li>
+                    <li class="allmenu_depth_1"><a href="#">이벤트&뉴스</a>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">이벤트</a></li>
+                        </ul>
+                    </li>
+                    <li class="allmenu_depth_1"><a href="#">프랜차이즈</a>
+                        <ul>
+                            <li><a href="#">인테리어</a></li>
+                            <li><a href="#">창업문의</a></li>
+                            <li><a href="#">창업설명회</a></li>
+                            <li><a href="#">개설안내</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <hr>
+        <div class="allmenu_user_menu">
+            <h2 class="hide">사용자 메뉴</h2>
+            <ul>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script type="text/javascript">
+        var depth1Els = $('.allmenu_depth_1');
+        depth1Els.click(function(){
+            var depth1El = $(this);
+            var isOpen = depth1El.hasClass('active');
+                depth1Els.removeClass('active');
+                
+                if(!isOpen) {
+                    depth1El.addClass('active');
+                } 
+        })
+    </script>
+</body>
+</html>
