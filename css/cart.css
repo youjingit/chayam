@@ -1,7 +1,27 @@
-main {
-    color: #2a1700;
+.card {
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
 }
 
-.padding_top {
-    padding-top: 80px;
+.cart_notice {
+    color: #888;
 }
+
+.img_wrap {
+    padding: 24px 0;
+}
+
+.cart_delete {
+    display: block;
+    background: url(../images/delete.png) no-repeat;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+    position: absolute;
+    bottom: 24px;
+    right: 42px;
+}
+
+.img-fluid {
+    max-width: 50%;
+}
+

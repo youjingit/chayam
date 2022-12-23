@@ -76,6 +76,65 @@
         <div>
             <a href="" class="menu_popup">주요메뉴</a>
         </div>
+        <div class="allmenu_container">
+            <div class="allmenu_top">
+                <h1 class="allmenu_logo"><a href="">CHAYAM</a></h1>
+                <a class="close_btn" href="">닫기</a>
+            </div>
+            <div class="allmenu_gnb_wrap">
+                <nav class="allmenu_gnb">
+                    <h2 class="hide">주요메뉴</h2>
+                    <ul>
+                        <li class="allmenu_depth_1"><a href="#">차얌 이야기</a>
+                            <ul>
+                                <li><a href="#">브랜드 소개</a></li>
+                                <li><a href="#">브랜드 경쟁력</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                            <ul>
+                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="#">COFFEE</a></li>
+                                <li><a href="#">TEA</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">매장</a>
+                            <ul>
+                                <li><a href="#">매장찾기</a></li>
+                                <li><a href="#">매장 이야기</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">멤버십</a>
+                            <ul>
+                                <li><a href="#">멤버십 소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">이벤트&뉴스</a>
+                            <ul>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">프랜차이즈</a>
+                            <ul>
+                                <li><a href="#">인테리어</a></li>
+                                <li><a href="#">창업문의</a></li>
+                                <li><a href="#">창업설명회</a></li>
+                                <li><a href="#">개설안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <hr>
+            <div class="allmenu_user_menu">
+                <h2 class="hide">사용자 메뉴</h2>
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main>
         <div class="padding_top">
@@ -273,6 +332,14 @@
                         <fieldset>
                             <legend class="hide">옵션 선택</legend>
                             <div class="mb-3">
+                                <label class="form-label">수량</label>
+                                <div class="count d-flex align-items-center">
+                                    <button type="button" class="minus btn btn-outline-primary">-</button>
+                                    <input type="text" id="result" value="1"></span>
+                                    <button type="button" class="plus btn btn-outline-primary">+</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
                                 <label class="form-label">HOT / ICE</label>
                                 <div>
                                     <label>
@@ -358,6 +425,14 @@
                     <form>
                         <fieldset>
                             <legend class="hide">옵션 선택</legend>
+                            <div class="mb-3">
+                                <label class="form-label">수량</label>
+                                <div class="count d-flex align-items-center">
+                                    <button type="button" class="minus btn btn-outline-primary">-</button>
+                                    <input type="text" id="result" value="1"></span>
+                                    <button type="button" class="plus btn btn-outline-primary">+</button>
+                                </div>
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label">HOT / ICE</label>
                                 <div>
@@ -450,6 +525,13 @@
             $("header").mouseleave(function () {
                 $(".depth_1>ul").stop().slideUp("fast");
             })
+
+            // header allmenu 메뉴 슬라이드  
+            var depth1Els = $('.allmenu_depth_1');
+            depth1Els.click(function () {
+                depth1Els.find("ul").not($(this).find("ul")).slideUp();
+                $(this).find("ul").slideToggle("fast");
+            });
 
             // MILKTEA Vue 시작
             new Vue({
@@ -737,6 +819,35 @@
                             }
                         ]
                     };
+                }
+            });
+
+            //수량 옵션
+            $('.count :button').on({
+                'click': function (e) {
+                    e.preventDefault();
+                    var $count = $(this).parent('.count').find('#result');
+                    var now = parseInt($count.val());
+                    var min = 1;
+                    var max = 999;
+                    var num = now;
+                    if ($(this).hasClass('minus')) {
+                        var type = 'm';
+                    } else {
+                        var type = 'p';
+                    }
+                    if (type == 'm') {
+                        if (now > min) {
+                            num = now - 1;
+                        }
+                    } else {
+                        if (now < max) {
+                            num = now + 1;
+                        }
+                    }
+                    if (num != now) {
+                        $count.val(num);
+                    }
                 }
             });
         });

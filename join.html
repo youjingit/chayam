@@ -73,6 +73,65 @@
         <div>
             <a href="" class="menu_popup">주요메뉴</a>
         </div>
+        <div class="allmenu_container">
+            <div class="allmenu_top">
+                <h1 class="allmenu_logo"><a href="">CHAYAM</a></h1>
+                <a class="close_btn" href="">닫기</a>
+            </div>
+            <div class="allmenu_gnb_wrap">
+                <nav class="allmenu_gnb">
+                    <h2 class="hide">주요메뉴</h2>
+                    <ul>
+                        <li class="allmenu_depth_1"><a href="#">차얌 이야기</a>
+                            <ul>
+                                <li><a href="#">브랜드 소개</a></li>
+                                <li><a href="#">브랜드 경쟁력</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                            <ul>
+                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="#">COFFEE</a></li>
+                                <li><a href="#">TEA</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">매장</a>
+                            <ul>
+                                <li><a href="#">매장찾기</a></li>
+                                <li><a href="#">매장 이야기</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">멤버십</a>
+                            <ul>
+                                <li><a href="#">멤버십 소개</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">이벤트&뉴스</a>
+                            <ul>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li class="allmenu_depth_1"><a href="#">프랜차이즈</a>
+                            <ul>
+                                <li><a href="#">인테리어</a></li>
+                                <li><a href="#">창업문의</a></li>
+                                <li><a href="#">창업설명회</a></li>
+                                <li><a href="#">개설안내</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <hr>
+            <div class="allmenu_user_menu">
+                <h2 class="hide">사용자 메뉴</h2>
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main>
         <div class="padding_top">
@@ -381,6 +440,13 @@
             $("header").mouseleave(function () {
                 $(".depth_1>ul").stop().slideUp("fast");
             })
+
+            // header allmenu 메뉴 슬라이드  
+            var depth1Els = $('.allmenu_depth_1');
+            depth1Els.click(function () {
+                depth1Els.find("ul").not($(this).find("ul")).slideUp();
+                $(this).find("ul").slideToggle("fast");
+            });
         });
 
         // 우편번호 찾기 찾기 화면을 넣을 element

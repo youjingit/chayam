@@ -1,13 +1,13 @@
 @media (min-width: 1200px) {
-    .competitive .container {
+    .brand_story .container {
         width: 1200px;
     }
 
-    .competitive .container_inner {
+    .brand_story .container_inner {
         padding: 0 20px;
     }
 
-    .competitive .cont {
+    .brand_story .cont {
         height: 450px;
     }
 }

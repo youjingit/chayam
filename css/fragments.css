@@ -1,3 +1,11 @@
+main {
+    color: #2a1700;
+}
+
+.padding_top {
+    padding-top: 80px;
+}
+
 header {
     padding: 8px 10px;
     width: 100%;
@@ -37,6 +45,84 @@ header:hover {
     text-indent: -9999px;
 }
 
+/* allmenu */
+.allmenu_container {
+    display: none;
+    background-color: #2a1700;
+    color: #fff;
+    padding: 30px 34px 0 30px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.allmenu_container.active {
+    display: block;
+}
+
+.allmenu_logo a {
+    display: block;
+    background: url(../images/bottom_logo.png) no-repeat;
+    width: 63px;
+    height: 63px;
+    text-indent: -9999px;
+}
+
+.allmenu_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.allmenu_top .close_btn {
+    display: block;
+    background: url(../images/close_btn.jpg) no-repeat;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
+} 
+
+.allmenu_depth_1 {
+    margin: 40px 0;
+}
+
+.allmenu_depth_1 ul {
+    display: none;
+}
+
+.allmenu_depth_1.active ul {
+    display: block;
+}
+
+.allmenu_depth_1 li {
+    padding-top: 20px;
+}
+
+.allmenu_depth_1 > a {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.allmenu_depth_1 > ul > li,
+.allmenu_user_menu {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.allmenu_container hr {
+    border: 2px solid #fff;
+}
+
+.allmenu_user_menu {
+    padding: 40px 0;
+}
+
+.allmenu_user_menu > ul > li:not(:first-child){
+    margin-top: 20px;
+}
+
 /* footer */
 footer {
     background: #000;
@@ -65,7 +151,7 @@ footer {
 }
 
 .footer_right p {
-    padding: 2px 0;
+    padding-top: 2px;
 }
 
 .footer_bottom {

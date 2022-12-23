@@ -15,6 +15,10 @@ body {
     padding: 0;
 }
 
+#fullpage .section:first-child{
+    background-color: rgb(92 6 140 / 14%);
+}
+
 .main_swiper {
     height: 100%;
     position: relative;
@@ -61,33 +65,50 @@ body {
     display: none;
 }
 
-.brand_slogan_wrap {
-    flex: 1;
+.quick_menu {
+    box-shadow: 0 0.5rem 1rem #5c068c2e;
+    border-radius: 12px;
+    width: 100%;
+    height: 12%;
+    margin: auto;
+}
+
+.quick_menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quick_menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    color: #412a2a;
-    text-align: center;
-    background: #eee;
-    padding: 20px;
 }
 
-.brand_slogan {
-    font-family: 'HSSantokki-Regular';
-    font-size: 36px;
-    font-weight: 300;
-    margin: 10px 0;
+.quick_i {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 12px 0;
 }
 
-.brand_slogan_subtitle {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 10px;
+.order {
+    background: url(../images/order_i.png) no-repeat;
 }
 
-.brand_slogan_wrap span{
-    font-weight: 400;
+.barcode {
+    background: url(../images/barcode_i.png) no-repeat;
+}
+
+.stamp {
+    background: url(../images/stamp_i.png) no-repeat;
+    width: 54px;
+    height: 54px;
+    margin: 17px 0;
+}
+
+.coupon {
+    background: url(../images/coupon_i.png) no-repeat;
 }
 
 /* slide2 - chayam menu slider */
@@ -207,27 +228,27 @@ body {
     text-indent: -9999px;
 }
 
-/* slide3 - competitve */
+/* slide3 - brand_story */
 #fullpage .section:nth-child(3) {
     background-color: #eedcc8;
 }
 
-.competitive .container {
+.brand_story .container {
     margin: auto;
 }
 
-.competitive .section_title {
+.brand_story .section_title {
     text-align: center;
 }
 
-.competitive .cont_wrap {
+.brand_story .cont_wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
 }
 
-.competitive .cont {
+.brand_story .cont {
     width: 100%;
     min-height: 170px;
     margin: 14px;
@@ -256,7 +277,7 @@ body {
     font-size: 24px;
 }
 
-.competitive .cont ul {
+.brand_story .cont ul {
     display: flex;
     align-items: center;
     justify-content: center;

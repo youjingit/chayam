@@ -86,17 +86,19 @@
         background: #5c068c;
     }
 
+    .quick_menu {
+        display: none;
+    }
 
     /* slide3 - competitve */
 
-    .competitive .container {
+    .brand_story .container {
         width: 640px;
     }
 
-    .competitive .cont {
+    .brand_story .cont {
         margin: 14px;
     }
-
 
     /* franchise */
     .franchise strong {

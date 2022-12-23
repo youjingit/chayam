@@ -2,7 +2,7 @@
 
     /* slide1 - main image slider */
 
-   .mySwiper {
+    .mySwiper {
         margin-top: 0;
    }
 
@@ -24,9 +24,6 @@
         bottom: 0;
     }
 
-    .brand_slogan_wrap {
-        display: none;
-    }
 
     /* slide2 - chayam menu slider */
     .container {
@@ -78,32 +75,32 @@
         z-index: 2;
     }
 
-    /* slide3 - competitve */
+    /* slide3 - brand_story */
 
-    .competitive .container {
+    .brand_story .container {
         width: 1024px;
     }
 
-    .competitive .container_inner {
+    .brand_story .container_inner {
         padding: 0 20px;
     }
 
-    .competitive .section_title {
+    .brand_story .section_title {
         text-align: right;
     }
 
-    .competitive .cont_wrap {
+    .brand_story .cont_wrap {
         flex-direction: row;
         justify-content: space-between;
         padding: 0;
     }
 
-    .competitive .cont {
+    .brand_story .cont {
         width: 400px;
         height: 450px;
     }
 
-    .competitive .cont:not(:last-child) {
+    .brand_story .cont:not(:last-child) {
         margin-right: 40px;
     }
 
@@ -117,7 +114,7 @@
         font-size: 36px;
     }
 
-    .competitive .cont ul {
+    .brand_story .cont ul {
         line-height: 55px;
         font-size: 26px;
         padding: 38px 0;
