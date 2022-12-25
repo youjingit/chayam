@@ -23,7 +23,10 @@
         position: absolute;
         bottom: 0;
     }
-
+    
+    .quick_menu {
+        display: none;
+    }
 
     /* slide2 - chayam menu slider */
     .container {

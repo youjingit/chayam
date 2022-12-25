@@ -1,0 +1,32 @@
+
+.stamp_board {
+    width: 512px;
+    border-radius: 20px;
+    background: rgba(92, 6, 140, .2);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.stamp_board img {
+    opacity: 0.5;
+    margin: 10px;
+}
+
+.point_notice, 
+.point_notice li{
+    list-style-type: disc;
+}
+
+.point_notice {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .stamp_board {
+        width: 340px;
+    }
+}

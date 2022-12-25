@@ -1,21 +1,4 @@
-.card {
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
-}
-
-.cart_notice {
-    color: #888;
-}
-
-.img_wrap {
-    padding: 24px 0;
-}
-
 .cart_delete {
-    display: block;
-    background: url(../images/delete.png) no-repeat;
-    width: 30px;
-    height: 30px;
-    text-indent: -9999px;
     position: absolute;
     bottom: 24px;
     right: 42px;

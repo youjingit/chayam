@@ -1,0 +1,11 @@
+/* header */
+header {
+    background: #fff;
+}
+
+/* main */
+
+.finish_wrap {
+    min-height: 450px;
+    height: calc(100vh - 518px);
+}

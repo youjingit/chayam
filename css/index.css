@@ -16,7 +16,7 @@ body {
 }
 
 #fullpage .section:first-child{
-    background-color: rgb(92 6 140 / 14%);
+    background-color: #eee;
 }
 
 .main_swiper {
@@ -66,11 +66,19 @@ body {
 }
 
 .quick_menu {
-    box-shadow: 0 0.5rem 1rem #5c068c2e;
-    border-radius: 12px;
     width: 100%;
-    height: 12%;
     margin: auto;
+}
+
+.quick_menu .section_title {
+    display: none;
+}
+
+.chayam_order_img {
+    background: url(../images/chayam_order.png) no-repeat;
+    width: 318px;
+    height: 284px;
+    margin: 24px auto;
 }
 
 .quick_menu ul {
@@ -80,36 +88,49 @@ body {
 }
 
 .quick_menu li {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #2a1700;
+}
+
+.quick_menu a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #fff;
+    font-size: 12px;
 }
 
 .quick_i {
     display: block;
-    width: 60px;
-    height: 60px;
-    margin: 12px 0;
+    width: 31px;
+    height: 31px;
 }
 
 .order {
-    background: url(../images/order_i.png) no-repeat;
+    background: url(../images/order_320.png) no-repeat;
+    margin-bottom: 3px;
 }
 
 .barcode {
-    background: url(../images/barcode_i.png) no-repeat;
+    background: url(../images/barcode_320.png) no-repeat;
 }
 
 .stamp {
-    background: url(../images/stamp_i.png) no-repeat;
-    width: 54px;
-    height: 54px;
-    margin: 17px 0;
+    background: url(../images/stamp_320.png) no-repeat;
+    width: 22px;
+    height: 22px;
+    margin: 5px 0;
 }
 
 .coupon {
-    background: url(../images/coupon_i.png) no-repeat;
+    background: url(../images/coupon_320.png) no-repeat;
 }
+
 
 /* slide2 - chayam menu slider */
 .chayam_menu .container_inner {

@@ -1,0 +1,102 @@
+create table members(
+    idx int auto_increment primary key,
+    u_id varchar(20) not null,
+    pwd varchar(16) not null,
+    u_name varchar(20) not null,
+    mobile varchar(15) not null,
+    email varchar(50) not null,
+    ps_code char(5) not null,
+    addr_b varchar(50) not null,
+    addr_d varchar(50) not null,
+    addr_ref varchar(50),
+    collect_agree char(1),
+    mkt_agree char(1),
+    sms_agree char(1),
+    email_agree char(1),
+    reg_date datetime
+);
+
+insert into members(
+    u_id, pwd, u_name,
+    mobile, email, ps_code,
+    addr_b, addr_d, addr_ref,
+    collect_agree, mkt_agree, sms_agree, email_agree, reg_date
+) values(
+    'admin1234', '1234bb@@', '관리자',
+    '01011112222', 'admin@abc.com', '12345', 
+    '경기도 군포시 산본로', '산본아파트 305동 1302호', '', 
+    'y', 'y', 'y', 'y', '2022-12-15' 
+);
+
+insert into members(
+    u_id, pwd, u_name,
+    mobile, email, ps_code,
+    addr_b, addr_d, addr_ref,
+    collect_agree, mkt_agree, sms_agree, email_agree, reg_date
+) values(
+    'vuejsss', '1234bb@@', '뷰',
+    '01012345678', 'vue@abc.com', '12345', 
+    '경기도 안양시 관악대로', '관악아파트 305동 1302호', '', 
+    'y', 'y', 'y', 'n', '2022-12-25' 
+);
+
+---------------------------------------------------------------------------
+
+create table products(
+    p_id int auto_increment primary key,
+    p_name varchar(15) not null,
+    p_image varchar(100) not null,
+    s_price varchar(10) not null,
+    m_price varchar(10) not null,
+    l_price varchar(10) not null,
+    reg_date datetime,
+);
+
+insert into products(
+    p_name,
+    p_image,
+    s_price, m_price, l_price,
+    reg_date,
+) values(
+    '리얼치즈라떼',
+    './images/menu/milktea_01.png',
+    '', '3,000', '3,800',
+    '2022-12-25'
+);
+
+create table orders(
+    o_id varchar(20) primary key,
+    u_id varchar(20),
+    reg_date datetime
+);
+
+insert into orders(
+    o_id, u_id, reg_date
+) values(
+    '542ada415',
+    'vuejsss',
+    '2022-12-25'
+);
+
+
+create table orders_detail(
+    idx int auto_increment primary key,
+    o_id varchar(20) not null,
+    p_id int not null,
+    count int not null,
+    hot char(1) not null,
+    size char(1) not null,
+    pearl char(1) not null,
+    cheeze char(1) not null,
+    jelly char(1) not null, 
+    reg_date datetime
+);
+
+insert into orders_detail(
+    o_id, p_id, 
+    count, hot, size, pearl, cheeze, jelly, 
+    reg_date
+) values(
+    '542ada415', '1',
+    '2', 'y', 'm', 'y', 'n', 'n', '2022-12-25'
+);

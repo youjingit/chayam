@@ -17,7 +17,7 @@
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="">CHAYAM</a></h1>
+        <h1 class="logo"><a href="#">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -28,7 +28,7 @@
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="#">메뉴</a>
+                    <li class="depth_1"><a href="menu.html">메뉴</a>
                         <ul>
                             <li><a href="#">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
@@ -66,17 +66,17 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="#">로그인</a></li>
+                <li><a href="login.html">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
             </ul>
         </div>
         <div>
-            <a href="" class="menu_popup">주요메뉴</a>
+            <a href="#" class="menu_popup">주요메뉴</a>
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="">CHAYAM</a></h1>
-                <a class="close_btn" href="">닫기</a>
+                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
                 <nav class="allmenu_gnb">
@@ -88,7 +88,7 @@
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                        <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
                             <ul>
                                 <li><a href="#">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -127,7 +127,7 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="#">로그인</a></li>
+                    <li><a href="login.html">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </div>
@@ -316,9 +316,9 @@
                                             <a href="#" class="float-end terms_link">약관보기</a>
                                         </div>
                                         <div class="form-check mb-2">
-                                            <input type="checkbox" id="save_agree_choice"
-                                                class="form-check-input custom_checkbox me-2 termck" value="y">
-                                            <label for="save_agree_choice" class="form-check-label">
+                                            <input type="checkbox" id="collect_agree_choice"
+                                                name="collect_agree" class="form-check-input custom_checkbox me-2 termck" value="y">
+                                            <label for="collect_agree_choice" class="form-check-label">
                                                 개인정보 수집 이용 동의 (선택)
                                             </label>
                                             <a href="#" class="float-end terms_link">약관보기</a>
@@ -379,8 +379,8 @@
                 <div class="notice">
                     <h3>Notice</h3>
                     <div class="notice_cont">
-                        <a href="" class="notice_title">쥬씨패밀리 멤버십 서비스 앱 출시 안내</a>
-                        <a href="" class="notice_more_btn">+ 더보기</a>
+                        <a href="#" class="notice_title">쥬씨패밀리 멤버십 서비스 앱 출시 안내</a>
+                        <a href="#" class="notice_more_btn">+ 더보기</a>
                     </div>
                 </div>
                 <div class="sns">
@@ -431,24 +431,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
+    <script src="./js/header.js"></script>
     <script>
-        $(document).ready(function () {
-            $("header").mouseenter(function () {
-                $(".depth_1>ul").stop().slideDown("fast");
-            })
-            $("header").mouseleave(function () {
-                $(".depth_1>ul").stop().slideUp("fast");
-            })
-
-            // header allmenu 메뉴 슬라이드  
-            var depth1Els = $('.allmenu_depth_1');
-            depth1Els.click(function () {
-                depth1Els.find("ul").not($(this).find("ul")).slideUp();
-                $(this).find("ul").slideToggle("fast");
-            });
-        });
-
         // 우편번호 찾기 찾기 화면을 넣을 element
         var element_wrap = document.getElementById('wrap');
 

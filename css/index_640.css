@@ -44,6 +44,50 @@
         color: #fff
     }
 
+    .chayam_order_img {
+        display: none;
+    }
+
+    .quick_menu .section_title {
+        display: block;
+        font-size: 36px;
+        margin: 20px 0 40px 0;
+    }
+
+    .quick_menu li {
+        width: 107px;
+        height: 107px;
+    }
+
+    .quick_menu a {
+        font-size: 16px;
+    }
+
+    .quick_i {
+        width: 52px;
+        height: 52px;
+    }
+
+    .order {
+        background: url(../images/order_i.png) no-repeat;
+        margin-bottom: 3px;
+    }
+    
+    .barcode {
+        background: url(../images/barcode_i.png) no-repeat;
+    }
+    
+    .stamp {
+        background: url(../images/stamp_i.png) no-repeat;
+        width: 44px;
+        height: 44px;
+        margin: 5px 0;
+    }
+    
+    .coupon {
+        background: url(../images/coupon_i.png) no-repeat;
+    }
+
     /* slide2 - chayam menu slider */
     .container {
         padding: 40px;
@@ -86,9 +130,6 @@
         background: #5c068c;
     }
 
-    .quick_menu {
-        display: none;
-    }
 
     /* slide3 - competitve */
 

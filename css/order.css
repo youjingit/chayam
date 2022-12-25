@@ -1,0 +1,22 @@
+/* header */
+header {
+    background: #fff;
+}
+
+/* main */
+.custom_checkbox {
+    width: 23px;
+    height: 23px;
+    margin: 0;
+    background-image: url(../images/unchecked.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    appearance: none;
+    border: 0;
+}
+
+.custom_checkbox:checked {
+    background-image: url(../images/checked.png) !important;
+    background-color: inherit;
+    border-color: inherit;
+}
