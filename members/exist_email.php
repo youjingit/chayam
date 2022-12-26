@@ -1,6 +1,6 @@
 <?php
 // 데이터 가져오기
-$u_id = $_GET["email"];
+$email = $_GET["email"];
 
 // DB 연결
 include "../inc/dbcon.php";

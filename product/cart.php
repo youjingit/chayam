@@ -1,3 +1,6 @@
+<?php
+include "../inc/session.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,17 +11,17 @@
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/order_finish.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="../css/cart.css">
 </head>
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="#">CHAYAM</a></h1>
+        <h1 class="logo"><a href="../index.php">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -67,8 +70,19 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="../members/join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                <?php }; ?>    
             </ul>
         </div>
         <div>
@@ -76,7 +90,7 @@
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <h1 class="allmenu_logo"><a href="../index.php">CHAYAM</a></h1>
                 <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
@@ -128,22 +142,55 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="join.html">회원가입</a></li>
+                    <?php if(!$s_idx){ ?>
+                        <!-- 로그인 전 -->
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="../members/join.php">회원가입</a></li>
+                    <?php } else if($s_id == "admin1234"){ ?>
+                        <!-- 관리자 로그인 -->
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <?php } else{ ?>
+                        <!-- 로그인 후 -->   
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <?php }; ?>    
                 </ul>
             </div>
         </div>
     </header>
     <main>
         <div class="padding_top">
-            <div class="container finish_wrap text-center d-flex flex-column justify-content-center my-5">
-                <h2 class="hide">주문완료</h2>
-                <div class="d-flex flex-column align-items-center">
-                    <p class="fs-2 fw-bold text-center text-nowrap">주문이 완료되었습니다</p>
-                    <p class="fs-5 text-center text-nowrap">마이페이지에서 주문내역을 확인하실 수 있습니다.</p>
-                    <img src="./images/chayaming.png" class="my-4" width="93px" alt="차야밍">
-                    <a href="#" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
-                    <a href="#" class="btn btn-lg w-50 btn-primary mt-4">마이페이지</a>
+            <div class="container">
+                <h2 id="cart_title" class="text-center fw-bold fs-1">장바구니</h2>
+                <div class="cart_list">
+                    <small class="mb-4 text-muted">담긴 메뉴는 최대 2개월간 저장됩니다.</small>
+                    <div class="card border-0 shadow">
+                        <div class="row g-0">
+                            <div class="col-4 d-flex justify-content-center py-4">
+                                <img src="../images/menu/milktea_05.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body pe-5 py-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-title fs-4 mb-0">밀크티</h5>
+                                        <span class="card-text fs-4">4,000원</span>
+                                    </div>
+                                    <p class="card-text option_txt"><small class="text-muted">HOT / 펄 추가</small></p>
+                                    <a class="cart_delete fs-2 text-danger" href="#"><span class="hide">삭제하기</span><i class="bi bi-trash"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card w-100 my-5 border-0 shadow">
+                    <div class="card-body px-5 py-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title fs-4 mb-0">상품 금액</h5>
+                            <span class="card-text fs-4">4,000원</span>
+                        </div>
+                      <a href="#" class="btn btn-lg btn-primary w-100 mt-4">주문하기</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,8 +250,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./libs/wow.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="../js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
         });

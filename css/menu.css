@@ -54,7 +54,7 @@ header {
     right: 10px;
 }
 
-#result {
+[name='count'] {
     width: 40px;
     height: 32px;
     margin: 0 10px;

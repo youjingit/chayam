@@ -1,3 +1,6 @@
+<?php
+include "../inc/session.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -6,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="#">CHAYAM</a></h1>
+        <h1 class="logo"><a href="../index.php">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -64,8 +67,19 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="#">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="mypage.php">마이페이지</a></li>
+                <?php }; ?>  
             </ul>
         </div>
         <div>
@@ -73,7 +87,7 @@
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <h1 class="allmenu_logo"><a href="../index.php">CHAYAM</a></h1>
                 <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
@@ -125,8 +139,19 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="#">로그인</a></li>
-                    <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="mypage.php">마이페이지</a></li>
+                <?php }; ?>    
                 </ul>
             </div>
         </div>
@@ -134,39 +159,24 @@
     <main>
         <div class="padding_top">
             <div class="login_container">
-                <h2 id="login_title">로그인</h2>
-                <form name="login_form" action="login_ok.php" method="post" onsubmit="return login_form_check()">
+                <h2 id="login_title">비밀번호 인증</h2>
+                <p>안전한 개인정보 수정을 위해 비밀번호를 다시 확인합니다.</p>
+                <form name="auth_form" action="../inc/auth_check.php" method="post" onsubmit="return auth_form_check()">
                     <fieldset>
-                        <legend class="hide">로그인</legend>
+                        <legend class="hide">비밀번호 인증</legend>
                         <section class="login_form">
                             <div class="input_wrap">
                                 <input class="u_id" type="text" name="u_id" id="u_id" placeholder="아이디를 입력하세요">
                                 <input class="pwd" type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력하세요">
-                                <br><span id="err_msg" class="err_txt"></span>
-                            </div>
-                            <div class="login_sub_menu">
-                                <a href="#" class="id_find">아이디 찾기</a>
-                                <a href="#" class="pwd_find">비밀번호 찾기</a>
+                                <br><span id="err_msg" class="err_txt"></span><br>
                             </div>
                             <div class="btn_wrap">
-                                <button type="submit" name="login_btn" id="login_btn">로그인</button>
-                                <button type="button" name="join_btn" id="join_btn">회원가입</button>
+                                <button type="submit" name="login_btn" id="login_btn">확인</button>
+                                <button type="button" name="back_btn" id="back_btn" onclick="history.back()">돌아가기</button>
                             </div>
                         </section>
                     </fieldset>
                 </form>
-                <div class="simple_login_title">
-                    <div class="simple_login_line"></div>
-                    <div class="simple_login_text">
-                        <span>간편 로그인</span>
-                    </div>
-                </div>
-                <div class="simple_login_cont">
-                    <a href="#"><i class="log_icon naver">네이버 로그인</i></a>
-                    <a href="#"><i class="log_icon kakao">카카오톡 로그인</i></a>
-                    <a href="#"><i class="log_icon fb">페이스북 로그인</i></a>
-                    <a href="#"><i class="log_icon google">구글 로그인</i></a>
-                </div>
             </div>
         </div>
     </main>
@@ -175,9 +185,9 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
-    <script src="./js/header.js"></script>
+    <script src="../js/header.js"></script>
     <script type="text/javascript">
-        function login_form_check() {
+        function auth_form_check() {
             var u_idEl = document.getElementById("u_id");
             var u_pwdEl = document.getElementById("pwd");
             if (u_idEl.value == "") {

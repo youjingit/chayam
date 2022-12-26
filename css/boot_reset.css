@@ -1,5 +1,5 @@
 .form-control:focus {
-    border-color: #2a1700;
+    border-color: #5c068c;
     box-shadow: none;
 }
 
@@ -43,4 +43,8 @@
 
 a:hover {
     color: inherit;
+}
+
+.col-form-label {
+    padding-top: 0;
 }

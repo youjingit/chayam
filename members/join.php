@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/join.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="../css/join.css">
 </head>
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="#">CHAYAM</a></h1>
+        <h1 class="logo"><a href="../index.php">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -66,7 +66,7 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="login.html">로그인</a></li>
+                <li><a href="../login/login.php">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <h1 class="allmenu_logo"><a href="../index.php">CHAYAM</a></h1>
                 <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
@@ -127,7 +127,7 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="../login/login.php">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </div>
@@ -135,12 +135,10 @@
     </header>
     <main>
         <div class="padding_top">
-            <h2 class="join_title">회원가입</h2>
+            <h2 id="join_title">회원가입</h2>
             <form name="join_form" class="container pb-4" action="insert.php" method="post"
                 onsubmit="return join_form_check()">
-                <input type="hidden" name="u_id_test" id="u_id_test">
                 <input type="hidden" name="u_id_exist" id="u_id_exist" value="t">
-                <input type="hidden" name="email_test" id="email_test">
                 <input type="hidden" name="email_exist" id="email_exist" value="t">
                 <fieldset class="row justify-content-center">
                     <legend class="hide">회원가입</legend>
@@ -154,7 +152,7 @@
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="d-grid gap-2">
-                                            <button type="button" id="id_search"
+                                            <button type="button" id="id_search_btn"
                                                 class="btn btn-outline-primary text-nowrap"
                                                 onclick="id_search()">중복확인</button>
                                         </div>
@@ -228,7 +226,7 @@
                                     </div>
                                     <div class="col-12 col-sm-3">
                                         <div class="d-grid gap-2">
-                                            <button type="button" id="email_search"
+                                            <button type="button" id="email_search_btn"
                                                 class="btn btn-outline-primary text-nowrap"
                                                 onclick="email_search()">중복확인</button>
                                         </div>
@@ -243,7 +241,7 @@
                                 <div class="row">
                                     <div class="col-7 col-md-9">
                                         <input type="text" name="ps_code" id="sample3_postcode"
-                                            class="form-control mb-3" placeholder="우편번호">
+                                            class="form-control mb-3" placeholder="우편번호" readonly>
                                     </div>
                                     <div class="col-5 col-md-3">
                                         <div class="d-grid gap-2">
@@ -256,7 +254,7 @@
                                 <div class="row">
                                     <div class="col-12 col-md-9">
                                         <input type="text" name="addr_b" id="sample3_address" class="form-control mb-3"
-                                            placeholder="기본주소">
+                                            placeholder="기본주소" readonly>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -292,7 +290,7 @@
                                     <div class="col-12 col-md-9">
                                         <div class="form-check mb-2">
                                             <input type="checkbox" class="form-check-input custom_checkbox me-2"
-                                                value="y" name="all_agree" id="all_agree">
+                                                name="all_agree" id="all_agree">
                                             <label for="all_agree" class="form-check-label">
                                                 전체 동의합니다.
                                             </label>
@@ -300,25 +298,24 @@
                                         <div class="form-check mb-2">
                                             <input type="checkbox"
                                                 class="form-check-input custom_checkbox me-2 termck essential"
-                                                name="use_agree" id="use_agree" value="y">
+                                                name="use_agree" id="use_agree" >
                                             <label for="use_agree" class="form-check-label">
                                                 이용약관 동의 (필수)
                                             </label>
                                             <a href="#" class="float-end terms_link">약관보기</a>
                                         </div>
                                         <div class="form-check mb-2">
-                                            <input type="checkbox" name="save_agree" id="save_agree"
-                                                class="form-check-input custom_checkbox me-2 termck essential"
-                                                value="y">
-                                            <label for="save_agree" class="form-check-label">
+                                            <input type="checkbox" name="collect_agree" id="collect_agree"
+                                                class="form-check-input custom_checkbox me-2 termck essential">
+                                            <label for="collect_agree" class="form-check-label">
                                                 개인정보 수집 이용 동의 (필수)
                                             </label>
                                             <a href="#" class="float-end terms_link">약관보기</a>
                                         </div>
                                         <div class="form-check mb-2">
-                                            <input type="checkbox" id="collect_agree_choice"
-                                                name="collect_agree" class="form-check-input custom_checkbox me-2 termck" value="y">
-                                            <label for="collect_agree_choice" class="form-check-label">
+                                            <input type="checkbox" id="collect_agree_ch"
+                                                name="collect_agree_ch" class="form-check-input custom_checkbox me-2 termck" value="y">
+                                            <label for="collect_agree_ch" class="form-check-label">
                                                 개인정보 수집 이용 동의 (선택)
                                             </label>
                                             <a href="#" class="float-end terms_link">약관보기</a>
@@ -334,20 +331,19 @@
                                             <div class="form-check form-check-inline">
                                                 <input type="checkbox" name="sms_agree" id="sms_agree"
                                                     class="form-check-input custom_checkbox me-2 termck"
-                                                    value="option1">
+                                                    value="y">
                                                 <label for="sms_agree" class="form-check-label">SMS</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input type="checkbox" name="email_agree" id="email_agree"
                                                     class="form-check-input custom_checkbox me-2 termck"
-                                                    value="option2">
+                                                    value="y">
                                                 <label for="email_agree" class="form-check-label">이메일</label>
                                             </div>
                                         </div>
                                         <div class="form-check mb-2">
                                             <input type="checkbox" name="tng_agree" id="tng_agree"
-                                                class="form-check-input custom_checkbox me-2 termck essential"
-                                                value="y">
+                                                class="form-check-input custom_checkbox me-2 termck essential">
                                             <label for="tng_agree" class="form-check-label">
                                                 본인은 만 14세 이상입니다. (필수)
                                             </label>
@@ -431,7 +427,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="../js/header.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
         var element_wrap = document.getElementById('wrap');
@@ -521,6 +517,8 @@
             var u_nameEl = document.getElementById("u_name");
             var mobileEl = document.getElementById("mobile");
             var emailEl = document.getElementById("email");
+            var ps_codeEl = document.getElementById("sample3_postcode");
+            var addr_bEl = document.getElementById("sample3_address");
             var addr_dEl = document.getElementById("sample3_detailAddress");
             var essEls = document.querySelectorAll(".essential:checked");
             var u_id_existEl = document.getElementById("u_id_exist"); //hidden input
@@ -639,6 +637,26 @@
                 return false;
             }
 
+            if (ps_codeEl.value == "") {
+                var txt = document.getElementById("err_address");
+                txt.innerHTML = "<em>우편번호를 검색하세요.</em>";
+                ps_codeEl.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_address");
+                txt.innerHTML = "";
+            }
+
+            if (addr_bEl.value == "") {
+                var txt = document.getElementById("err_address");
+                txt.innerHTML = "<em>기본주소를 입력하세요.</em>";
+                addr_bEl.focus();
+                return false;
+            } else {
+                var txt = document.getElementById("err_address");
+                txt.innerHTML = "";
+            }
+
             if (addr_dEl.value == "") {
                 var txt = document.getElementById("err_address");
                 txt.innerHTML = "<em>상세주소를 입력하세요.</em>";
@@ -678,7 +696,7 @@
                 url: 'exist_id.php',
                 method: 'get',
                 data: {
-                    u_idVal: u_idVal
+                    u_id: u_idVal
                 }
             }).then(function (data) {
                 if (data === 't') {
@@ -690,7 +708,7 @@
             })
         }
 
-        $("#u_id_test").change(function () {
+        $("#u_id").change(function () {
             $('#u_id_exist').val('t');
         })
 
@@ -713,7 +731,7 @@
                 url: 'exist_email.php',
                 method: 'get',
                 data: {
-                    emailVal: emailVal
+                    email: emailVal
                 }
             }).then(function (data) {
                 if (data === 't') {
@@ -725,7 +743,7 @@
             })
         }
 
-        $("#email_test").change(function () {
+        $("#email").change(function () {
             $('#email_exist').val('t');
         })
 

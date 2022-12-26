@@ -1,3 +1,6 @@
+<?php
+include "inc/session.php";
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -78,8 +81,19 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+            <?php if(!$s_idx){ ?>
+                <!-- 로그인 전 -->
+                <li><a href="./login/login.php">로그인</a></li>
+                <li><a href="./members/join.php">회원가입</a></li>
+            <?php } else if($s_id == "admin1234"){ ?>
+                <!-- 관리자 로그인 -->
+                <li><a href="./login/logout.php">로그아웃</a></li>
+                <li><a href="./admin/index.php">관리자 페이지</a></li>
+            <?php } else{ ?>
+                <!-- 로그인 후 -->   
+                <li><a href="./login/logout.php">로그아웃</a></li>
+                <li><a href="./members/mypage.php">마이페이지</a></li>
+            <?php }; ?>    
             </ul>
         </div>
         <div>
@@ -145,8 +159,19 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="join.html">회원가입</a></li>
+                    <?php if(!$s_idx){ ?>
+                        <!-- 로그인 전 -->
+                        <li><a href="./login/login.php">로그인</a></li>
+                        <li><a href="./members/join.php">회원가입</a></li>
+                    <?php } else if($s_id == "admin1234"){ ?>
+                        <!-- 관리자 로그인 -->
+                        <li><a href="./login/logout.php">로그아웃</a></li>
+                        <li><a href="./admin/index.php">관리자 페이지</a></li>
+                    <?php } else{ ?>
+                        <!-- 로그인 후 -->   
+                        <li><a href="./login/logout.php">로그아웃</a></li>
+                        <li><a href="./members/my_page.php">마이페이지</a></li>
+                    <?php }; ?>    
                 </ul>
             </div>
         </div>

@@ -4,6 +4,10 @@ header {
 }
 
 /* main */
+#order_title {
+    margin: 90px 0 64px 0;
+}
+
 .custom_checkbox {
     width: 23px;
     height: 23px;

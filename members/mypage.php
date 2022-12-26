@@ -1,3 +1,18 @@
+<?php
+// 세션으로 데이터 가져오기
+include "../inc/session.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select * from members where idx=$s_idx;";
+// 쿼리 실행
+$result = mysqli_query($dbcon, $sql);
+
+// DB에서 데이터 가져오기
+$array = mysqli_fetch_array($result);
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,17 +23,17 @@
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/mypage.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="../css/mypage.css">
 </head>
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="#">CHAYAM</a></h1>
+        <h1 class="logo"><a href="../index.php">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -67,8 +82,19 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                <?php }; ?>    
             </ul>
         </div>
         <div>
@@ -76,7 +102,7 @@
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <h1 class="allmenu_logo"><a href="../index.php">CHAYAM</a></h1>
                 <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
@@ -128,8 +154,19 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                <?php }; ?>    
                 </ul>
             </div>
         </div>
@@ -137,7 +174,7 @@
     <main>
         <div class="padding_top">
             <div class="container mb-5">
-                <h2 class="text-center my-5 fw-bold fs-1">마이페이지</h2>
+                <h2 id="mypage_title" class="text-center fw-bold fs-1">마이페이지</h2>
                 <div class="row gy-3">
                     <div class="col-12">
                         <div class="card">
@@ -181,18 +218,18 @@
                             </div>
                             <div class="card-body text-center">
                                 <div class="stamp_board">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
-                                    <img src="./images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
+                                    <img src="../images/stamp.png" alt="stamp">
                                 </div>
                                 <p class="card-text">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
                                 <p class="card-text">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
@@ -205,7 +242,7 @@
                                 멤버십 바코드
                             </div>
                             <div class="card-body text-center">
-                                <img src="./images/barcode.png" alt="barcode">
+                                <img src="../images/barcode.png" alt="barcode">
                             </div>
                         </div>
                     </div>
@@ -242,8 +279,8 @@
                 <div class="row justify-content-end mt-4">
                     <div class="col-12 col-xl-6">
                         <div class="d-flex gap-2">
-                            <a href="#" class="btn btn-secondary w-100">로그아웃</a>
-                            <a href="#" class="btn btn-secondary w-100">회원탈퇴</a>
+                            <a href="mypage_auth.php" class="btn btn-secondary w-100">내 정보수정</a>
+                            <a href="mypage_auth.php" class="btn btn-secondary w-100">회원탈퇴</a>
                         </div>
                     </div>
                 </div>
@@ -306,8 +343,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./libs/wow.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="../js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
         });

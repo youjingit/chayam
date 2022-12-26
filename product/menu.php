@@ -1,3 +1,44 @@
+<?php
+include "../inc/session.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+function makeJson($result){
+    $array = array();
+    while($row = mysqli_fetch_array($result)){
+        array_push($array,
+            array(
+                'p_id' => $row['p_id'],
+                'p_cate' => $row['p_cate'],
+                'p_name' => $row['p_name'],
+                'p_image' => $row['p_image'],
+                's_price' => $row['s_price'],
+                'm_price' => $row['m_price'],
+                'l_price' => $row['l_price'],
+            )
+        );
+    }
+    return json_encode($array, JSON_UNESCAPED_UNICODE);
+}
+
+//milktea
+$sql1 = "select * from products where p_cate='milktea';";
+$result1 = mysqli_query($dbcon, $sql1);
+$json1 = makeJson($result1);
+
+//coffee
+$sql2 = "select * from products where p_cate='coffee';";
+$result2 = mysqli_query($dbcon, $sql2);
+$json2 = makeJson($result2);
+
+//tea
+$sql3 = "select * from products where p_cate='tea';";
+$result3 = mysqli_query($dbcon, $sql3);
+$json3 = makeJson($result3);
+
+mysqli_close($dbcon);
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -8,19 +49,19 @@
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
 
 </head>
 
 <body>
     <header id="header" class="header">
-        <h1 class="logo"><a href="#">CHAYAM</a></h1>
+        <h1 class="logo"><a href="../index.php">CHAYAM</a></h1>
         <div class="gnb_wrap">
             <nav class="gnb">
                 <h2 class="hide">주요메뉴</h2>
@@ -69,8 +110,19 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
+                <?php if(!$s_idx){ ?>
+                    <!-- 로그인 전 -->
+                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="../members/join.php">회원가입</a></li>
+                <?php } else if($s_id == "admin1234"){ ?>
+                    <!-- 관리자 로그인 -->
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                <?php } else{ ?>
+                    <!-- 로그인 후 -->   
+                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                <?php }; ?>    
             </ul>
         </div>
         <div>
@@ -78,7 +130,7 @@
         </div>
         <div class="allmenu_container">
             <div class="allmenu_top">
-                <h1 class="allmenu_logo"><a href="#">CHAYAM</a></h1>
+                <h1 class="allmenu_logo"><a href="../index.php">CHAYAM</a></h1>
                 <a class="close_btn" href="#">닫기</a>
             </div>
             <div class="allmenu_gnb_wrap">
@@ -130,8 +182,19 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="join.html">회원가입</a></li>
+                    <?php if(!$s_idx){ ?>
+                        <!-- 로그인 전 -->
+                        <li><a href="../login/login.php">로그인</a></li>
+                        <li><a href="../members/join.php">회원가입</a></li>
+                    <?php } else if($s_id == "admin1234"){ ?>
+                        <!-- 관리자 로그인 -->
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <?php } else{ ?>
+                        <!-- 로그인 후 -->   
+                        <li><a href="../login/logout.php">로그아웃</a></li>
+                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <?php }; ?>    
                 </ul>
             </div>
         </div>
@@ -164,25 +227,26 @@
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">MILK TEA</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">MILK TEA</h3>
+                        <h3 class="fs-1 fw-bold text-center">MILK TEA</h3>
                         <hr>
                         <div class="pb-4">
-                            <div id="milktea_vue" class="wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">
+                            <div id="milktea_vue">
                                 <div class="row gy-4">
                                     <div v-for="info in list" class="col-12 col-sm-6 col-lg-4 col-xl-3">
                                         <div class="card h-100">
-                                            <img :src="info.img" class="card-img-top w-100 px-5" alt="...">
+                                            <img :src="info.p_image" class="card-img-top w-100 px-5" alt="...">
                                             <div class="card-body">
-                                                <h5 class="card-title fw-bold">{{ info.name }}</h5>
-                                                <p class="card-text">{{ info.description }}</p>
+                                                <h5 class="card-title fw-bold">{{ info.p_name }}</h5>
                                                 <p class="card-text d-flex flex-wrap">
-                                                    <span v-if="info.sPrice">S: {{ info.sPrice }} / </span>
-                                                    <span>M: {{ info.mPrice }} / </span>
-                                                    <span>L: {{ info.lPrice }} </span>
+                                                    <span v-if="info.s_price">S: {{ info.s_price }} / </span>
+                                                    <span>M: {{ info.m_price }} / </span>
+                                                    <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a v-if="!info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
-                                                    <a v-if="info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                        <i class="bi bi-cart"></i>
+                                                        <span class="hide">장바구니에 담기</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -200,25 +264,26 @@
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">COFFEE</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">COFFEE</h3>
+                        <h3 class="fs-1 fw-bold text-center">COFFEE</h3>
                         <hr>
                         <div class="pb-4">
-                            <div id="coffee_vue" class="wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">
-                                <div class="row gy-4">
+                            <div id="coffee_vue" >
+                            <div class="row gy-4">
                                     <div v-for="info in list" class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                        <div class="card">
-                                            <img :src="info.img" class="card-img-top w-100 px-5" alt="...">
+                                        <div class="card h-100">
+                                            <img :src="info.p_image" class="card-img-top w-100 px-5" alt="...">
                                             <div class="card-body">
-                                                <h5 class="card-title fw-bold">{{ info.name }}</h5>
-                                                <p class="card-text">{{ info.description }}</p>
+                                                <h5 class="card-title fw-bold">{{ info.p_name }}</h5>
                                                 <p class="card-text d-flex flex-wrap">
-                                                    <span v-if="info.sPrice">S: {{ info.sPrice }} / </span>
-                                                    <span>M: {{ info.mPrice }} / </span>
-                                                    <span>L: {{ info.lPrice }} </span>
+                                                    <span v-if="info.s_price">S: {{ info.s_price }} / </span>
+                                                    <span>M: {{ info.m_price }} / </span>
+                                                    <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a v-if="!info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
-                                                    <a v-if="info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                        <i class="bi bi-cart"></i>
+                                                        <span class="hide">장바구니에 담기</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -236,25 +301,26 @@
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">TEA</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">TEA</h3>
+                        <h3 class="fs-1 fw-bold text-center">TEA</h3>
                         <hr>
                         <div class="pb-4">
-                            <div id="tea_vue" class="wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">
+                            <div id="tea_vue">
                                 <div class="row gy-4">
                                     <div v-for="info in list" class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                        <div class="card">
-                                            <img :src="info.img" class="card-img-top w-100 px-5" alt="...">
+                                        <div class="card h-100">
+                                            <img :src="info.p_image" class="card-img-top w-100 px-5" alt="...">
                                             <div class="card-body">
-                                                <h5 class="card-title fw-bold">{{ info.name }}</h5>
-                                                <p class="card-text">{{ info.description }}</p>
+                                                <h5 class="card-title fw-bold">{{ info.p_name }}</h5>
                                                 <p class="card-text d-flex flex-wrap">
-                                                    <span v-if="info.sPrice">S: {{ info.sPrice }} / </span>
-                                                    <span>M: {{ info.mPrice }} / </span>
-                                                    <span>L: {{ info.lPrice }} </span>
+                                                    <span v-if="info.s_price">S: {{ info.s_price }} / </span>
+                                                    <span>M: {{ info.m_price }} / </span>
+                                                    <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a v-if="!info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
-                                                    <a v-if="info.sPrice" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i class="bi bi-cart"></i><span class="hide">장바구니에 담기</span></a>
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                        <i class="bi bi-cart"></i>
+                                                        <span class="hide">장바구니에 담기</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -335,7 +401,7 @@
                                 <label class="form-label">수량</label>
                                 <div class="count d-flex align-items-center">
                                     <button type="button" class="minus btn btn-outline-primary">-</button>
-                                    <input type="text" id="result" value="1"></span>
+                                    <input type="text" name="count" value="1"></span>
                                     <button type="button" class="plus btn btn-outline-primary">+</button>
                                 </div>
                             </div>
@@ -343,11 +409,11 @@
                                 <label class="form-label">HOT / ICE</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option1" id="option1" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="hot" value="h" checked>
                                         <span class="btn btn-outline-primary">HOT</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option1" id="option1" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="hot" value="i">
                                         <span class="btn btn-outline-primary">ICE</span>
                                     </label>
                                 </div>
@@ -356,11 +422,11 @@
                                 <label class="form-label">SIZE</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option2" id="option2" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="size" value="m" checked>
                                         <span class="btn btn-outline-primary">M</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option2" id="option2" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="size" value="l">
                                         <span class="btn btn-outline-primary">L</span>
                                     </label>
                                 </div>
@@ -369,12 +435,12 @@
                                 <label class="form-label">펄 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option3" id="option3" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="pearl" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option3" id="option3" autocomplete="off">
-                                        <span class="btn btn-outline-primary flex-nowrap">펄 추가 (+500원)</span>
+                                        <input type="radio" class="btn-check" name="pearl" value="y">
+                                        <span class="btn btn-outline-primary">펄 추가 (+500원)</span>
                                     </label>
                                 </div>
                             </div>
@@ -382,11 +448,11 @@
                                 <label class="form-label">치즈폼 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option4" id="option4" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="cheeze" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option4" id="option4" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="cheeze" value="y">
                                         <span class="btn btn-outline-primary">치즈폼 추가 (+500원)</span>
                                     </label>
                                 </div>
@@ -395,11 +461,11 @@
                                 <label class="form-label">코코넛젤리 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option5" id="option5" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="jelly" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option5" id="option5" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="jelly" value="y">
                                         <span class="btn btn-outline-primary">코코넛젤리 추가 (+500원)</span>
                                     </label>
                                 </div>
@@ -409,7 +475,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">담기</button>
+                    <button type="button" class="btn btn-primary" onclick="addCartModal('#exampleModal');">담기</button>
                 </div>
             </div>
         </div>
@@ -429,7 +495,7 @@
                                 <label class="form-label">수량</label>
                                 <div class="count d-flex align-items-center">
                                     <button type="button" class="minus btn btn-outline-primary">-</button>
-                                    <input type="text" id="result" value="1"></span>
+                                    <input type="text" name="count" value="1"></span>
                                     <button type="button" class="plus btn btn-outline-primary">+</button>
                                 </div>
                             </div>
@@ -437,11 +503,11 @@
                                 <label class="form-label">HOT / ICE</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option1" id="option1" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="hot" value="h" checked>
                                         <span class="btn btn-outline-primary">HOT</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option1" id="option1" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="hot" value="i">
                                         <span class="btn btn-outline-primary">ICE</span>
                                     </label>
                                 </div>
@@ -450,15 +516,15 @@
                                 <label class="form-label">SIZE</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option2" id="option2" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="size" value="s" checked>
                                         <span class="btn btn-outline-primary">S</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option2" id="option2" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="size" value="m" >
                                         <span class="btn btn-outline-primary">M</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option2" id="option2" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="size" value="l" >
                                         <span class="btn btn-outline-primary">L</span>
                                     </label>
                                 </div>
@@ -467,11 +533,11 @@
                                 <label class="form-label">펄 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option3" id="option3" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="pearl" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option3" id="option3" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="pearl" value="y">
                                         <span class="btn btn-outline-primary">펄 추가 (+500원)</span>
                                     </label>
                                 </div>
@@ -480,11 +546,11 @@
                                 <label class="form-label">치즈폼 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option4" id="option4" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="cheeze" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option4" id="option4" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="cheeze" value="y">
                                         <span class="btn btn-outline-primary">치즈폼 추가 (+500원)</span>
                                     </label>
                                 </div>
@@ -493,11 +559,11 @@
                                 <label class="form-label">코코넛젤리 추가</label>
                                 <div>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option5" id="option5" autocomplete="off" checked>
+                                        <input type="radio" class="btn-check" name="jelly" value="n" checked>
                                         <span class="btn btn-outline-primary">안함</span>
                                     </label>
                                     <label>
-                                        <input type="radio" class="btn-check" name="option5" id="option5" autocomplete="off">
+                                        <input type="radio" class="btn-check" name="jelly" value="y">
                                         <span class="btn btn-outline-primary">코코넛젤리 추가 (+500원)</span>
                                     </label>
                                 </div>
@@ -507,7 +573,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">담기</button>
+                    <button type="button" class="btn btn-primary" onclick="addCartModal('#exampleModal2');">담기</button>
                 </div>
             </div>
         </div>
@@ -515,297 +581,87 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <script src="./libs/wow.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="../libs/wow.min.js"></script>
+    <script src="../js/header.js"></script>
     <script type="text/javascript">
-        
+        var global_p_id = null;
+
+        function addCartModal(modalSelector){
+            var modalEl = $(modalSelector);
+            var count = modalEl.find("[name='count']").val();
+            var hot = modalEl.find("[name='hot']:checked").val();
+            var size = modalEl.find("[name='size']:checked").val();
+            var pearl = modalEl.find("[name='pearl']:checked").val();
+            var cheeze = modalEl.find("[name='cheeze']:checked").val();
+            var jelly = modalEl.find("[name='jelly']:checked").val();
+            var data = {
+                p_id : global_p_id,
+                count : count,
+                hot : hot,
+                size : size,
+                pearl : pearl,
+                cheeze : cheeze,
+                jelly : jelly
+            };
+            console.log(data);
+            var cartList = JSON.parse(localStorage.getItem('cartList') || '[]');
+            // p_id int not null,
+            // count int not null,
+            // hot char(1) not null,
+            // size char(1) not null,
+            // pearl char(1) not null,
+            // cheeze char(1) not null,
+            // jelly char(1) not null, 
+
+        }
         $(document).ready(function () {
             // MILKTEA Vue 시작
             new Vue({
                 el: '#milktea_vue',
                 data: function(){
                     return {
-                        list: [
-                            {
-                                img: './images/menu/milktea_01.png',
-                                name: '리얼치즈라떼',
-                                mPrice: '3,000원',
-                                lPrice: '3,800원'
-                            },
-                            {
-                                img: './images/menu/milktea_02.png',
-                                name: '비스킷치즈',
-                                mPrice: '2,800원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/milktea_03.png',
-                                name: '옥수수치즈',
-                                mPrice: '3,300원',
-                                lPrice: '3,800원'
-                            },
-                            {
-                                img: './images/menu/milktea_04.png',
-                                name: '말차초코',
-                                mPrice: '2,500원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/milktea_05.png',
-                                name: '말차 카라멜 프라페',
-                                mPrice: '3,000원',
-                                lPrice: '3,800원'
-                            },
-                            {
-                                img: './images/menu/milktea_06.png',
-                                name: '말차민트',
-                                mPrice: '2,800원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/milktea_07.png',
-                                name: '차얌 밀크티',
-                                sPrice: '900원',
-                                mPrice: '1,500원',
-                                lPrice: '2,000원'
-                            },
-                            {
-                                img: './images/menu/milktea_08.png',
-                                name: '타로 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_09.png',
-                                name: '보성 말차 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_10.png',
-                                name: '블랙 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_11.png',
-                                name: '얼그레이 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_12.png',
-                                name: '우롱 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_13.png',
-                                name: '초코 밀크티',
-                                sPrice: '1,200원',
-                                mPrice: '1,800원',
-                                lPrice: '2,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_14.png',
-                                name: '망고 밀크퐁',
-                                mPrice: '2,500원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/milktea_15.png',
-                                name: '딸기 밀크퐁',
-                                mPrice: '2,500원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/milktea_16.png',
-                                name: '블루베리 밀크퐁',
-                                mPrice: '2,500원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/milktea_17.png',
-                                name: '흑당얌',
-                                mPrice: '2,300원',
-                                lPrice: '3,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_18.png',
-                                name: '오레오 밀크티',
-                                mPrice: '3,000원',
-                                lPrice: '4,000원'
-                            },
-                            {
-                                img: './images/menu/milktea_19.png',
-                                name: '팥얌',
-                                mPrice: '2,500원',
-                                lPrice: '3,300원'
-                            },
-                            {
-                                img: './images/menu/milktea_20.png',
-                                name: '달고나 밀크티',
-                                sPrice: '1,700원',
-                                mPrice: '2,300원',
-                                lPrice: '2,800원'
-                            },
-                            {
-                                img: './images/menu/milktea_21.png',
-                                name: '달고나 블랙밀크티',
-                                mPrice: '2,300원',
-                                lPrice: '2,800원'
-                            },
-                            {
-                                img: './images/menu/milktea_22.png',
-                                name: '달고나 치즈밀크티',
-                                mPrice: '2,500원',
-                                lPrice: '3,500원'
-                            }
-                        ]
+                        list: <?php echo $json1;?>,
                     };
+                },
+                methods: {
+                    openCartModal: function(p_id, s_price_check){
+                        global_p_id = p_id;
+                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
+                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+                        modal.show();
+                    }
                 }
             });
             new Vue({
                 el: '#coffee_vue',
                 data: function(){
                     return {
-                        list: [
-                            {
-                                img: './images/menu/coffee_01.png',
-                                name: '치즈크림커피',
-                                mPrice: '2,500원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_02.png',
-                                name: '말차라떼',
-                                mPrice: '2,000원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_03.png',
-                                name: '아메리카노',
-                                sPrice: '1,000원',
-                                mPrice: '1,800원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_04.png',
-                                name: '카페라떼',
-                                sPrice: '2,200원',
-                                mPrice: '2,700원',
-                                lPrice: '4,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_05.png',
-                                name: '바닐라라떼',
-                                mPrice: '2,500원',
-                                lPrice: '3,500원'
-                            },
-                            {
-                                img: './images/menu/coffee_06.png',
-                                name: '에스프레소 보성 말차라떼',
-                                mPrice: '2,000원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_07.png',
-                                name: '에스프레소 초코라떼',
-                                mPrice: '2,000원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_08.png',
-                                name: '에스프레소 티라떼',
-                                mPrice: '2,000원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_09.png',
-                                name: '달고나 커피',
-                                mPrice: '2,500원',
-                                lPrice: '3,000원'
-                            },
-                            {
-                                img: './images/menu/coffee_10.png',
-                                name: '코코넛 커피 스무디',
-                                mPrice: '2,800원',
-                                lPrice: '3,800원'
-                            },
-                        ]
+                        list: <?php echo $json2;?>
                     };
+                },
+                methods: {
+                    openCartModal: function(p_id, s_price_check){
+                        global_p_id = p_id;
+                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
+                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+                        modal.show();
+                    }
                 }
             });
             new Vue({
                 el: '#tea_vue',
                 data: function(){
                     return {
-                        list: [
-                            {
-                                img: './images/menu/tea_01.png',
-                                name: '우롱치즈폼티',
-                                mPrice: '1,900원',
-                                lPrice: '2,500원'
-                            },
-                            {
-                                img: './images/menu/tea_02.png',
-                                name: '얼그레이 치즈폼티',
-                                mPrice: '1,900원',
-                                lPrice: '2,500원'
-                            },
-                            {
-                                img: './images/menu/tea_03.png',
-                                name: '블랙 치즈폼티',
-                                mPrice: '1,900원',
-                                lPrice: '2,500원'
-                            },
-                            {
-                                img: './images/menu/tea_04.png',
-                                name: '딸기우롱 치즈폼티',
-                                mPrice: '2,200원',
-                                lPrice: '2,900원'
-                            },
-                            {
-                                img: './images/menu/tea_05.png',
-                                name: '차얌 치즈폼티',
-                                mPrice: '1,900원',
-                                lPrice: '2,500원'
-                            },
-                            {
-                                img: './images/menu/tea_05.png',
-                                name: '잉글리시 블랙퍼스트',
-                                sPrice: '900원',
-                                mPrice: '1,500원',
-                                lPrice: '2,000원'
-                            },
-                            {
-                                img: './images/menu/tea_05.png',
-                                name: '우롱',
-                                sPrice: '900원',
-                                mPrice: '1,500원',
-                                lPrice: '2,000원'
-                            },
-                            {
-                                img: './images/menu/tea_05.png',
-                                name: '얼그레이',
-                                sPrice: '900원',
-                                mPrice: '1,500원',
-                                lPrice: '2,000원'
-                            },
-                            {
-                                img: './images/menu/tea_05.png',
-                                name: '차얌 블랙티',
-                                sPrice: '900원',
-                                mPrice: '1,500원',
-                                lPrice: '2,000원'
-                            }
-                        ]
+                        list: <?php echo $json3;?>
                     };
+                },
+                methods: {
+                    openCartModal: function(p_id, s_price_check){
+                        global_p_id = p_id;
+                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
+                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+                        modal.show();
+                    }
                 }
             });
 
@@ -813,7 +669,7 @@
             $('.count :button').on({
                 'click': function (e) {
                     e.preventDefault();
-                    var $count = $(this).parent('.count').find('#result');
+                    var $count = $(this).parent('.count').find("[name='count']");
                     var now = parseInt($count.val());
                     var min = 1;
                     var max = 999;
