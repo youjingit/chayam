@@ -47,8 +47,8 @@ mysqli_close($dbcon);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
@@ -72,9 +72,9 @@ mysqli_close($dbcon);
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="#">메뉴</a>
+                    <li class="depth_1"><a href="javascript:void(0);">메뉴</a>
                         <ul>
-                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="javascript:void(0);">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -143,9 +143,9 @@ mysqli_close($dbcon);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                        <li class="allmenu_depth_1"><a href="javascript:void(0);">MENU</a>
                             <ul>
-                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="javascript:void(0);">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -224,7 +224,7 @@ mysqli_close($dbcon);
                             <ol class="breadcrumb justify-content-end mt-3">
                                 <li class="breadcrumb-item"><a href="#">HOME</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">MENU</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><a href="#">MILK TEA</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a href="../product/menu.php">MILK TEA</a></li>
                             </ol>
                         </nav>
                         <h3 class="fs-1 fw-bold text-center">MILK TEA</h3>
@@ -578,10 +578,10 @@ mysqli_close($dbcon);
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
-    <script src="../libs/wow.min.js"></script>
+    <script src="../libs/jquery-3.6.1.min.js"></script>
+    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../libs/vue/vue.js"></script>
+    <script src="../libs/wow/wow.min.js"></script>
     <script src="../js/header.js"></script>
     <script type="text/javascript">
         var global_p_id = null;

@@ -1,6 +1,6 @@
 /* header */
 body {
-    overflow: hidden!important;
+    overflow-x: hidden!important;
 }
 
 /* slide1 - main image slider */

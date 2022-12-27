@@ -9,9 +9,9 @@ include "inc/session.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./libs/fullpage/jquery.fullpage.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="./libs/wow/animate.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/fragments.css">
     <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
@@ -39,9 +39,9 @@ include "inc/session.php";
                         </ul>
                     </li>
                     <li class="depth_1">
-                        <a href="menu.html">메뉴</a>
+                        <a href="./product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="./product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -116,9 +116,9 @@ include "inc/session.php";
                             </ul>
                         </li>
                         <li class="allmenu_depth_1">
-                            <a href="menu.html">메뉴</a>
+                            <a href="./product/menu.php">메뉴</a>
                             <ul>
-                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="./product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -228,7 +228,7 @@ include "inc/session.php";
                         <li class="slide_page"><a href="#">차얌 블랜드</a></li>
                     </ul>
                     <div class="quick_menu">
-                        <h2 class="section_title">CHAYAM ORDER</h2>
+                        <h2 class="hide">CHAYAM ORDER</h2>
                         <div class="chayam_order_img"></div>
                         <ul>
                             <li><a href="#"><i class="quick_i order"></i><span>주문</span></a></li>
@@ -479,10 +479,10 @@ include "inc/session.php";
         </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="./libs/jquery.fullpage.js" ></script>
-    <script src="./libs/wow.min.js" ></script>
+    <script src="./libs/jquery-3.6.1.min.js"></script> 
+    <script src="./libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./libs/fullpage/jquery.fullpage.js"></script>
+    <script src="./libs/wow/wow.min.js"></script>
     <script src="./js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -490,6 +490,7 @@ include "inc/session.php";
             $("#fullpage").fullpage({
                 lockAnchors: true,
                 scrollBar: true,
+                responsiveWidth: 1024,
                 afterRender: function(){
                     new WOW().init();
                 }

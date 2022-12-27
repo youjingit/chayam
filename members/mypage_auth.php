@@ -29,9 +29,9 @@ include "../inc/session.php";
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="menu.html">메뉴</a>
+                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="../product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -102,7 +102,7 @@ include "../inc/session.php";
                         </li>
                         <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
                             <ul>
-                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -184,7 +184,7 @@ include "../inc/session.php";
         <p>Copyright 2019 차얌 all rights reserved.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> 
+    <script src="../libs/jquery-3.6.1.min.js"></script> 
     <script src="../js/header.js"></script>
     <script type="text/javascript">
         function auth_form_check() {

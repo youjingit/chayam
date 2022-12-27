@@ -44,9 +44,9 @@ $array = mysqli_fetch_array($result);
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="menu.html">메뉴</a>
+                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="../product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -117,7 +117,7 @@ $array = mysqli_fetch_array($result);
                         </li>
                         <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
                             <ul>
-                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -341,8 +341,8 @@ $array = mysqli_fetch_array($result);
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../libs/jquery-3.6.1.min.js"></script>
+    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="../js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {

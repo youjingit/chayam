@@ -23,7 +23,7 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
     <link rel="stylesheet" type="text/css" href="../css/fragments.css">
@@ -45,9 +45,9 @@ $array = mysqli_fetch_array($result);
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="menu.html">메뉴</a>
+                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="#">MILK TEA</a></li>
+                            <li><a href="../product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -118,7 +118,7 @@ $array = mysqli_fetch_array($result);
                         </li>
                         <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
                             <ul>
-                                <li><a href="#">MILK TEA</a></li>
+                                <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -422,9 +422,9 @@ $array = mysqli_fetch_array($result);
 
 
     <!-- 폼 스크립트 -->
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="../libs/jquery-3.6.1.js"></script>
+    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../libs/daum_api/postcode.v2.js"></script>
     <script src="../js/header.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
