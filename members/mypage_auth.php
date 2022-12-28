@@ -1,5 +1,8 @@
 <?php
 include "../inc/session.php";
+
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -100,7 +103,7 @@ include "../inc/session.php";
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>

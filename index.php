@@ -15,7 +15,6 @@ include "inc/session.php";
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/fragments.css">
     <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_1024.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/index_460.css">
     <link rel="stylesheet" type="text/css" href="css/index_640.css">
@@ -116,7 +115,7 @@ include "inc/session.php";
                             </ul>
                         </li>
                         <li class="allmenu_depth_1">
-                            <a href="./product/menu.php">메뉴</a>
+                            <a href="#">메뉴</a>
                             <ul>
                                 <li><a href="./product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>

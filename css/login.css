@@ -1,9 +1,3 @@
-/* header */
-header {
-    background: #fff;
-}
-
-
 /* main */
 
 #login_title {
@@ -85,6 +79,7 @@ header {
 }
   
 .simple_login_text span {
+    padding: 0 10px;
     background: #fff;
 }
 

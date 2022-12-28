@@ -48,8 +48,7 @@ mysqli_close($dbcon);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
     <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../libs/wow/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
     <link rel="stylesheet" type="text/css" href="../css/fragments.css">
@@ -143,7 +142,7 @@ mysqli_close($dbcon);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="javascript:void(0);">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="javascript:void(0);">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -227,7 +226,7 @@ mysqli_close($dbcon);
                                 <li class="breadcrumb-item active" aria-current="page"><a href="../product/menu.php">MILK TEA</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center">MILK TEA</h3>
+                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">MILK TEA</h3>
                         <hr>
                         <div class="pb-4">
                             <div id="milktea_vue">
@@ -244,7 +243,9 @@ mysqli_close($dbcon);
                                                 </p>
                                                 <div class="cart_wrap">
                                                     <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
-                                                        <i class="bi bi-cart"></i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                        </svg>
                                                         <span class="hide">장바구니에 담기</span>
                                                     </a>
                                                 </div>
@@ -264,7 +265,7 @@ mysqli_close($dbcon);
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">COFFEE</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center">COFFEE</h3>
+                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">COFFEE</h3>
                         <hr>
                         <div class="pb-4">
                             <div id="coffee_vue" >
@@ -281,7 +282,9 @@ mysqli_close($dbcon);
                                                 </p>
                                                 <div class="cart_wrap">
                                                     <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
-                                                        <i class="bi bi-cart"></i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                        </svg>
                                                         <span class="hide">장바구니에 담기</span>
                                                     </a>
                                                 </div>
@@ -301,7 +304,7 @@ mysqli_close($dbcon);
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">TEA</a></li>
                             </ol>
                         </nav>
-                        <h3 class="fs-1 fw-bold text-center">TEA</h3>
+                        <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">TEA</h3>
                         <hr>
                         <div class="pb-4">
                             <div id="tea_vue">
@@ -318,7 +321,9 @@ mysqli_close($dbcon);
                                                 </p>
                                                 <div class="cart_wrap">
                                                     <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
-                                                        <i class="bi bi-cart"></i>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                        </svg>
                                                         <span class="hide">장바구니에 담기</span>
                                                     </a>
                                                 </div>

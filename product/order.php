@@ -103,7 +103,7 @@ include "../inc/session.php";
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="menu.php">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -162,7 +162,7 @@ include "../inc/session.php";
     <main>
         <div class="padding_top">
             <div class="container mb-5">
-                <h2 id="order_title" class="text-center fw-bold fs-1">주문하기</h2>
+                <h2 id="order_title" class="text-center fs-1">주문하기</h2>
                 <form name="order_form" action="order.php" method="post" onsubmit="return order_form_check()">
                     <fieldset>
                         <legend class="hide">주문하기</legend>
@@ -214,8 +214,12 @@ include "../inc/session.php";
                             <div class="card-body d-flex align-items-center px-4 py-4">
                                 <input type="checkbox" class="form-check-input custom_checkbox mx-2" name="credit_card"
                                     id="credit_card" value="y">
-                                <label for="credit_card" class="d-flex align-items-center"><i
-                                        class="bi bi-credit-card fs-3 mx-2 mt-1"></i>신용카드</label>
+                                <label for="credit_card" class="d-flex align-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                                        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                                    </svg><span class="px-2">신용카드</span>
+                                </label>
                             </div>
                         </div>
                         <div class="card my-3">

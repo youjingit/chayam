@@ -82,19 +82,8 @@ $array = mysqli_fetch_array($result);
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <?php if(!$s_idx){ ?>
-                    <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="join.php">회원가입</a></li>
-                <?php } else if($s_id == "admin1234"){ ?>
-                    <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
-                <?php } else{ ?>
-                    <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="mypage.php">마이페이지</a></li>
-                <?php }; ?>      
+                <li><a href="../login/login.php">로그인</a></li>
+                <li><a href="join.php">회원가입</a></li>
             </ul>
         </div>
         <div>
@@ -115,7 +104,7 @@ $array = mysqli_fetch_array($result);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="../product/menu.php">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -154,19 +143,8 @@ $array = mysqli_fetch_array($result);
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                <?php if(!$s_idx){ ?>
-                    <!-- 로그인 전 -->
                     <li><a href="../login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
-                <?php } else if($s_id == "admin1234"){ ?>
-                    <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
-                <?php } else{ ?>
-                    <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="mypage.php">마이페이지</a></li>
-                <?php }; ?>    
                 </ul>
             </div>
         </div>

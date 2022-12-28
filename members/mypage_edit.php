@@ -4,6 +4,9 @@
 $s_idx =  isset($_SESSION["s_idx"])?  $_SESSION["s_idx"] : ""; */
 include "../inc/session.php";
 
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
+
 // DB 연결
 include "../inc/dbcon.php";
 
@@ -116,7 +119,7 @@ $array = mysqli_fetch_array($result);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -181,7 +184,7 @@ $array = mysqli_fetch_array($result);
                 <fieldset class="row justify-content-center">
                     <legend class="hide">회원정보 수정</legend>
                     <section class="col-12 col-lg-9">
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="u_id" class="col-12 col-md-3 col-form-label fs-5 fw-bold">아이디</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -191,7 +194,7 @@ $array = mysqli_fetch_array($result);
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="pwd" class="col-12 col-md-3 col-form-label fs-5 fw-bold">비밀번호</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -203,7 +206,7 @@ $array = mysqli_fetch_array($result);
                                 <span id="err_pwd" class="err_txt"></span>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="re_pwd" class="col-12 col-md-3 col-form-label fs-5 fw-bold">비밀번호 확인</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -214,7 +217,7 @@ $array = mysqli_fetch_array($result);
                                 <span id="err_repwd" class="err_txt"></span>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="u_name" class="col-12 col-md-3 col-form-label fs-5 fw-bold">이름</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -224,7 +227,7 @@ $array = mysqli_fetch_array($result);
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="mobile" class="col-12 col-md-3 col-form-label fs-5 fw-bold">휴대폰</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -244,7 +247,7 @@ $array = mysqli_fetch_array($result);
                                 <span id="err_mobile" class="err_txt"></span>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mb-3 d-flex align-items-center">
                             <label for="email" class="col-12 col-md-3 col-form-label fs-5 fw-bold">이메일</label>
                             <div class="col-12 col-md-9">
                                 <div class="row">
@@ -311,9 +314,10 @@ $array = mysqli_fetch_array($result);
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div class="row mb-3">
                             <label class="col-12 col-md-3 col-form-label fs-5 fw-bold">이용약관동의</label>
-                            <div class="col-12 col-md-9">
+                            <div class="col-12 col-md-9 pt-1">
                                 <div class="row">
                                     <div class="col-12 col-md-9">
                                         <div class="form-check mb-2">

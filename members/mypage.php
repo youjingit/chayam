@@ -2,6 +2,9 @@
 // 세션으로 데이터 가져오기
 include "../inc/session.php";
 
+// 로그인 사용자만 접근
+include "../inc/login_check.php";
+
 // DB 연결
 include "../inc/dbcon.php";
 
@@ -29,6 +32,14 @@ $array = mysqli_fetch_array($result);
     <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
     <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
     <link rel="stylesheet" type="text/css" href="../css/mypage.css">
+    <script>
+        function mem_del(){
+            var rtn_val = confirm("정말 탈퇴하시겠습니까?");
+            if(rtn_val == true){
+                location.href = "member_delete.php";
+            };
+        };
+    </script>
 </head>
 
 <body>
@@ -115,7 +126,7 @@ $array = mysqli_fetch_array($result);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="menu.html">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
                                 <li><a href="../product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -174,7 +185,7 @@ $array = mysqli_fetch_array($result);
     <main>
         <div class="padding_top">
             <div class="container mb-5">
-                <h2 id="mypage_title" class="text-center fw-bold fs-1">마이페이지</h2>
+                <h2 id="mypage_title" class="text-center fs-1">마이페이지</h2>
                 <div class="row gy-3">
                     <div class="col-12">
                         <div class="card">
@@ -279,8 +290,8 @@ $array = mysqli_fetch_array($result);
                 <div class="row justify-content-end mt-4">
                     <div class="col-12 col-xl-6">
                         <div class="d-flex gap-2">
-                            <a href="mypage_auth.php" class="btn btn-secondary w-100">내 정보수정</a>
-                            <a href="mypage_auth.php" class="btn btn-secondary w-100">회원탈퇴</a>
+                            <button type="button" onclick="location.href='mypage_auth.php'" class="btn btn-secondary w-100">내 정보수정</button>
+                            <button type="button" class="btn btn-secondary w-100" onclick="mem_del()">회원탈퇴</button>
                         </div>
                     </div>
                 </div>
@@ -346,6 +357,7 @@ $array = mysqli_fetch_array($result);
     <script src="../js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            
         });
     </script>
 </body>

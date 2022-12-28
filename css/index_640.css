@@ -44,6 +44,12 @@
         color: #fff
     }
 
+    .chayam_order_img {
+        background: url(../images/chayam_order.png) no-repeat;
+        width: 318px;
+        height: 284px;
+    }
+
     .quick_menu ul {
         padding-bottom: 20px; 
     }

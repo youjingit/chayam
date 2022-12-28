@@ -48,3 +48,12 @@ a:hover {
 .col-form-label {
     padding-top: 0;
 }
+
+.card-header {
+    background-color: #2a1700ba;
+    color: #fff;
+}
+
+hr {
+    opacity: inherit;
+}
