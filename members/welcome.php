@@ -21,14 +21,13 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/order_finish.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/order_finish.css">
 </head>
 
 <body>
@@ -155,7 +154,7 @@ $array = mysqli_fetch_array($result);
                 <h2 class="hide">회원가입 완료</h2>
                 <div class="d-flex flex-column align-items-center">
                     <p class="fs-2 fw-bold text-center text-nowrap"><span><?php echo $array["u_name"];?></span>님, 가입이 완료되었습니다!</p>
-                    <img src="../images/chayaming.png" class="my-4" width="93px" alt="차야밍">
+                    <img src="/chayam/assets/images/chayaming.png" class="my-4" width="93px" alt="차야밍">
                     <a href="../index.php" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
                     <a href="../login/login.php" class="btn btn-lg w-50 btn-primary mt-4">로그인</a>
                 </div>
@@ -215,9 +214,9 @@ $array = mysqli_fetch_array($result);
             </div>
         </div>
     </footer>
-    <script src="../libs/jquery-3.6.1.min.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
         });

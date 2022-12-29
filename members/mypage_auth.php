@@ -12,11 +12,11 @@ include "../inc/login_check.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/login.css">
 </head>
 
 <body>
@@ -187,8 +187,8 @@ include "../inc/login_check.php";
         <p>Copyright 2019 차얌 all rights reserved.</p>
     </footer>
 
-    <script src="../libs/jquery-3.6.1.min.js"></script> 
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script> 
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
         function auth_form_check() {
             var u_idEl = document.getElementById("u_id");

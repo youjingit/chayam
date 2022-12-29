@@ -9,17 +9,17 @@ include "inc/session.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" type="text/css" href="./libs/fullpage/jquery.fullpage.min.css">
-    <link rel="stylesheet" type="text/css" href="./libs/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" type="text/css" href="./libs/wow/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/index_460.css">
-    <link rel="stylesheet" type="text/css" href="css/index_640.css">
-    <link rel="stylesheet" type="text/css" href="css/index_1024.css">
-    <link rel="stylesheet" type="text/css" href="css/index_1200.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/fullpage/jquery.fullpage.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/wow/animate.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_460.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_1200.css">
 
 </head>
 
@@ -186,32 +186,32 @@ include "inc/session.php";
                             <div class="swiper-slide">
                                 <a href="#">
                                     <picture>
-                                        <source media="(min-width: 1024px)" srcset="images/main01.jpg">
-                                        <img src="images/mobile_main01.jpg" alt="차얌 흑당얌">
+                                        <source media="(min-width: 1024px)" srcset="/chayam/assets/images/main01.jpg">
+                                        <img src="/chayam/assets/images/mobile_main01.jpg" alt="차얌 흑당얌">
                                     </picture>
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a href="#">
                                     <picture>
-                                        <source media="(min-width: 1024px)" srcset="images/main02.jpg">
-                                        <img src="images/mobile_main02.jpg" alt="차얌 밀크퐁">
+                                        <source media="(min-width: 1024px)" srcset="/chayam/assets/images/main02.jpg">
+                                        <img src="/chayam/assets/images/mobile_main02.jpg" alt="차얌 밀크퐁">
                                     </picture>
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a href="#">
                                     <picture>
-                                        <source media="(min-width: 1024px)" srcset="images/main03.jpg">
-                                        <img src="images/mobile_main03.jpg" alt="치즈 흑당얌">
+                                        <source media="(min-width: 1024px)" srcset="/chayam/assets/images/main03.jpg">
+                                        <img src="/chayam/assets/images/mobile_main03.jpg" alt="치즈 흑당얌">
                                     </picture>
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a href="#">
                                     <picture>
-                                        <source media="(min-width: 1024px)" srcset="images/main04.jpg">
-                                        <img src="images/mobile_main04.jpg" alt="차얌 블랜드">
+                                        <source media="(min-width: 1024px)" srcset="/chayam/assets/images/main04.jpg">
+                                        <img src="/chayam/assets/images/mobile_main04.jpg" alt="차얌 블랜드">
                                     </picture>
                                 </a>
                             </div>
@@ -260,11 +260,11 @@ include "inc/session.php";
                                 <h3 class="hide">MILK TEA</h3>
                                 <div class="swiper menuSwiper">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"><img src="images/milktea1.png" alt="차얌 밀크티"></div>
-                                        <div class="swiper-slide"><img src="images/milktea2.png" alt="타로 밀크티"></div>
-                                        <div class="swiper-slide"><img src="images/milktea3.png" alt="보성 말차 밀크티"></div>
-                                        <div class="swiper-slide"><img src="images/milktea4.png" alt="망고 밀크퐁"></div>
-                                        <div class="swiper-slide"><img src="images/milktea5.png" alt="오레오 밀크티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/milktea1.png" alt="차얌 밀크티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/milktea2.png" alt="타로 밀크티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/milktea3.png" alt="보성 말차 밀크티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/milktea4.png" alt="망고 밀크퐁"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/milktea5.png" alt="오레오 밀크티"></div>
                                     </div>
                                 </div>
                                 <div class="menu_pagination_wrap">
@@ -277,11 +277,11 @@ include "inc/session.php";
                                 <h3 class="hide">COFFEE</h3>
                                 <div class="swiper menuSwiper">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"><img src="images/coffee1.png" alt="아메리카노"></div>
-                                        <div class="swiper-slide"><img src="images/coffee2.png" alt="카페라떼"></div>
-                                        <div class="swiper-slide"><img src="images/coffee3.png" alt="달고나 커피"></div>
-                                        <div class="swiper-slide"><img src="images/coffee4.png" alt="코코넛 커피 스무디"></div>
-                                        <div class="swiper-slide"><img src="images/coffee5.png" alt="치즈크림커피"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/coffee1.png" alt="아메리카노"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/coffee2.png" alt="카페라떼"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/coffee3.png" alt="달고나 커피"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/coffee4.png" alt="코코넛 커피 스무디"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/coffee5.png" alt="치즈크림커피"></div>
                                     </div>
                                 </div>
                                 <div class="menu_pagination_wrap">
@@ -294,11 +294,11 @@ include "inc/session.php";
                                 <h3 class="hide">TEA</h3>
                                 <div class="swiper menuSwiper">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"><img src="images/tea1.png" alt="차얌 치즈폼티"></div>
-                                        <div class="swiper-slide"><img src="images/tea2.png" alt="우롱"></div>
-                                        <div class="swiper-slide"><img src="images/tea3.png" alt="얼그레이"></div>
-                                        <div class="swiper-slide"><img src="images/tea4.png" alt="차얌 블랙티"></div>
-                                        <div class="swiper-slide"><img src="images/tea5.png" alt="잉글리시블랙퍼스트"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/tea1.png" alt="차얌 치즈폼티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/tea2.png" alt="우롱"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/tea3.png" alt="얼그레이"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/tea4.png" alt="차얌 블랙티"></div>
+                                        <div class="swiper-slide"><img src="/chayam/assets/images/tea5.png" alt="잉글리시블랙퍼스트"></div>
                                     </div>
                                 </div>
                                 <div class="menu_pagination_wrap">
@@ -362,7 +362,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 성결대점</dt>
                                 <dd>
-                                    <img src="images/franchise1.png" alt="차얌 성결대점">
+                                    <img src="/chayam/assets/images/franchise1.png" alt="차얌 성결대점">
                                 </dd>
                             </dl>
                         </div>
@@ -370,7 +370,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 수원정자점</dt>
                                 <dd>
-                                    <img src="images/franchise2.png" alt="차얌 수원정자점">
+                                    <img src="/chayam/assets/images/franchise2.png" alt="차얌 수원정자점">
 
                                 </dd>
                             </dl>
@@ -379,7 +379,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 군포송정점</dt>
                                 <dd>
-                                    <img src="images/franchise3.png" alt="차얌 군포송정점">
+                                    <img src="/chayam/assets/images/franchise3.png" alt="차얌 군포송정점">
 
                                 </dd>
                             </dl>
@@ -388,7 +388,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 삼산시장점</dt>
                                 <dd>
-                                    <img src="images/franchise4.png" alt="차얌 삼산시장점">
+                                    <img src="/chayam/assets/images/franchise4.png" alt="차얌 삼산시장점">
                                 </dd>
                             </dl>
                         </div>
@@ -396,7 +396,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 구의점</dt>
                                 <dd>
-                                    <img src="images/franchise5.png" alt="차얌 구의점">
+                                    <img src="/chayam/assets/images/franchise5.png" alt="차얌 구의점">
                                 </dd>
                             </dl>
                         </div>
@@ -404,7 +404,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 방이시장점</dt>
                                 <dd>
-                                    <img src="images/franchise6.png" alt="차얌 방이시장점">
+                                    <img src="/chayam/assets/images/franchise6.png" alt="차얌 방이시장점">
                                 </dd>
                             </dl>
                         </div>
@@ -412,7 +412,7 @@ include "inc/session.php";
                             <dl>
                                 <dt>차얌 광교호수공원점</dt>
                                 <dd>
-                                    <img src="images/franchise7.png" alt="차얌 광교호수공원점">
+                                    <img src="/chayam/assets/images/franchise7.png" alt="차얌 광교호수공원점">
                                 </dd>
                             </dl>
                         </div>
@@ -478,11 +478,11 @@ include "inc/session.php";
         </div>
     </main>
 
-    <script src="./libs/jquery-3.6.1.min.js"></script> 
-    <script src="./libs/swiper/swiper-bundle.min.js"></script>
-    <script src="./libs/fullpage/jquery.fullpage.js"></script>
-    <script src="./libs/wow/wow.min.js"></script>
-    <script src="./js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script> 
+    <script src="/chayam/assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="/chayam/assets/libs/fullpage/jquery.fullpage.js"></script>
+    <script src="/chayam/assets/libs/wow/wow.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             // fullpage 실행

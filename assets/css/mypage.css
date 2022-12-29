@@ -20,6 +20,10 @@
     margin: 10px;
 }
 
+.stamp_board img.active {
+    opacity: 1;
+}
+
 .point_notice, 
 .point_notice li{
     list-style-type: disc;

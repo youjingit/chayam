@@ -19,7 +19,7 @@ function makeJson($result){
             )
         );
     }
-    return json_encode($array, JSON_UNESCAPED_UNICODE);
+    return json_encode($array, JSON_UNESCAPED_UNICODE); //자바스크립트에서 사용할 수 있게 변환
 }
 
 //milktea
@@ -47,14 +47,14 @@ mysqli_close($dbcon);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../libs/wow/animate.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/wow/animate.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/menu.css">
 
 </head>
 
@@ -242,7 +242,7 @@ mysqli_close($dbcon);
                                                     <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="clickCartBtn(info.p_id, info.s_price ? true : false)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                                         </svg>
@@ -281,7 +281,7 @@ mysqli_close($dbcon);
                                                     <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="clickCartBtn(info.p_id, info.s_price ? true : false)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                                         </svg>
@@ -320,7 +320,7 @@ mysqli_close($dbcon);
                                                     <span>L: {{ info.l_price }} </span>
                                                 </p>
                                                 <div class="cart_wrap">
-                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="openCartModal(info.p_id, info.s_price ? true : false)">
+                                                    <a href="javascript:void(0);" class="btn btn-primary" @click="clickCartBtn(info.p_id, info.s_price ? true : false)">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                                             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                                         </svg>
@@ -583,13 +583,43 @@ mysqli_close($dbcon);
             </div>
         </div>
     </div>
-    <script src="../libs/jquery-3.6.1.min.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../libs/vue/vue.js"></script>
-    <script src="../libs/wow/wow.min.js"></script>
-    <script src="../js/header.js"></script>
+    <div class="modal fade" id="cartCompleteModal" tabindex="-1" aria-labelledby="cartCompleteModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <p class="my-4">장바구니에 담겼습니다. </p>
+                    <a href="/chayam/product/cart.php" class="btn btn-primary">장바구니 보기</a>
+                    <a href="javascript:void(0)" class="btn btn-secondary" data-bs-dismiss="modal">계속 쇼핑하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/libs/vue/vue.js"></script>
+    <script src="/chayam/assets/libs/wow/wow.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
+        // 전역 상품아이디 
         var global_p_id = null;
+
+        function openCartModal(p_id, s_price_check){
+            // 로그인이 필요한 서비스입니다 팝업
+            var s_idx = '<?php echo $s_idx?>';
+            if(!s_idx){
+                alert("로그인이 필요한 서비스입니다.");
+                location.href = "http://localhost/chayam/login/login.php";
+                return;
+            }
+
+            // 해당 상품 아이디값을 전역 변수에 넣기
+            global_p_id = p_id;
+
+            //장바구니 버튼 클릭시 팝업 열기
+            var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
+            var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
+            modal.show();
+        }
 
         function addCartModal(modalSelector){
             var modalEl = $(modalSelector);
@@ -599,26 +629,37 @@ mysqli_close($dbcon);
             var pearl = modalEl.find("[name='pearl']:checked").val();
             var cheeze = modalEl.find("[name='cheeze']:checked").val();
             var jelly = modalEl.find("[name='jelly']:checked").val();
-            var data = {
-                p_id : global_p_id,
-                count : count,
-                hot : hot,
-                size : size,
-                pearl : pearl,
-                cheeze : cheeze,
-                jelly : jelly
-            };
-            console.log(data);
-            var cartList = JSON.parse(localStorage.getItem('cartList') || '[]');
-            // p_id int not null,
-            // count int not null,
-            // hot char(1) not null,
-            // size char(1) not null,
-            // pearl char(1) not null,
-            // cheeze char(1) not null,
-            // jelly char(1) not null, 
 
+            $.ajax({
+                url: '/chayam/api/cart/save.php',
+                method: 'post',
+                data: {
+                    u_id : '<?php echo $s_id; ?>',
+                    p_id : global_p_id,
+                    count : count,
+                    hot : hot,
+                    size : size,
+                    pearl : pearl,
+                    cheeze : cheeze,
+                    jelly : jelly
+                }
+            }).then(function (data) {
+                if(data === 'f'){
+                    alert("시스템 오류입니다.");
+                    return;
+                } 
+
+                // 장바구니 팝업 닫기
+                var modal = bootstrap.Modal.getOrCreateInstance(modalEl.get(0));
+                modal.hide();
+
+                // 장바구니에 담겼습니다 팝업 열기
+                var cartModalEl = document.querySelector("#cartCompleteModal");
+                var cartModal = bootstrap.Modal.getOrCreateInstance(cartModalEl);
+                cartModal.show();
+            })
         }
+
         $(document).ready(function () {
             // MILKTEA Vue 시작
             new Vue({
@@ -629,11 +670,8 @@ mysqli_close($dbcon);
                     };
                 },
                 methods: {
-                    openCartModal: function(p_id, s_price_check){
-                        global_p_id = p_id;
-                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
-                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
-                        modal.show();
+                    clickCartBtn: function (p_id, s_price_check){
+                       openCartModal(p_id, s_price_check);
                     }
                 }
             });
@@ -645,11 +683,8 @@ mysqli_close($dbcon);
                     };
                 },
                 methods: {
-                    openCartModal: function(p_id, s_price_check){
-                        global_p_id = p_id;
-                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
-                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
-                        modal.show();
+                    clickCartBtn: function(p_id, s_price_check){
+                        openCartModal(p_id, s_price_check);
                     }
                 }
             });
@@ -661,11 +696,8 @@ mysqli_close($dbcon);
                     };
                 },
                 methods: {
-                    openCartModal: function(p_id, s_price_check){
-                        global_p_id = p_id;
-                        var myModalEl = document.querySelector(s_price_check ? '#exampleModal2' : '#exampleModal');
-                        var modal = bootstrap.Modal.getOrCreateInstance(myModalEl);
-                        modal.show();
+                    clickCartBtn: function(p_id, s_price_check){
+                        openCartModal(p_id, s_price_check);
                     }
                 }
             });

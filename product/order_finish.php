@@ -9,14 +9,13 @@ include "../inc/session.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/bootstrap/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/order_finish.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/order_finish.css">
 </head>
 
 <body>
@@ -166,9 +165,9 @@ include "../inc/session.php";
                 <div class="d-flex flex-column align-items-center">
                     <p class="fs-2 fw-bold text-center text-nowrap">주문이 완료되었습니다</p>
                     <p class="fs-5 text-center text-nowrap">마이페이지에서 주문내역을 확인하실 수 있습니다.</p>
-                    <img src="./images/chayaming.png" class="my-4" width="93px" alt="차야밍">
-                    <a href="#" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
-                    <a href="#" class="btn btn-lg w-50 btn-primary mt-4">마이페이지</a>
+                    <img src="/chayam/assets/images/chayaming.png" class="my-4" width="93px" alt="차야밍">
+                    <a href="/chayam/index.php" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
+                    <a href="/chayam/members/mypage.php" class="btn btn-lg w-50 btn-primary mt-4">마이페이지</a>
                 </div>
             </div>
         </div>
@@ -226,9 +225,9 @@ include "../inc/session.php";
             </div>
         </div>
     </footer>
-    <script src="../libs/jquery-3.6.1.min.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
         });

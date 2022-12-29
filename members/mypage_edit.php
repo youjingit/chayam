@@ -26,13 +26,13 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/join.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/join.css">
 </head>
 
 <body>
@@ -426,10 +426,10 @@ $array = mysqli_fetch_array($result);
 
 
     <!-- 폼 스크립트 -->
-    <script src="../libs/jquery-3.6.1.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../libs/daum_api/postcode.v2.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/libs/daum_api/postcode.v2.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script>
         // 우편번호 찾기 찾기 화면을 넣을 element
         var element_wrap = document.getElementById('wrap');
@@ -643,7 +643,7 @@ $array = mysqli_fetch_array($result);
             }
 
             $.ajax({
-                url: 'exist_email.php',
+                url: '/chayam/api/members/exist_email.php',
                 method: 'get',
                 data: {
                     email: emailVal

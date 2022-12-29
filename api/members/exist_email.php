@@ -1,12 +1,12 @@
 <?php
 // 데이터 가져오기
-$u_id = $_GET["u_id"];
+$email = $_GET["email"];
 
 // DB 연결
-include "../inc/dbcon.php";
+include "../../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select u_id from members where u_id='$u_id';";
+$sql = "select email from members where email='$email';";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);

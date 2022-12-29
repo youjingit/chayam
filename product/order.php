@@ -1,5 +1,63 @@
 <?php
 include "../inc/session.php";
+
+// DB 연결
+include "../inc/dbcon.php";
+
+// 쿼리 작성
+$sql = "select t1.*, t2.*, "; 
+$sql .= "format ( ";
+$sql .= "    t1.count * case t1.size ";
+$sql .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
+$sql .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
+$sql .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql .= "    end ";
+$sql .= "    + case t1.pearl when 'y' then 500 else 0 end ";
+$sql .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
+$sql .= "    + case t1.jelly when 'y' then 500 else 0 end, ";
+$sql .= "    0 ";
+$sql .= ") as price ";
+$sql .= "from" ;
+$sql .= "   cart t1, products t2 ";
+$sql .= "where ";
+$sql .= "   t1.u_id = '$s_id' ";
+$sql .= "   and t1.p_id = t2.p_id ;";
+
+// 쿼리 실행
+$result = mysqli_query($dbcon, $sql);
+
+// 총 주문금액
+$sql1 = "select "; 
+$sql1 .= "format ( ";
+$sql1 .= "sum(";
+$sql1 .= "    t1.count * case t1.size ";
+$sql1 .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
+$sql1 .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
+$sql1 .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql1 .= "    end ";
+$sql1 .= "    + case t1.pearl when 'y' then 500 else 0 end ";
+$sql1 .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
+$sql1 .= "    + case t1.jelly when 'y' then 500 else 0 end ";
+$sql1 .= "    ), ";
+$sql1 .= "    0 ";
+$sql1 .= ") as total_price ";
+$sql1 .= "from" ;
+$sql1 .= "   cart t1, products t2 ";
+$sql1 .= "where ";
+$sql1 .= "   t1.u_id = '$s_id' ";
+$sql1 .= "   and t1.p_id = t2.p_id ";
+$sql1 .= "group by ";
+$sql1 .= "   t1.u_id ";
+
+
+// 쿼리 실행
+$result1 = mysqli_query($dbcon, $sql1);
+
+$array1 = mysqli_fetch_array($result1);
+
+
+// DB 종료
+mysqli_close($dbcon);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -9,14 +67,13 @@ include "../inc/session.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../libs/bootstrap//bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/order.css">
+    <link rel="stylesheet" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/order.css">
 </head>
 
 <body>
@@ -176,23 +233,34 @@ include "../inc/session.php";
                             </div>
                         </div>
                         <div class="card my-3">
-                            <div class="row g-0">
-                                <div class="card-header fs-5 fw-bold ps-4">
-                                    주문 내역
-                                </div>
+                            <div class="card-header fs-5 fw-bold ps-4">
+                                주문 내역
+                            </div>
+                            <?php while($array = mysqli_fetch_array($result)){ ?>
+                            <div class="row">
                                 <div class="col-4 d-flex justify-content-center py-4">
-                                    <img src="../images/menu/milktea_05.png" class="img-fluid rounded-start" alt="...">
+                                    <img src="<?php echo $array['p_image']; ?>" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-8">
-                                    <div class="card-body px-4 py-4">
+                                    <div class="card-body pe-5 py-4">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="card-title fs-4 mb-0">밀크티</h5>
-                                            <span class="card-text fs-4">4,000원</span>
+                                            <h5 class="card-title fs-4 mb-0"><?php echo $array['p_name']; ?></h5>
+                                            <span class="card-text fs-4"><?php echo $array['price']; ?> 원</span>
                                         </div>
-                                        <p class="card-text option_txt"><small class="text-muted">HOT / 펄 추가</small></p>
+                                        <p class="card-text option_txt">
+                                            <small class="text-muted">
+                                                <?php echo $array['count']; ?> 개
+                                                / <?php echo $array['hot'] == 'h' ? 'HOT' : 'ICE' ; ?> 
+                                                / <?php echo strtoupper($array['size']); ?> 
+                                                <?php if($array['pearl'] == 'y') echo '/ 펄 추가'; ?> 
+                                                <?php if($array['cheeze'] == 'y') echo '/ 치즈폼 추가'; ?> 
+                                                <?php if($array['jelly'] == 'y') echo '/ 코코넛젤리 추가'; ?> 
+                                            </small>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
                         <div class="card my-3">
                             <div class="card-header fs-5 fw-bold ps-4">
@@ -209,11 +277,19 @@ include "../inc/session.php";
                         </div>
                         <div class="card my-3">
                             <div class="card-header fs-5 fw-bold ps-4">
+                                쿠폰
+                            </div>
+                            <div class="card-body px-4 py-4">
+                                <p>보유중인 쿠폰이 없습니다.</p>
+                            </div>
+                        </div>
+                        <div class="card my-3">
+                            <div class="card-header fs-5 fw-bold ps-4">
                                 결제정보
                             </div>
                             <div class="card-body d-flex align-items-center px-4 py-4">
                                 <input type="checkbox" class="form-check-input custom_checkbox mx-2" name="credit_card"
-                                    id="credit_card" value="y">
+                                    id="credit_card" value="y" checked>
                                 <label for="credit_card" class="d-flex align-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
                                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
@@ -228,17 +304,17 @@ include "../inc/session.php";
                             </div>
                             <div class="card-body d-flex flex-column px-4 py-4">
                                 <div class="d-flex justify-content-between"><span>상품금액</span>
-                                    <div><span>4,000</span> 원</div>
+                                    <div><span><?php echo $array1['total_price']; ?></span> 원</div>
                                 </div>
                                 <div class="d-flex justify-content-between"><span>할인금액</span>
                                     <div>-<span>0</span> 원</div>
                                 </div>
                                 <div class="d-flex justify-content-between"><span>결제금액</span>
-                                    <div class="text-danger"><span>4,000</span> 원</div>
+                                    <div class="text-danger"><span><?php echo $array1['total_price']; ?></span> 원</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-lg btn-primary w-100 mt-4">주문 결제하기</a>
+                        <a href="#" class="btn btn-lg btn-primary w-100 mt-4" onclick="clickPayBtn()">주문 결제하기</a>
                     </fieldset>
                 </form>
             </div>
@@ -297,12 +373,25 @@ include "../inc/session.php";
             </div>
         </div>
     </footer>
-    <script src="../libs/jquery-3.6.1.min.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-        });
+        function clickPayBtn(){
+            if(confirm("결제를 진행하시겠습니까?")){
+                $.ajax({
+                    url: '/chayam/api/cart/order.php',
+                    method: 'post',
+                }).then(function (data) {
+                    if(data === 't'){
+                        alert("결제되었습니다.");
+                        //location.href = "/chayam/product/order_finish.php";
+                        return;
+                    } 
+                    alert("시스템 오류입니다.");
+                })
+            }
+        }
     </script>
 </body>
 

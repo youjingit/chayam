@@ -58,9 +58,9 @@ if(!$num){ // 일치하는 아이디가 없다면
 
         // 세션 변수 생성
         // $_SESSION["세션변수명"] = "저장할 값";
-        $_SESSION["s_idx"] = $array["idx"];
-        $_SESSION["s_name"] = $array["u_name"];
-        $_SESSION["s_id"] = $array["u_id"];
+        // $_SESSION["s_idx"] = $array["idx"];
+        // $_SESSION["s_name"] = $array["u_name"];
+        // $_SESSION["s_id"] = $array["u_id"];
         /* echo $_SESSION["s_idx"]." / ";
         echo $_SESSION["s_name"]." / ";
         echo $_SESSION["s_id"]; */

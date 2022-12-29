@@ -9,12 +9,14 @@ include "../inc/login_check.php";
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select * from members where idx=$s_idx;";
+$sql = "select coalesce(min(t1.count), 0) as count from stamp t1 where t1.u_id= '$s_id';";
+
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
 
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -24,22 +26,13 @@ $array = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차얌 - 茶원이 다른 밀크티, 차얌</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/boot_reset.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_640.css">
-    <link rel="stylesheet" type="text/css" href="../css/fragments_1024.css">
-    <link rel="stylesheet" type="text/css" href="../css/mypage.css">
-    <script>
-        function mem_del(){
-            var rtn_val = confirm("정말 탈퇴하시겠습니까?");
-            if(rtn_val == true){
-                location.href = "member_delete.php";
-            };
-        };
-    </script>
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/libs/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/boot_reset.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_1024.css">
+    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/mypage.css">
 </head>
 
 <body>
@@ -229,18 +222,17 @@ $array = mysqli_fetch_array($result);
                             </div>
                             <div class="card-body text-center">
                                 <div class="stamp_board">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
-                                    <img src="../images/stamp.png" alt="stamp">
+                                    <?php 
+                                        $i = 1;
+                                        while($i <= 12){
+                                            if($array['count'] >= $i){
+                                                echo '<img class="active" src="/chayam/assets/images/stamp.png" alt="stamp">';
+                                            } else {
+                                                echo '<img src="/chayam/assets/images/stamp.png" alt="stamp">';
+                                            }
+                                            $i++;
+                                        }
+                                    ?>
                                 </div>
                                 <p class="card-text">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
                                 <p class="card-text">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
@@ -253,7 +245,7 @@ $array = mysqli_fetch_array($result);
                                 멤버십 바코드
                             </div>
                             <div class="card-body text-center">
-                                <img src="../images/barcode.png" alt="barcode">
+                                <img src="/chayam/assets/images/barcode.png" alt="barcode">
                             </div>
                         </div>
                     </div>
@@ -352,13 +344,16 @@ $array = mysqli_fetch_array($result);
             </div>
         </div>
     </footer>
-    <script src="../libs/jquery-3.6.1.min.js"></script>
-    <script src="../libs/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="../js/header.js"></script>
+    <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script>
+    <script src="/chayam/assets/libs/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            
-        });
+        function mem_del(){
+            var rtn_val = confirm("정말 탈퇴하시겠습니까?");
+            if(rtn_val == true){
+                location.href = "member_delete.php";
+            };
+        };
     </script>
 </body>
 
