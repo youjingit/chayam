@@ -385,7 +385,7 @@ mysqli_close($dbcon);
                 }).then(function (data) {
                     if(data === 't'){
                         alert("결제되었습니다.");
-                        //location.href = "/chayam/product/order_finish.php";
+                        location.href = "/chayam/product/order_finish.php";
                         return;
                     } 
                     alert("시스템 오류입니다.");

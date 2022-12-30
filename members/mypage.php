@@ -14,9 +14,39 @@ $sql = "select coalesce(min(t1.count), 0) as count from stamp t1 where t1.u_id= 
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
 
+// 총 주문금액
+$sql1 = "select "; 
+$sql1 .= "format ( ";
+$sql1 .= "sum(";
+$sql1 .= "    t1.count * case t1.size ";
+$sql1 .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
+$sql1 .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
+$sql1 .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql1 .= "    end ";
+$sql1 .= "    + case t1.pearl when 'y' then 500 else 0 end ";
+$sql1 .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
+$sql1 .= "    + case t1.jelly when 'y' then 500 else 0 end ";
+$sql1 .= "    ), ";
+$sql1 .= "    0 ";
+$sql1 .= ") as total_price, t1.o_id, min(t1.reg_date) as reg_date ";
+$sql1 .= "from" ;
+$sql1 .= "   orders t0, orders_detail t1, products t2 ";
+$sql1 .= "where ";
+$sql1 .= "   t0.u_id = '$s_id' ";
+$sql1 .= "   and t0.o_id = t1.o_id ";
+$sql1 .= "   and t1.p_id = t2.p_id ";
+$sql1 .= "group by ";
+$sql1 .= "   t1.o_id ";
+
+
+// 쿼리 실행
+$result1 = mysqli_query($dbcon, $sql1);
+
 // DB에서 데이터 가져오기
 $array = mysqli_fetch_array($result);
 
+// DB 종료
+mysqli_close($dbcon);
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -186,32 +216,26 @@ $array = mysqli_fetch_array($result);
                                 <div class="card-header d-flex justify-content-between align-items-center px-4">
                                     <p class="fs-5 fw-bold">주문 내역</p>
                                 </div>
+                                <?php while($array1 = mysqli_fetch_array($result1)){ ?> 
                                 <div class="card-body">
                                     <table class="table ">
                                         <thead class="bg-light">
                                             <tr>
                                                 <th>주문일시</th>
-                                                <th>메뉴</th>
-                                                <th>옵션</th>
-                                                <th>가격</th>
+                                                <th>주문번호</th>
+                                                <th>주문금액</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>2022-12-24 18:35</td>
-                                                <td>밀크티</td>
-                                                <td>HOT / 펄 추가</td>
-                                                <td>4,000원</td>
+                                                <td><?php echo $array1['reg_date']; ?></td>
+                                                <td><?php echo $array1['o_id']; ?></td>
+                                                <td><?php echo $array1['total_price']; ?></td>
                                             </tr>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th colspan="3">주문금액</th>
-                                                <th>4,000원</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

@@ -163,7 +163,7 @@ include "../inc/session.php";
             <div class="container finish_wrap text-center d-flex flex-column justify-content-center my-5">
                 <h2 class="hide">주문완료</h2>
                 <div class="d-flex flex-column align-items-center">
-                    <p class="fs-2 fw-bold text-center text-nowrap">주문이 완료되었습니다</p>
+                    <p class="fs-2 fw-bold text-center text-nowrap">주문이 완료되었습니다.</p>
                     <p class="fs-5 text-center text-nowrap">마이페이지에서 주문내역을 확인하실 수 있습니다.</p>
                     <img src="/chayam/assets/images/chayaming.png" class="my-4" width="93px" alt="차야밍">
                     <a href="/chayam/index.php" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>

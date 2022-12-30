@@ -5,7 +5,7 @@ include "../../inc/session.php";
 include "../../inc/dbcon.php";  
 
 $o_id = uniqid();
-$reg_date = date("Y-m-d");
+$reg_date = date('Y-m-d h:i:s');
 
 // orders table insert 쿼리 작성
 $sql = "insert into orders( ";

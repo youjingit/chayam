@@ -2,7 +2,7 @@
 include "../inc/session.php";
 
 // 로그인 사용자만 접근
-include "../inc/login_check.php";
+// include "../inc/login_check.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
