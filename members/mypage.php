@@ -216,25 +216,29 @@ mysqli_close($dbcon);
                                 <div class="card-header d-flex justify-content-between align-items-center px-4">
                                     <p class="fs-5 fw-bold">주문 내역</p>
                                 </div>
-                                <?php while($array1 = mysqli_fetch_array($result1)){ ?> 
-                                <div class="card-body">
-                                    <table class="table ">
-                                        <thead class="bg-light">
-                                            <tr>
-                                                <th>주문일시</th>
-                                                <th>주문번호</th>
-                                                <th>주문금액</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><?php echo $array1['reg_date']; ?></td>
-                                                <td><?php echo $array1['o_id']; ?></td>
-                                                <td><?php echo $array1['total_price']; ?></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <?php if(!mysqli_num_rows($result1)) {?>
+                                    <p class="text-center my-4">주문 내역이 없습니다.</p>
+                                <?php } else { ?>
+                                <?php       while($array1 = mysqli_fetch_array($result1)) { ?>
+                                    <div class="card-body">
+                                        <table class="table ">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th>주문일시</th>
+                                                    <th>주문번호</th>
+                                                    <th>주문금액</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><?php echo $array1['reg_date']; ?></td>
+                                                    <td><?php echo $array1['o_id']; ?></td>
+                                                    <td><?php echo $array1['total_price']; ?></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <?php       } ?>
                                 <?php } ?>
                             </div>
                         </div>

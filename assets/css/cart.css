@@ -13,3 +13,15 @@
     max-width: 50%;
 }
 
+.card-title,
+.price_text {
+    font-size: 20px;
+}
+
+@media (max-width: 640px) {
+    .card-title,
+    .price_text,
+    .btn {
+        font-size: 16px;
+    }
+}

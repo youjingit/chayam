@@ -232,8 +232,8 @@ mysqli_close($dbcon);
                             <div class="col-8">
                                 <div class="card-body pe-5 py-4">
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <h5 class="card-title fs-4 mb-0"><?php echo $array['p_name']; ?></h5>
-                                        <span class="card-text fs-4"><?php echo $array['price']; ?> 원</span>
+                                        <h5 class="card-title mb-0"><?php echo $array['p_name']; ?></h5>
+                                        <span class="card-text price_text"><?php echo $array['price']; ?> 원</span>
                                     </div>
                                     <p class="card-text option_txt">
                                         <small class="text-muted">
@@ -260,8 +260,8 @@ mysqli_close($dbcon);
                 <div class="card w-100 my-5 border-0 shadow">
                     <div class="card-body px-5 py-4">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="card-title fs-4 mb-0">상품 금액</h5>
-                            <span class="card-text fs-4"><?php echo $array1['total_price']; ?> 원</span>
+                            <h5 class="card-title mb-0">상품 금액</h5>
+                            <span class="card-text price_text"><?php echo $array1['total_price']; ?> 원</span>
                         </div>
                       <a href="/chayam/product/order.php" class="btn btn-lg btn-primary w-100 mt-4">주문하기</a>
                     </div>
@@ -348,7 +348,3 @@ mysqli_close($dbcon);
 </body>
 
 </html>
-
-<?php 
-mysqli_close($dbcon);
-?>

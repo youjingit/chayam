@@ -133,6 +133,10 @@ body {
 
 
 /* slide2 - chayam menu slider */
+.chayam_menu {
+    overflow-x: hidden;
+}
+
 .chayam_menu .container_inner {
     width: 100%;
     margin: 0 auto;
@@ -145,7 +149,7 @@ body {
 
 .section_title {
     font-family: 'HSSantokki-Regular';
-    font-size: 42px;
+    font-size: 46px;
     font-weight: 600;
     color: #5c068c;
     margin-bottom: 40px;
@@ -189,7 +193,7 @@ body {
 .menu_slider {
     position: relative;
     width: 100%;
-    min-width: 320px;
+    max-width: 1024px;
     display: none;
 }
 
@@ -270,7 +274,8 @@ body {
 }
 
 .brand_story .cont {
-    width: 100%;
+    width: 85%;
+    min-width: 320px;
     min-height: 170px;
     margin: 14px;
     border-top-right-radius: 20px;
@@ -319,6 +324,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .franchise .container_inner {
@@ -455,5 +462,10 @@ body {
     100% {
         transform: translate(-200%, 0)
     }
+}
+
+/* scroll indicator */
+.fullpage-nav {
+    display: none;
 }
 

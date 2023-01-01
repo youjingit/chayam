@@ -20,3 +20,20 @@
     background-color: inherit;
     border-color: inherit;
 }
+
+.card-title,
+.price_text {
+    font-size: 20px;
+}
+
+@media (max-width: 640px) {
+    .card-title,
+    .price_text,
+    .btn {
+        font-size: 16px;
+    }
+
+    .store_addr {
+        font-size: 12px;
+    }
+}

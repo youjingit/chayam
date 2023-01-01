@@ -155,7 +155,6 @@
     .menu_slider {
         margin-top: -72px;
         margin-left: 50px;
-        min-width: 1024px;
     }
 
     .menuSwiper .swiper-slide {
@@ -276,4 +275,42 @@
     .sns {
         margin: 72px 0;
     }
+
+    /* scroll indicator */
+    .fullpage-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        z-index: 10;
+        width: 23px;
+        top: 50%;
+        right: 60px;
+        margin-top: -95px;
+        justify-content: space-between;
+        background-color: #eee6;
+        border-radius: 8px;
+        padding: 0px 14px;
+    }
+
+    .fullpage-nav-current,
+    .fullpage-nav-total {
+        color: #2a1700;
+        font-weight: 800;
+        padding: 10px 0;
+    }
+    
+    .fullpage-nav-progress {
+        width: 4px;
+        height: 120px;
+        background-color: #c1c1c1;
+    }
+
+    .fullpage-nav-progress-active {
+        display: block;
+        width: 4px;
+        background-color: #5c068c;
+        transition: all .5s cubic-bezier(0.16, 0.04, 0.03, 0.95);
+    }
 }
+

@@ -228,8 +228,8 @@ mysqli_close($dbcon);
                                 주문 매장
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center px-4 py-4">
-                                <a href="#" class="btn btn-outline-primary">매장 선택</a>
-                                <p class="card-text">AK 금정점 (경기도 군포시 금정동 689 AK플라자 금정점 2층)</p>
+                                <a href="#" class="btn btn-outline-primary text-nowrap my-2">매장 선택</a>
+                                <p class="card-text store_addr">AK 금정점 (경기도 군포시 금정동 689 AK플라자 금정점 2층)</p>
                             </div>
                         </div>
                         <div class="card my-3">
@@ -244,8 +244,8 @@ mysqli_close($dbcon);
                                 <div class="col-8">
                                     <div class="card-body pe-5 py-4">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h5 class="card-title fs-4 mb-0"><?php echo $array['p_name']; ?></h5>
-                                            <span class="card-text fs-4"><?php echo $array['price']; ?> 원</span>
+                                            <h5 class="card-title mb-0"><?php echo $array['p_name']; ?></h5>
+                                            <span class="card-text price_text"><?php echo $array['price']; ?> 원</span>
                                         </div>
                                         <p class="card-text option_txt">
                                             <small class="text-muted">
@@ -269,8 +269,8 @@ mysqli_close($dbcon);
                             <div class="card-body px-4 py-4">
                                 <p><small class="text-muted">(1,500P 이상 적립 시 사용가능)</small></p>
                                 <div class="d-flex align-items-center">
-                                    <p>잔여 포인트 <span class="text-danger me-4">0P</span></p>
-                                    <label for="point">포인트 사용</label>
+                                    <p class="text-nowrap">잔여 포인트 <span class="text-danger me-4">0P</span></p>
+                                    <label for="point" class="text-nowrap">포인트 사용</label>
                                     <input type="text" name="point" id="point" class="mx-2" placeholder="포인트 입력">P
                                 </div>
                             </div>

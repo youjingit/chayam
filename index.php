@@ -476,6 +476,16 @@ include "inc/session.php";
                 </footer>
             </div>
         </div>
+        <!-- scroll indicator -->
+        <div class="fullpage-nav">
+            <span class="fullpage-nav-current">01</span>
+
+            
+            <span class="fullpage-nav-progress">
+                <em class="fullpage-nav-progress-active"></em>
+            </span>
+            <span class="fullpage-nav-total">04</span>
+        </div>
     </main>
 
     <script src="/chayam/assets/libs/jquery-3.6.1.min.js"></script> 
@@ -485,6 +495,9 @@ include "inc/session.php";
     <script src="/chayam/assets/js/header.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var total_page_num=$('#fullpage').find('.section').length;
+            $('.fullpage-nav-progress-active').css({'height':(1 / (total_page_num-1)) * 100 + '%'});
+
             // fullpage 실행
             $("#fullpage").fullpage({
                 lockAnchors: true,
@@ -492,6 +505,17 @@ include "inc/session.php";
                 responsiveWidth: 1024,
                 afterRender: function(){
                     new WOW().init();
+                },
+                //scrollbar indicator
+                onLeave: function(index, nextIndex, direction){
+                    if(nextIndex === total_page_num){
+                        $('.fullpage-nav-progress-active').css({'height': '100%'});
+                        return;
+                    } 
+                    $('.fullpage-nav-progress-active').css({'height':(nextIndex / (total_page_num-1)) * 100 + '%'});
+
+                    var strNextIndex = '0' + nextIndex;
+                    $('.fullpage-nav-current').text(strNextIndex);
                 }
             });
 
@@ -502,6 +526,7 @@ include "inc/session.php";
                 // },
                 slidesPerView: 1,
                 loop: true,
+                effect: 'fade',
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
@@ -563,6 +588,8 @@ include "inc/session.php";
             });
         }
 
+        
+
         //menu_subtitle 클릭 시 해당 메뉴 슬라이더 보이기
         var subTitleEls = $(".menu_subtitle");
 
@@ -575,7 +602,6 @@ include "inc/session.php";
             menuSlider.removeClass("active");
 
             $(targetId).addClass("active");
-
         });
 
     </script>
