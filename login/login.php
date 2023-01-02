@@ -26,9 +26,9 @@
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
+                    <li class="depth_1"><a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="../product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -65,7 +65,7 @@
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
                 <li><a href="#">로그인</a></li>
-                <li><a href="../members/join.php">회원가입</a></li>
+                <li><a href="/chayam/members/join.php">회원가입</a></li>
             </ul>
         </div>
         <div>
@@ -88,7 +88,7 @@
                         </li>
                         <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
-                                <li><a href="../product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -126,7 +126,7 @@
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
                     <li><a href="#">로그인</a></li>
-                    <li><a href="../members/join.php">회원가입</a></li>
+                    <li><a href="/chayam/members/join.php">회원가입</a></li>
                 </ul>
             </div>
         </div>
@@ -150,7 +150,7 @@
                             </div>
                             <div class="btn_wrap">
                                 <button type="submit" name="login_btn" id="login_btn">로그인</button>
-                                <button type="button" name="join_btn" id="join_btn" onclick="location.href='../members/join.php'">회원가입</button>
+                                <button type="button" name="join_btn" id="join_btn" onclick="location.href='./chayam/members/join.php'">회원가입</button>
                             </div>
                         </section>
                     </fieldset>

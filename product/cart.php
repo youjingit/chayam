@@ -130,16 +130,16 @@ mysqli_close($dbcon);
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="../members/join.php">회원가입</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
+                    <li><a href="/chayam/members/join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                 <?php }; ?>    
             </ul>
         </div>
@@ -202,16 +202,16 @@ mysqli_close($dbcon);
                 <ul>
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="../login/login.php">로그인</a></li>
-                        <li><a href="../members/join.php">회원가입</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/chayam/members/join.php">회원가입</a></li>
                     <?php } else if($s_id == "admin1234"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                     <?php }; ?>    
                 </ul>
             </div>

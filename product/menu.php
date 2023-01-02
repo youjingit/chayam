@@ -111,16 +111,16 @@ mysqli_close($dbcon);
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="../members/join.php">회원가입</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
+                    <li><a href="/chayam/members/join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                 <?php }; ?>    
             </ul>
         </div>
@@ -183,16 +183,16 @@ mysqli_close($dbcon);
                 <ul>
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="../login/login.php">로그인</a></li>
-                        <li><a href="../members/join.php">회원가입</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/chayam/members/join.php">회원가입</a></li>
                     <?php } else if($s_id == "admin1234"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                     <?php }; ?>    
                 </ul>
             </div>
@@ -221,9 +221,9 @@ mysqli_close($dbcon);
                         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
                             aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-end mt-3">
-                                <li class="breadcrumb-item"><a href="#">HOME</a></li>
+                                <li class="breadcrumb-item"><a href="/chayam/index.php">HOME</a></li>
                                 <li class="breadcrumb-item active" aria-current="page"><a href="#">MENU</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><a href="../product/menu.php">MILK TEA</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"><a href="#">MILK TEA</a></li>
                             </ol>
                         </nav>
                         <h3 class="fs-1 fw-bold text-center wow fadeInUp" data-wow-delay="0s" data-wow-offset="10">MILK TEA</h3>

@@ -149,7 +149,7 @@ body {
 
 .section_title {
     font-family: 'HSSantokki-Regular';
-    font-size: 46px;
+    font-size: 50px;
     font-weight: 600;
     color: #5c068c;
     margin-bottom: 40px;
@@ -274,7 +274,6 @@ body {
 }
 
 .brand_story .cont {
-    width: 85%;
     min-width: 320px;
     min-height: 170px;
     margin: 14px;

@@ -99,7 +99,7 @@
     }
 
     .section_title {
-        font-size: 90px;
+        font-size: 80px;
     }
 
     .section_title:after {
@@ -134,7 +134,7 @@
     }
 
     .brand_story .cont {
-        margin: 14px;
+        min-width: 440px;
     }
 
     /* franchise */

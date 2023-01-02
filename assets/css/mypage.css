@@ -38,3 +38,15 @@
         width: 340px;
     }
 }
+
+@media (max-width: 640px) {
+    .order_history {
+        font-size: 12px;
+    }
+
+    .stamp_info,
+    .coupon_info,
+    .point_notice {
+        font-size: 14px;
+    }
+}

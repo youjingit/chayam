@@ -43,9 +43,9 @@ $array = mysqli_fetch_array($result);
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
+                    <li class="depth_1"><a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="../product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -81,7 +81,7 @@ $array = mysqli_fetch_array($result);
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="../login/login.php">로그인</a></li>
+                <li><a href="/chayam/login/login.php">로그인</a></li>
                 <li><a href="join.php">회원가입</a></li>
             </ul>
         </div>
@@ -105,7 +105,7 @@ $array = mysqli_fetch_array($result);
                         </li>
                         <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
-                                <li><a href="../product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -142,7 +142,7 @@ $array = mysqli_fetch_array($result);
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
                 </ul>
             </div>
@@ -156,7 +156,7 @@ $array = mysqli_fetch_array($result);
                     <p class="fs-2 fw-bold text-center text-nowrap"><span><?php echo $array["u_name"];?></span>님, 가입이 완료되었습니다!</p>
                     <img src="/chayam/assets/images/chayaming.png" class="my-4" width="93px" alt="차야밍">
                     <a href="../index.php" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
-                    <a href="../login/login.php" class="btn btn-lg w-50 btn-primary mt-4">로그인</a>
+                    <a href="/chayam/login/login.php" class="btn btn-lg w-50 btn-primary mt-4">로그인</a>
                 </div>
             </div>
         </div>

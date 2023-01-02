@@ -16,7 +16,6 @@ include "inc/session.php";
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments.css">
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/fragments_640.css">
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_460.css">
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_640.css">
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_1024.css">
     <link rel="stylesheet" type="text/css" href="/chayam/assets/css/index_1200.css">
@@ -38,9 +37,9 @@ include "inc/session.php";
                         </ul>
                     </li>
                     <li class="depth_1">
-                        <a href="./product/menu.php">메뉴</a>
+                        <a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="./product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -82,16 +81,16 @@ include "inc/session.php";
             <ul>
             <?php if(!$s_idx){ ?>
                 <!-- 로그인 전 -->
-                <li><a href="./login/login.php">로그인</a></li>
-                <li><a href="./members/join.php">회원가입</a></li>
+                <li><a href="/chayam/login/login.php">로그인</a></li>
+                <li><a href="/chayam/members/join.php">회원가입</a></li>
             <?php } else if($s_id == "admin1234"){ ?>
                 <!-- 관리자 로그인 -->
-                <li><a href="./login/logout.php">로그아웃</a></li>
-                <li><a href="./admin/index.php">관리자 페이지</a></li>
+                <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
             <?php } else{ ?>
                 <!-- 로그인 후 -->   
-                <li><a href="./login/logout.php">로그아웃</a></li>
-                <li><a href="./members/mypage.php">마이페이지</a></li>
+                <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
             <?php }; ?>    
             </ul>
         </div>
@@ -117,7 +116,7 @@ include "inc/session.php";
                         <li class="allmenu_depth_1">
                             <a href="#">메뉴</a>
                             <ul>
-                                <li><a href="./product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -160,16 +159,16 @@ include "inc/session.php";
                 <ul>
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="./login/login.php">로그인</a></li>
-                        <li><a href="./members/join.php">회원가입</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/chayam/members/join.php">회원가입</a></li>
                     <?php } else if($s_id == "admin1234"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="./login/logout.php">로그아웃</a></li>
-                        <li><a href="./admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="./login/logout.php">로그아웃</a></li>
-                        <li><a href="./members/my_page.php">마이페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/members/my_page.php">마이페이지</a></li>
                     <?php }; ?>    
                 </ul>
             </div>
@@ -230,7 +229,7 @@ include "inc/session.php";
                         <h2 class="hide">CHAYAM ORDER</h2>
                         <div class="chayam_order_img"></div>
                         <ul>
-                            <li><a href="#"><i class="quick_i order"></i><span>주문</span></a></li>
+                            <li><a href="/chayam/product/menu.php"><i class="quick_i order"></i><span>주문</span></a></li>
                             <li><a href="#"><i class="quick_i barcode"></i><span>멤버십</span></a></li>
                             <li><a href="#"><i class="quick_i stamp"></i><span>적립</span></a></li>
                             <li><a href="#"><i class="quick_i coupon"></i><span>쿠폰</span></a></li>
@@ -357,6 +356,7 @@ include "inc/session.php";
                             <a href="#"><span>가맹상담신청</span></a>
                         </div>
                     </div>
+
                     <div class="franchise_cont_wrap">
                         <div class="franchise_cont_item">
                             <dl>
@@ -479,8 +479,6 @@ include "inc/session.php";
         <!-- scroll indicator -->
         <div class="fullpage-nav">
             <span class="fullpage-nav-current">01</span>
-
-            
             <span class="fullpage-nav-progress">
                 <em class="fullpage-nav-progress-active"></em>
             </span>
@@ -521,9 +519,9 @@ include "inc/session.php";
 
             // 메인 이미지 슬라이드
             var swiper = new Swiper(".mySwiper", {
-                // autoplay: {
-                //     delay: 3000,
-                // },
+                autoplay: {
+                    delay: 3000,
+                },
                 slidesPerView: 1,
                 loop: true,
                 effect: 'fade',

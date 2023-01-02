@@ -28,9 +28,9 @@
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
+                    <li class="depth_1"><a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="../product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -66,7 +66,7 @@
         <div class="top_menu">
             <h2 class="hide">사용자 메뉴</h2>
             <ul>
-                <li><a href="../login/login.php">로그인</a></li>
+                <li><a href="/chayam/login/login.php">로그인</a></li>
                 <li><a href="#">회원가입</a></li>
             </ul>
         </div>
@@ -90,7 +90,7 @@
                         </li>
                         <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
-                                <li><a href="../product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -127,7 +127,7 @@
             <div class="allmenu_user_menu">
                 <h2 class="hide">사용자 메뉴</h2>
                 <ul>
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </div>

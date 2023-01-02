@@ -129,16 +129,16 @@ mysqli_close($dbcon);
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="../members/join.php">회원가입</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
+                    <li><a href="/chayam/members/join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                 <?php }; ?>     
             </ul>
         </div>
@@ -201,16 +201,16 @@ mysqli_close($dbcon);
                 <ul>
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="../login/login.php">로그인</a></li>
-                        <li><a href="../members/join.php">회원가입</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/chayam/members/join.php">회원가입</a></li>
                     <?php } else if($s_id == "admin1234"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                     <?php }; ?>    
                 </ul>
             </div>
@@ -228,7 +228,7 @@ mysqli_close($dbcon);
                                 주문 매장
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center px-4 py-4">
-                                <a href="#" class="btn btn-outline-primary text-nowrap my-2">매장 선택</a>
+                                <a href="#" class="btn btn-outline-primary text-nowrap mx-2">매장 선택</a>
                                 <p class="card-text store_addr">AK 금정점 (경기도 군포시 금정동 689 AK플라자 금정점 2층)</p>
                             </div>
                         </div>
@@ -268,10 +268,12 @@ mysqli_close($dbcon);
                             </div>
                             <div class="card-body px-4 py-4">
                                 <p><small class="text-muted">(1,500P 이상 적립 시 사용가능)</small></p>
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center point_wrap">
                                     <p class="text-nowrap">잔여 포인트 <span class="text-danger me-4">0P</span></p>
-                                    <label for="point" class="text-nowrap">포인트 사용</label>
-                                    <input type="text" name="point" id="point" class="mx-2" placeholder="포인트 입력">P
+                                    <div>
+                                        <label for="point" class="text-nowrap">포인트 사용</label>
+                                        <input type="text" name="point" id="point" class="mx-2" placeholder="포인트 입력">P
+                                    </div>
                                 </div>
                             </div>
                         </div>

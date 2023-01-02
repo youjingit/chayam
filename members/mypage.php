@@ -78,9 +78,9 @@ mysqli_close($dbcon);
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
+                    <li class="depth_1"><a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="../product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -118,15 +118,15 @@ mysqli_close($dbcon);
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
                     <li><a href="#">마이페이지</a></li>
                 <?php }; ?>    
             </ul>
@@ -151,7 +151,7 @@ mysqli_close($dbcon);
                         </li>
                         <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
-                                <li><a href="../product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -190,15 +190,15 @@ mysqli_close($dbcon);
                 <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
                     <li><a href="#">마이페이지</a></li>
                 <?php }; ?>    
                 </ul>
@@ -221,7 +221,7 @@ mysqli_close($dbcon);
                                 <?php } else { ?>
                                 <?php       while($array1 = mysqli_fetch_array($result1)) { ?>
                                     <div class="card-body">
-                                        <table class="table ">
+                                        <table class="table order_history">
                                             <thead class="bg-light">
                                                 <tr>
                                                     <th>주문일시</th>
@@ -262,8 +262,8 @@ mysqli_close($dbcon);
                                         }
                                     ?>
                                 </div>
-                                <p class="card-text">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
-                                <p class="card-text">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
+                                <p class="card-text stamp_info">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
+                                <p class="card-text stamp_info">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
                             </div>
                         </div>
                     </div>
@@ -284,7 +284,7 @@ mysqli_close($dbcon);
                             </div>
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <p class="card-text"><span class="text-danger fs-4">1,500</span> P</p>
+                                    <p class="card-text"><span class="text-danger fs-4">0</span> P</p>
                                     <a href="#" class="btn btn-outline-primary btn-sm">적립/사용내역</a>
                                 </div>
                                 <ul class="point_notice mt-2">
@@ -302,7 +302,7 @@ mysqli_close($dbcon);
                                 보유 쿠폰
                             </div>
                             <div class="card-body">
-                                <p class="card-text">현재 보유중인 쿠폰이 없습니다.</p>
+                                <p class="card-text coupon_info">현재 보유중인 쿠폰이 없습니다.</p>
                             </div>
                         </div>
                     </div>

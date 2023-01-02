@@ -32,9 +32,9 @@ include "../inc/session.php";
                             <li><a href="#">브랜드 경쟁력</a></li>
                         </ul>
                     </li>
-                    <li class="depth_1"><a href="../product/menu.php">메뉴</a>
+                    <li class="depth_1"><a href="/chayam/product/menu.php">메뉴</a>
                         <ul>
-                            <li><a href="../product/menu.php">MILK TEA</a></li>
+                            <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                             <li><a href="#">COFFEE</a></li>
                             <li><a href="#">TEA</a></li>
                         </ul>
@@ -72,15 +72,15 @@ include "../inc/session.php";
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
                     <li><a href="mypage.php">마이페이지</a></li>
                 <?php }; ?>  
             </ul>
@@ -105,7 +105,7 @@ include "../inc/session.php";
                         </li>
                         <li class="allmenu_depth_1"><a href="#">MENU</a>
                             <ul>
-                                <li><a href="../product/menu.php">MILK TEA</a></li>
+                                <li><a href="/chayam/product/menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
                                 <li><a href="#">TEA</a></li>
                             </ul>
@@ -144,15 +144,15 @@ include "../inc/session.php";
                 <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
                     <li><a href="join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
                     <li><a href="mypage.php">마이페이지</a></li>
                 <?php }; ?>    
                 </ul>

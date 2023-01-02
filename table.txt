@@ -356,6 +356,13 @@ create table stamp(
 
 
 
+
+
+create database chayam
+default character set utf8
+default collate utf8_general_ci;
+
+
 select 
 format (
     sum(

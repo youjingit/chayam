@@ -7,8 +7,40 @@
         padding: 0 20px;
     }
 
+    .brand_story .section_title {
+        text-align: right;
+    }
+
+    .brand_story .cont_wrap {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
     .brand_story .cont {
-        height: 450px;
+        min-width: 340px;
+        width: 340px;
+        height: 400px;
+    }
+
+    .brand_story .cont:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .cont_subtitle {
+        height: 40%;
+        line-height: 60px;
+        padding: 0;
+    }
+
+    .cont_subtitle span {
+        font-size: 36px;
+    }
+
+    .brand_story .cont ul {
+        line-height: 55px;
+        font-size: 26px;
+        padding: 38px 0;
     }
 }
 

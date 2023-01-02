@@ -71,16 +71,16 @@ include "../inc/session.php";
             <ul>
                 <?php if(!$s_idx){ ?>
                     <!-- 로그인 전 -->
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="../members/join.php">회원가입</a></li>
+                    <li><a href="/chayam/login/login.php">로그인</a></li>
+                    <li><a href="/chayam/members/join.php">회원가입</a></li>
                 <?php } else if($s_id == "admin1234"){ ?>
                     <!-- 관리자 로그인 -->
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../admin/index.php">관리자 페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                 <?php } else{ ?>
                     <!-- 로그인 후 -->   
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                    <li><a href="../members/mypage.php">마이페이지</a></li>
+                    <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                    <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                 <?php }; ?>      
             </ul>
         </div>
@@ -143,16 +143,16 @@ include "../inc/session.php";
                 <ul>
                     <?php if(!$s_idx){ ?>
                         <!-- 로그인 전 -->
-                        <li><a href="../login/login.php">로그인</a></li>
-                        <li><a href="../members/join.php">회원가입</a></li>
+                        <li><a href="/chayam/login/login.php">로그인</a></li>
+                        <li><a href="/chayam/members/join.php">회원가입</a></li>
                     <?php } else if($s_id == "admin1234"){ ?>
                         <!-- 관리자 로그인 -->
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../admin/index.php">관리자 페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/admin/index.php">관리자 페이지</a></li>
                     <?php } else{ ?>
                         <!-- 로그인 후 -->   
-                        <li><a href="../login/logout.php">로그아웃</a></li>
-                        <li><a href="../members/mypage.php">마이페이지</a></li>
+                        <li><a href="/chayam/login/logout.php">로그아웃</a></li>
+                        <li><a href="/chayam/members/mypage.php">마이페이지</a></li>
                     <?php }; ?>      
                 </ul>
             </div>
@@ -164,10 +164,10 @@ include "../inc/session.php";
                 <h2 class="hide">주문완료</h2>
                 <div class="d-flex flex-column align-items-center">
                     <p class="fs-2 fw-bold text-center text-nowrap">주문이 완료되었습니다.</p>
-                    <p class="fs-5 text-center text-nowrap">마이페이지에서 주문내역을 확인하실 수 있습니다.</p>
+                    <p class="text-center text-nowrap mypage_info"><span>주문내역은 마이페이지에서 </span><span>확인하실 수 있습니다.</span></p>
                     <img src="/chayam/assets/images/chayaming.png" class="my-4" width="93px" alt="차야밍">
-                    <a href="/chayam/index.php" class="btn btn-lg w-50 btn-outline-primary mt-4">홈으로</a>
-                    <a href="/chayam/members/mypage.php" class="btn btn-lg w-50 btn-primary mt-4">마이페이지</a>
+                    <a href="/chayam/index.php" class="btn btn-lg w-50 btn-outline-primary mt-4 text-nowrap">홈으로</a>
+                    <a href="/chayam/members/mypage.php" class="btn btn-lg w-50 btn-primary mt-4 text-nowrap">마이페이지</a>
                 </div>
             </div>
         </div>
