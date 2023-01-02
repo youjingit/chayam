@@ -20,7 +20,7 @@ $reg_date = date("Y-m-d");
 
 include "../inc/dbcon.php";
 
-$sql = "insert into members(";
+$sql = "insert into chayam_members(";
 $sql .= "u_id, pwd, u_name, ";
 $sql .= "mobile, email, ps_code, ";
 $sql .= "addr_b, addr_d, addr_ref, ";

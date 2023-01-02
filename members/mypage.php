@@ -9,7 +9,7 @@ include "../inc/login_check.php";
 include "../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select coalesce(min(t1.count), 0) as count from stamp t1 where t1.u_id= '$s_id';";
+$sql = "select coalesce(min(t1.count), 0) as count from chayam_stamp t1 where t1.u_id= '$s_id';";
 
 // 쿼리 실행
 $result = mysqli_query($dbcon, $sql);
@@ -19,9 +19,9 @@ $sql1 = "select ";
 $sql1 .= "format ( ";
 $sql1 .= "sum(";
 $sql1 .= "    t1.count * case t1.size ";
-$sql1 .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
-$sql1 .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
-$sql1 .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql1 .= "        when 's' then (replace(t2.s_price, ',', '') + 0) ";
+$sql1 .= "        when 'm' then (replace(t2.m_price, ',', '') + 0) ";
+$sql1 .= "        else (replace(t2.l_price, ',', '') + 0) ";
 $sql1 .= "    end ";
 $sql1 .= "    + case t1.pearl when 'y' then 500 else 0 end ";
 $sql1 .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
@@ -30,7 +30,7 @@ $sql1 .= "    ), ";
 $sql1 .= "    0 ";
 $sql1 .= ") as total_price, t1.o_id, min(t1.reg_date) as reg_date ";
 $sql1 .= "from" ;
-$sql1 .= "   orders t0, orders_detail t1, products t2 ";
+$sql1 .= "   chayam_orders t0, chayam_orders_detail t1, chayam_products t2 ";
 $sql1 .= "where ";
 $sql1 .= "   t0.u_id = '$s_id' ";
 $sql1 .= "   and t0.o_id = t1.o_id ";

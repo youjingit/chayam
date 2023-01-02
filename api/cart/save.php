@@ -13,7 +13,7 @@ $jelly = $_POST["jelly"];
 include "../../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "insert into cart (";
+$sql = "insert into chayam_cart (";
 $sql .= "   u_id,";
 $sql .= "   p_id,";
 $sql .= "   count,";

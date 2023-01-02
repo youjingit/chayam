@@ -17,7 +17,7 @@ $email_agree = @$_POST["email_agree"] == "y" ? "y" : "n";
 include "../inc/dbcon.php";
 
 // 비밀번호를 입력한 경우
-$sql = "update members set ";
+$sql = "update chayam_members set ";
 $sql .= "pwd='$pwd', ";
 $sql .= "mobile='$mobile', ";
 $sql .= "email='$email', ";
@@ -26,7 +26,7 @@ $sql .= "collect_agree='$collect_agree', mkt_agree='$mkt_agree', sms_agree='$sms
 $sql .= "where idx=$s_idx;";
 
 //비밀번호를 입력하지 않은 경우
-$sql_nPwd = "update members set mobile='$mobile', email='$email', ps_code='$ps_code', addr_b='$addr_b', addr_d='$addr_d', addr_ref='$addr_ref', collect_agree='$collect_agree', mkt_agree='$mkt_agree', sms_agree='$sms_agree', email_agree='$email_agree' where idx=$s_idx;";
+$sql_nPwd = "update chayam_members set mobile='$mobile', email='$email', ps_code='$ps_code', addr_b='$addr_b', addr_d='$addr_d', addr_ref='$addr_ref', collect_agree='$collect_agree', mkt_agree='$mkt_agree', sms_agree='$sms_agree', email_agree='$email_agree' where idx=$s_idx;";
 
 // 쿼리 전송
 // mysqli_query(DB 연결객체, 전송할 쿼리)

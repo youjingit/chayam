@@ -23,17 +23,17 @@ function makeJson($result){
 }
 
 //milktea
-$sql1 = "select * from products where p_cate='milktea';";
+$sql1 = "select * from chayam_products where p_cate='milktea';";
 $result1 = mysqli_query($dbcon, $sql1);
 $json1 = makeJson($result1);
 
 //coffee
-$sql2 = "select * from products where p_cate='coffee';";
+$sql2 = "select * from chayam_products where p_cate='coffee';";
 $result2 = mysqli_query($dbcon, $sql2);
 $json2 = makeJson($result2);
 
 //tea
-$sql3 = "select * from products where p_cate='tea';";
+$sql3 = "select * from chayam_products where p_cate='tea';";
 $result3 = mysqli_query($dbcon, $sql3);
 $json3 = makeJson($result3);
 
@@ -142,7 +142,7 @@ mysqli_close($dbcon);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">메뉴</a>
                             <ul>
                                 <li><a href="javascript:void(0);">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
@@ -608,7 +608,7 @@ mysqli_close($dbcon);
             var s_idx = '<?php echo $s_idx?>';
             if(!s_idx){
                 alert("로그인이 필요한 서비스입니다.");
-                location.href = "http://localhost/chayam/login/login.php";
+                location.href = "/chayam/login/login.php";
                 return;
             }
 

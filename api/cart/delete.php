@@ -6,7 +6,7 @@ $c_id = $_POST["c_id"];
 include "../../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "delete from cart where c_id = '$c_id' ";
+$sql = "delete from chayam_cart where c_id = '$c_id' ";
 
 try {
     mysqli_query($dbcon, $sql);

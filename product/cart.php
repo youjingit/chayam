@@ -8,9 +8,9 @@ include "../inc/dbcon.php";
 $sql = "select t1.*, t2.*, "; 
 $sql .= "format ( ";
 $sql .= "    t1.count * case t1.size ";
-$sql .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
-$sql .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
-$sql .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql .= "        when 's' then (replace(t2.s_price, ',', '') + 0) ";
+$sql .= "        when 'm' then (replace(t2.m_price, ',', '') + 0) ";
+$sql .= "        else (replace(t2.l_price, ',', '') + 0) ";
 $sql .= "    end ";
 $sql .= "    + case t1.pearl when 'y' then 500 else 0 end ";
 $sql .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
@@ -18,7 +18,7 @@ $sql .= "    + case t1.jelly when 'y' then 500 else 0 end, ";
 $sql .= "    0 ";
 $sql .= ") as price ";
 $sql .= "from" ;
-$sql .= "   cart t1, products t2 ";
+$sql .= "   chayam_cart t1, chayam_products t2 ";
 $sql .= "where ";
 $sql .= "   t1.u_id = '$s_id' ";
 $sql .= "   and t1.p_id = t2.p_id ;";
@@ -31,9 +31,9 @@ $sql1 = "select ";
 $sql1 .= "format ( ";
 $sql1 .= "sum(";
 $sql1 .= "    t1.count * case t1.size ";
-$sql1 .= "        when 's' then cast(replace(t2.s_price, ',', '') as int) ";
-$sql1 .= "        when 'm' then cast(replace(t2.m_price, ',', '') as int) ";
-$sql1 .= "        else cast(replace(t2.l_price, ',', '') as int) ";
+$sql1 .= "        when 's' then (replace(t2.s_price, ',', '') + 0) ";
+$sql1 .= "        when 'm' then (replace(t2.m_price, ',', '') + 0) ";
+$sql1 .= "        else (replace(t2.l_price, ',', '') + 0) ";
 $sql1 .= "    end ";
 $sql1 .= "    + case t1.pearl when 'y' then 500 else 0 end ";
 $sql1 .= "    + case t1.cheeze when 'y' then 500 else 0 end ";
@@ -42,7 +42,7 @@ $sql1 .= "    ), ";
 $sql1 .= "    0 ";
 $sql1 .= ") as total_price ";
 $sql1 .= "from" ;
-$sql1 .= "   cart t1, products t2 ";
+$sql1 .= "   chayam_cart t1, chayam_products t2 ";
 $sql1 .= "where ";
 $sql1 .= "   t1.u_id = '$s_id' ";
 $sql1 .= "   and t1.p_id = t2.p_id ";
@@ -161,7 +161,7 @@ mysqli_close($dbcon);
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">메뉴</a>
                             <ul>
                                 <li><a href="menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>

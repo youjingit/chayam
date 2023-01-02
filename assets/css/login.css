@@ -11,6 +11,7 @@
 .login_container {
     max-width: 437px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .login_container p{ 

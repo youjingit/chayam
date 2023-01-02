@@ -1,4 +1,4 @@
-create table members(
+create table chayam_members(
     idx int auto_increment primary key,
     u_id varchar(20) not null unique,
     pwd varchar(16) not null,
@@ -16,7 +16,7 @@ create table members(
     reg_date datetime
 );
 
-insert into members(
+insert into chayam_members(
     u_id, pwd, u_name,
     mobile, email, ps_code,
     addr_b, addr_d, addr_ref,
@@ -28,7 +28,7 @@ insert into members(
     'y', 'y', 'y', 'y', '2022-12-15' 
 );
 
-insert into members(
+insert into chayam_members(
     u_id, pwd, u_name,
     mobile, email, ps_code,
     addr_b, addr_d, addr_ref,
@@ -42,7 +42,7 @@ insert into members(
 
 ---------------------------------------------------------------------------
 
-create table products(
+create table chayam_products(
     p_id int auto_increment primary key,
     p_cate varchar(10) not null,
     p_name varchar(15) not null,
@@ -53,7 +53,7 @@ create table products(
     reg_date datetime default now()
 );
 
-insert into products(
+insert into chayam_products(
     p_cate,
     p_name,
     p_image,
@@ -307,7 +307,7 @@ insert into products(
 
 -----------------------------------------------------------------------------
 
-create table cart(
+create table chayam_cart(
     c_id int auto_increment primary key,
     u_id varchar(20) not null,
     p_id int not null,
@@ -323,7 +323,7 @@ create table cart(
 
 -----------------------------------------------------------------------------
 
-create table orders(
+create table chayam_orders(
     o_id varchar(20) primary key,
     u_id varchar(20) not null,
     reg_date datetime not null
@@ -332,7 +332,7 @@ create table orders(
 
 -----------------------------------------------------------------------------
 
-create table orders_detail(
+create table chayam_orders_detail(
     idx int auto_increment primary key,
     o_id varchar(20) not null,
     p_id int not null,
@@ -348,7 +348,7 @@ create table orders_detail(
 
 ------------------------------------------------------------------------------
 
-create table stamp(
+create table chayam_stamp(
     u_id varchar(20) primary key,
     count int not null
 );
@@ -388,4 +388,4 @@ t1.u_id = '$s_id'
 and 
 
 
-insert into stamp ( u_id, count ) select 'vuejsss', ( select sum(x1.count) FROM orders_detail x1 where x1.o_id = '63ad752f9bf9d' group by x1.o_id ) where not exists ( select 1 from stamp x1 where x1.u_id = 'vuejsss' );
+insert into stamp ( u_id, count ) select 'vuejsss', ( select sum(x1.count) FROM chayam_orders_detail x1 where x1.o_id = '63ad752f9bf9d' group by x1.o_id ) where not exists ( select 1 from chayam_stamp x1 where x1.u_id = 'vuejsss' );

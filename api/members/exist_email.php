@@ -6,7 +6,7 @@ $email = $_GET["email"];
 include "../../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select email from members where email='$email';";
+$sql = "select email from chayam_members where email='$email';";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);

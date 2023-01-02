@@ -355,8 +355,7 @@ include "inc/session.php";
                             <strong>"茶원이 다른 창업 차얌,<br>런칭 1개월만의 20호점 가맹 계약 돌파!"</strong>
                             <a href="#"><span>가맹상담신청</span></a>
                         </div>
-                    </div>
-
+                    </div>    
                     <div class="franchise_cont_wrap">
                         <div class="franchise_cont_item">
                             <dl>
@@ -371,7 +370,6 @@ include "inc/session.php";
                                 <dt>차얌 수원정자점</dt>
                                 <dd>
                                     <img src="/chayam/assets/images/franchise2.png" alt="차얌 수원정자점">
-
                                 </dd>
                             </dl>
                         </div>
@@ -380,7 +378,6 @@ include "inc/session.php";
                                 <dt>차얌 군포송정점</dt>
                                 <dd>
                                     <img src="/chayam/assets/images/franchise3.png" alt="차얌 군포송정점">
-
                                 </dd>
                             </dl>
                         </div>
@@ -415,6 +412,58 @@ include "inc/session.php";
                                     <img src="/chayam/assets/images/franchise7.png" alt="차얌 광교호수공원점">
                                 </dd>
                             </dl>
+                        </div>
+                    </div>
+                    <div class="franchise_cont_dot_wrap">
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                    </div>
+                    <div class="franchise_cont_dot_wrap2">
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
+                        </div>
+                        <div class="franchise_cont_dot">
+                            <i></i>
                         </div>
                     </div>
                 </section>

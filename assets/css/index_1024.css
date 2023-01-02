@@ -161,6 +161,10 @@
         text-align: left;
     }
 
+    .menuSwiper .swiper-slide img {
+        width: 100%;
+    }
+
     .menu_pagination_wrap {
         position: absolute;
         bottom: 0;

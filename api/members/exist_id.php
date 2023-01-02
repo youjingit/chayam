@@ -6,7 +6,7 @@ $u_id = $_GET["u_id"];
 include "../../inc/dbcon.php";
 
 // 쿼리 작성
-$sql = "select u_id from members where u_id='$u_id';";
+$sql = "select u_id from chayam_members where u_id='$u_id';";
 
 // 쿼리 전송
 $result = mysqli_query($dbcon, $sql);

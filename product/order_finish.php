@@ -102,7 +102,7 @@ include "../inc/session.php";
                                 <li><a href="#">브랜드 경쟁력</a></li>
                             </ul>
                         </li>
-                        <li class="allmenu_depth_1"><a href="#">MENU</a>
+                        <li class="allmenu_depth_1"><a href="#">메뉴</a>
                             <ul>
                                 <li><a href="menu.php">MILK TEA</a></li>
                                 <li><a href="#">COFFEE</a></li>
