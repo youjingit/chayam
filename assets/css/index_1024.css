@@ -120,9 +120,6 @@
     }
 
     /* slide2 - chayam menu slider */
-    .container {
-        padding: 0;
-    }
 
     .chayam_menu .container {
         width: 80%;
@@ -137,6 +134,7 @@
 
     .section_title {
         font-size: 90px;
+        margin-bottom: 40px;
     }
 
     .section_title:after {
@@ -150,6 +148,7 @@
 
     .menu_subtitle {
         font-size: 70px;
+        padding-bottom: 26px;
     }
 
     .menu_slider {

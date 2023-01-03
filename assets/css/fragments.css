@@ -1,7 +1,3 @@
-main {
-    color: #2a1700;
-}
-
 .padding_top {
     padding-top: 80px;
 }
@@ -123,6 +119,12 @@ header:hover {
     margin-top: 20px;
 }
 
+/* main */
+
+main {
+    color: #2a1700;
+}
+
 /* footer */
 footer {
     background: #000;
@@ -181,6 +183,7 @@ footer {
 .notice_cont {
     padding: 4px 0;
     font-size: 12px;
+    white-space: nowrap;
 }
 
 .notice a:hover {

@@ -89,9 +89,6 @@
     }
 
     /* slide2 - chayam menu slider */
-    .container {
-        padding: 40px;
-    }
 
     .chayam_menu .container_inner {
         min-width: 640px;
@@ -131,6 +128,10 @@
 
     .brand_story .container {
         width: 640px;
+    }
+
+    .brand_story .section_title {
+        padding-top: 0;
     }
 
     .brand_story .cont {

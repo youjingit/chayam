@@ -441,28 +441,28 @@ include "inc/session.php";
                         </div>
                     </div>
                     <div class="franchise_cont_dot_wrap2">
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
-                        <div class="franchise_cont_dot">
+                        <div class="franchise_cont_dot2">
                             <i></i>
                         </div>
                     </div>
