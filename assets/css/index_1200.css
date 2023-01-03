@@ -1,4 +1,8 @@
 @media (min-width: 1200px) {
+    .brand_story {
+        padding: 0;
+    }
+    
     .brand_story .container {
         width: 1200px;
     }

@@ -262,8 +262,8 @@ mysqli_close($dbcon);
                                         }
                                     ?>
                                 </div>
-                                <p class="card-text stamp_info">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
-                                <p class="card-text stamp_info">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
+                                <p class="card-text stamp_info text-nowrap">스탬프 12개 적립 시 무료음료쿠폰 1개가 익일 발급됩니다.</p>
+                                <p class="card-text stamp_info text-nowrap">발행된 스탬프의 유효기간은 발행일로부터 1년입니다.</p>
                             </div>
                         </div>
                     </div>

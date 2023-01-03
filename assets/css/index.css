@@ -137,6 +137,7 @@ body {
 
 .chayam_menu {
     overflow-x: hidden;
+    padding: 20px 0;
 }
 
 .chayam_menu .container_inner {
@@ -257,6 +258,10 @@ body {
 /* slide3 - brand_story */
 #fullpage .section:nth-child(3) {
     background-color: #eedcc8;
+}
+
+.brand_story {
+    padding: 20px 0;
 }
 
 .brand_story .container {

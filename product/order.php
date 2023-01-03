@@ -263,59 +263,67 @@ mysqli_close($dbcon);
                             <?php } ?>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-6 card my-3">
-                                <div class="card-header fs-5 fw-bold ps-4">
-                                    포인트
-                                </div>
-                                <div class="card-body px-4 py-4">
-                                    <p><small class="text-muted">(1,500P 이상 적립 시 사용가능)</small></p>
-                                    <div class="d-flex align-items-center point_wrap">
-                                        <p class="text-nowrap">잔여 포인트 <span class="text-danger me-4">0P</span></p>
-                                        <div>
-                                            <label for="point" class="text-nowrap">포인트 사용</label>
-                                            <input type="text" name="point" id="point" class="mx-2" placeholder="포인트 입력">P
+                            <div class="col-12 col-lg-6">
+                                <div class="card my-3">
+                                    <div class="card-header fs-5 fw-bold ps-4">
+                                        포인트
+                                    </div>
+                                    <div class="card-body px-4 py-4">
+                                        <p><small class="text-muted">(1,500P 이상 적립 시 사용가능)</small></p>
+                                        <div class="d-flex align-items-center point_wrap">
+                                            <p class="text-nowrap">잔여 포인트 <span class="text-danger me-4">0P</span></p>
+                                            <div class="text-nowrap">
+                                                <label for="point" class="text-nowrap">포인트 사용</label>
+                                                <input type="text" name="point" id="point" class="mx-2" placeholder="포인트 입력">P
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 card my-3">
-                                <div class="card-header fs-5 fw-bold ps-4">
-                                    쿠폰
+                            <div class="col-12 col-lg-6">
+                                <div class="card my-3">
+                                    <div class="card-header fs-5 fw-bold ps-4">
+                                        쿠폰
+                                    </div>
+                                    <div class="card-body px-4 py-4">
+                                        <p>보유중인 쿠폰이 없습니다.</p>
+                                    </div>
                                 </div>
-                                <div class="card-body px-4 py-4">
-                                    <p>보유중인 쿠폰이 없습니다.</p>
-                                </div>
-                            </div>
+                            </div>  
                         </div>
                         <div class="row">
-                            <div class="col-12 col-md-6 card my-3">
-                                <div class="card-header fs-5 fw-bold ps-4">
-                                    결제정보
-                                </div>
-                                <div class="card-body d-flex align-items-center px-4 py-4">
-                                    <input type="checkbox" class="form-check-input custom_checkbox mx-2" name="credit_card"
-                                        id="credit_card" value="y" checked>
-                                    <label for="credit_card" class="d-flex align-items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-                                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
-                                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
-                                        </svg><span class="px-2">신용카드</span>
-                                    </label>
+                            <div class="col-12 col-lg-6">
+                                <div class="card my-3">
+                                    <div class="card-header fs-5 fw-bold ps-4">
+                                        결제정보
+                                    </div>
+                                    <div class="card-body d-flex align-items-center px-4 py-4">
+                                        <input type="checkbox" class="form-check-input custom_checkbox mx-2" name="credit_card"
+                                            id="credit_card" value="y" checked>
+                                        <label for="credit_card" class="d-flex align-items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+                                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+                                                <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+                                            </svg><span class="px-2">신용카드</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 card my-3">
-                                <div class="card-header fs-5 fw-bold ps-4">
-                                    주문 금액
-                                </div>
-                                <div class="card-body d-flex flex-column px-4 py-4">
-                                    <div class="d-flex justify-content-between"><span>상품금액</span>
-                                        <div><span><?php echo $array1['total_price']; ?></span> 원</div>
+                            <div class="col-12 col-lg-6">
+                                <div class="card my-3">
+                                    <div class="card-header fs-5 fw-bold ps-4">
+                                        주문 금액
                                     </div>
-                                    <div class="d-flex justify-content-between"><span>할인금액</span>
-                                        <div>-<span>0</span> 원</div>
-                                    </div>
-                                    <div class="d-flex justify-content-between"><span>결제금액</span>
-                                        <div class="text-danger"><span><?php echo $array1['total_price']; ?></span> 원</div>
+                                    <div class="card-body d-flex flex-column px-4 py-4">
+                                        <div class="d-flex justify-content-between"><span>상품금액</span>
+                                            <div><span><?php echo $array1['total_price']; ?></span> 원</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between"><span>할인금액</span>
+                                            <div>-<span>0</span> 원</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between"><span>결제금액</span>
+                                            <div class="text-danger"><span><?php echo $array1['total_price']; ?></span> 원</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

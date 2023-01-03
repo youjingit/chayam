@@ -90,6 +90,10 @@
 
     /* slide2 - chayam menu slider */
 
+    .chayam_menu {
+        padding: 0;
+    }
+
     .chayam_menu .container_inner {
         min-width: 640px;
         max-width: 1023px;
@@ -125,6 +129,9 @@
 
 
     /* slide3 - competitve */
+    .brand_story {
+        padding: 0;
+    }
 
     .brand_story .container {
         width: 640px;
