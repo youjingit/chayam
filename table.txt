@@ -1,3 +1,8 @@
+create database youjindev
+default character set utf8
+default collate utf8_general_ci;
+
+----------------------------------------------------------------------------
 create table chayam_members(
     idx int auto_increment primary key,
     u_id varchar(20) not null unique,
@@ -354,38 +359,3 @@ create table chayam_stamp(
 );
 
 
-
-
-
-
-create database chayam
-default character set utf8
-default collate utf8_general_ci;
-
-
-select 
-format (
-    sum(
-    t1.count * case t1.size 
-        when 's' then cast(replace(t2.s_price, ',', '') as int)
-        when 'm' then cast(replace(t2.m_price, ',', '') as int)
-        else cast(replace(t2.l_price, ',', '') as int)
-    end
-    + case t1.pearl when 'y' then 500 else 0 end
-    + case t1.cheeze when 'y' then 500 else 0 end
-    + case t1.jelly when 'y' then 500 else 0 end
-    ),
-    0
-) as total_price
-from cart t1, products t2
-where 
-t1.p_id = t2.p_id 
-group by 
-t1.u_id ;
-
-
-t1.u_id = '$s_id'
-and 
-
-
-insert into stamp ( u_id, count ) select 'vuejsss', ( select sum(x1.count) FROM chayam_orders_detail x1 where x1.o_id = '63ad752f9bf9d' group by x1.o_id ) where not exists ( select 1 from chayam_stamp x1 where x1.u_id = 'vuejsss' );
