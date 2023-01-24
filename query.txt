@@ -1,3 +1,6 @@
+관리자 아이디 : admin1234
+비밀번호 : 1234bb@@
+
 create database youjindev
 default character set utf8
 default collate utf8_general_ci;
